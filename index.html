@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mikuna Wassi - Menú Interactivo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            andean: {
+              50: '#fbf7f4',
+              100: '#f4eae2',
+              800: '#4a2810',
+              950: '#2d1506',
+            },
+            amber: {
+              950: '#451a03',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Estilos base para los modales nativos por :target */
+    .modal-backdrop {
+      display: none;
+    }
+    :target.modal-backdrop {
+      display: flex;
+    }
+  </style>
+</head>
+<body class="bg-andean-50 text-stone-800 font-sans min-h-screen pb-32">
+
+  <header class="bg-andean-950 text-white sticky top-0 z-40 shadow-md">
+    <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+      <div>
+        <h1 class="text-xl font-bold tracking-wide text-amber-400">Mikuna Wassi</h1>
+        <p class="text-xs text-stone-300">La Casa de la Comida · Sabores Andinos</p>
+      </div>
+      <div class="flex space-x-2 text-sm font-semibold">
+        <a href="index.html" class="bg-amber-500 text-andean-950 px-2 py-1 rounded shadow">ES</a>
+        <a href="eng.html" class="bg-stone-800 text-stone-300 px-2 py-1 rounded hover:bg-stone-700">EN</a>
+        <a href="fra.html" class="bg-stone-800 text-stone-300 px-2 py-1 rounded hover:bg-stone-700">FR</a>
+      </div>
+    </div>
+
+    <nav class="bg-amber-950 text-amber-100 text-xs font-medium border-t border-amber-900 overflow-x-auto whitespace-nowrap scrollbar-none">
+      <div class="max-w-md mx-auto px-2 py-2 flex space-x-4">
+        <a href="#sopas" class="px-2 py-1 hover:text-amber-400 transition">Sopas</a>
+        <a href="#exclusivos" class="px-2 py-1 hover:text-amber-400 transition">Exclusividades</a>
+        <a href="#grill" class="px-2 py-1 hover:text-amber-400 transition">Grill y Saltados</a>
+        <a href="#vegetariano" class="px-2 py-1 hover:text-amber-400 transition">Vegetariano</a>
+        <a href="#bebidas" class="px-2 py-1 hover:text-amber-400 transition">Bebidas</a>
+        <a href="#postres" class="px-2 py-1 hover:text-amber-400 transition">Postres</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-md mx-auto px-4 mt-4 space-y-8">
+
+    <section id="sopas" class="scroll-mt-24">
+      <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
+        🍲 Sopas y Cremas
+      </h2>
+      <div class="space-y-3">
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+          <img src="images/sustancia_pollo.jpg" alt="Sustancia de Pollo" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-stone-900 text-sm">Sustancia de Pollo</h3>
+              <p class="text-xs text-stone-500 line-clamp-1">Caldo concentrado de pollo, ideal para reponer energías.</p>
+            </div>
+            <div class="flex justify-between items-center mt-1">
+              <span class="text-amber-950 font-bold text-sm">S/. 15.00</span>
+              <button onclick="addToCart('Sustancia de Pollo', 15.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                + Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+          <img src="images/sopa_criolla_pollo.jpg" alt="Sopa Criolla de Pollo" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-stone-900 text-sm">Sopa Criolla de Pollo</h3>
+              <p class="text-xs text-stone-500 line-clamp-1">Sopa tradicional con fideos, leche, huevo y carne de pollo.</p>
+            </div>
+            <div class="flex justify-between items-center mt-1">
+              <span class="text-amber-950 font-bold text-sm">S/. 18.00</span>
+              <button onclick="addToCart('Sopa Criolla de Pollo', 18.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                + Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+          <img src="images/sopa_criolla_carne.jpg" alt="Sopa Criolla de Carne" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-stone-900 text-sm">Sopa Criolla de Carne</h3>
+              <p class="text-xs text-stone-500 line-clamp-1">Variación clásica con carne de res molida o picada, fideos y toque de leche.</p>
+            </div>
+            <div class="flex justify-between items-center mt-1">
+              <span class="text-amber-950 font-bold text-sm">S/. 18.00</span>
+              <button onclick="addToCart('Sopa Criolla de Carne', 18.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                + Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+          <img src="images/crema_verduras.jpg" alt="Crema de Verduras" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-stone-900 text-sm">Crema de Verduras</h3>
+              <p class="text-xs text-stone-500 line-clamp-1">Suave selección de verduras mixtas de la estación licuadas.</p>
+            </div>
+            <div class="flex justify-between items-center mt-1">
+              <span class="text-amber-950 font-bold text-sm">S/. 18.00</span>
+              <button onclick="addToCart('Crema de Verduras', 18.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                + Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="exclusivos" class="scroll-mt-24">
+      <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
+        ⭐ Exclusividad de la Casa
+      </h2>
+      <div class="space-y-3">
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+          <img src="images/pollo_acevichado.jpg" alt="Pollo Acevichado" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start">
+                <h3 class="font-bold text-stone-900 text-sm">Pollo Acevichado</h3>
+                <a href="#modal-acevichado" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingredientes</a>
+              </div>
+              <p class="text-xs text-stone-500 line-clamp-1">Presa de pollo en salsa acevichada con cebolla y ají amarillo.</p>
+            </div>
+            <div class="flex justify-between items-center mt-1">
+              <span class="text-amber-950 font-bold text-sm">S/. 25.00</span>
+              <button onclick="addToCart('Pollo Acevichado', 25.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                + Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+          <img src="images/pure_campesino.jpg" alt="Puré Campesino con Pollo" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start">
+                <h3 class="font-bold text-stone-900 text-sm">Puré Campesino con Pollo a la Olla</h3>
+                <a href="#modal-pure" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingredientes</a>
+              </div>
+              <p class="text-xs text-stone-500 line-clamp-1">Puré de zapallo con papa, huacatay, queso local y pollo macerado.</p>
+            </div>
+            <div class="flex justify-between items-center mt-1">
+              <span class="text-amber-950 font-bold text-sm">S/. 25.00</span>
+              <button onclick="addToCart('Puré Campesino con Pollo a la Olla', 25.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                + Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+          <img src="images/alpaca_chicha.jpg" alt="Alpaca en Salsa de Chicha" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start">
+                <h3 class="font-bold text-stone-900 text-sm">Alpaca en Salsa de Chicha</h3>
+                <a href="#modal-alpaca-chicha" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingredientes</a>
+              </div>
+              <p class="text-xs text-stone-500 line-clamp-1">Carne de alpaca en salsa de chicha de maíz cabanita.</p>
+            </div>
+            <div class="flex justify-between items-center mt-1">
+              <span class="text-amber-950 font-bold text-sm">S/. 27.00</span>
+              <button onclick="addToCart('Alpaca en Salsa de Chicha', 27.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                + Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="grill" class="scroll-mt-24">
+      <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
+        🔥 Saltados, Grill y Plancha
+      </h2>
+      <div class="space-y-3">
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+          <img src="images/pollo_anticuchero.jpg" alt="Pollo Anticuchero" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start">
+                <h3 class="font-bold text-stone-900 text-sm">Pollo Anticuchero</h3>
+                <a href="#modal-anticuchero" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingredientes</a>
+              </div>
+              <p class="text-xs text-stone-500 line-clamp-1">Macerado en salsa anticuchera con papa, choclo y huancaína.</p>
+            </div>
+            <div class="flex justify-between items-center mt-1">
+              <span class="text-amber-950 font-bold text-sm">S/. 30.00</span>
+              <button onclick="addToCart('Pollo Anticuchero', 30.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                + Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+          <img src="images/pechuga_plancha.jpg" alt="Pechuga a la Plancha" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-stone-900 text-sm">Pechuga de Pollo a la Plancha</h3>
+              <p class="text-xs text-stone-500 line-clamp-1">Acompañado de papas fritas, vegetales, arroz blanco y cremas.</p>
+            </div>
+            <div class="flex justify-between items-center mt-1">
+              <span class="text-amber-950 font-bold text-sm">S/. 35.00</span>
+              <button onclick="addToCart('Pechuga de Pollo a la Plancha', 35.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                + Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+          <img src="images/trucha_parrilla.jpg" alt="Trucha a la Parrilla" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-stone-900 text-sm">Trucha a la Parrilla</h3>
+              <p class="text-xs text-stone-500 line-clamp-1">Filete de trucha a la plancha con papas fritas, arroz y chimichurri.</p>
+            </div>
+            <div class="flex justify-between items-center mt-1">
+              <span class="text-amber-950 font-bold text-sm">S/. 35.00</span>
+              <button onclick="addToCart('Trucha a la Parrilla', 35.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                + Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+          <img src="images/lomo_alpaca.jpg" alt="Lomo Saltado de Alpaca" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start">
+                <h3 class="font-bold text-stone-900 text-sm">Lomo Saltado de Alpaca</h3>
+                <a href="#modal-lomo-alpaca" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingredientes</a>
+              </div>
+              <p class="text-xs text-stone-500 line-clamp-1">Salteado tradicional con cebolla, tomate, papas fritas y arroz.</p>
+            </div>
+            <div class="flex justify-between items-center mt-1">
+              <span class="text-amber-950 font-bold text-sm">S/. 38.00</span>
+              <button onclick="addToCart('Lomo Saltado de Alpaca', 38.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                + Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+          <img src="images/lomo_res.jpg" alt="Lomo Fino de Res al Grill" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-stone-900 text-sm">Lomo Fino de Res al Grill</h3>
+              <p class="text-xs text-stone-500 line-clamp-1">Chuleta de res a la parrilla con papas, ensalada, arroz y chimichurri.</p>
+            </div>
+            <div class="flex justify-between items-center mt-1">
+              <span class="text-amber-950 font-bold text-sm">S/. 38.00</span>
+              <button onclick="addToCart('Lomo Fino de Res al Grill', 38.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                + Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vegetariano" class="scroll-mt-24">
+      <h2 class="text-lg font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+        🌿 Rincón Vegetariano
+      </h2>
+      <div class="space-y-3">
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+          <img src="images/spaghetti_vegetales.jpg" alt="Spaghetti Vegetales" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-stone-900 text-sm">Spaghetti con Vegetales</h3>
+              <p class="text-xs text-stone-500 line-clamp-1">Pasta salteada con verduras frescas seleccionadas y especias.</p>
+            </div>
+            <div class="flex justify-between items-center mt-1">
+              <span class="text-emerald-900 font-bold text-sm">S/. 23.00</span>
+              <button onclick="addToCart('Spaghetti con Vegetales', 23.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                + Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+          <img src="images/spaghetti_pesto.jpg" alt="Spaghetti al Pesto" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-stone-900 text-sm">Spaghetti al Pesto</h3>
+              <p class="text-xs text-stone-500 line-clamp-1">Pasta bañada en salsa cremosa de albahaca, espinaca y queso local.</p>
+            </div>
+            <div class="flex justify-between items-center mt-1">
+              <span class="text-emerald-900 font-bold text-sm">S/. 23.00</span>
+              <button onclick="addToCart('Spaghetti al Pesto', 23.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                + Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bebidas" class="scroll-mt-24">
+      <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
+        🥤 Bebidas y Refrescos
+      </h2>
+      <div class="grid grid-cols-2 gap-3">
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex flex-col justify-between">
+          <h3 class="font-bold text-stone-900 text-xs">Copa de Vino</h3>
+          <div class="flex justify-between items-center mt-2">
+            <span class="text-amber-950 text-xs font-bold">S/. 12.00</span>
+            <button onclick="addToCart('Copa de Vino', 12.00)" class="bg-stone-900 text-white text-[11px] px-2 py-1 rounded">
+              + Ver
+            </button>
+          </div>
+        </div>
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex flex-col justify-between">
+          <h3 class="font-bold text-stone-900 text-xs">Cerveza Cusqueña</h3>
+          <div class="flex justify-between items-center mt-2">
+            <span class="text-amber-950 text-xs font-bold">S/. 10.00</span>
+            <button onclick="addToCart('Cerveza Cusqueña 310ml', 10.00)" class="bg-stone-900 text-white text-[11px] px-2 py-1 rounded">
+              + Ver
+            </button>
+          </div>
+        </div>
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex flex-col justify-between">
+          <h3 class="font-bold text-stone-900 text-xs">Chicha Morada</h3>
+          <div class="flex justify-between items-center mt-2">
+            <span class="text-amber-950 text-xs font-bold">S/. 6.00</span>
+            <button onclick="addToCart('Chicha Morada', 6.00)" class="bg-stone-900 text-white text-[11px] px-2 py-1 rounded">
+              + Ver
+            </button>
+          </div>
+        </div>
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex flex-col justify-between">
+          <h3 class="font-bold text-stone-900 text-xs">Refresco Maracuyá</h3>
+          <div class="flex justify-between items-center mt-2">
+            <span class="text-amber-950 text-xs font-bold">S/. 5.00</span>
+            <button onclick="addToCart('Refresco de Maracuyá', 5.00)" class="bg-stone-900 text-white text-[11px] px-2 py-1 rounded">
+              + Ver
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="postres" class="scroll-mt-24">
+      <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
+        🍰 Postres Tradicionales
+      </h2>
+      <div class="grid grid-cols-2 gap-3">
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex flex-col justify-between">
+          <h3 class="font-bold text-stone-900 text-xs">Pie de Sancayo</h3>
+          <div class="flex justify-between items-center mt-2">
+            <span class="text-amber-950 text-xs font-bold">S/. 12.00</span>
+            <button onclick="addToCart('Pie de Sancayo', 12.00)" class="bg-stone-900 text-white text-[11px] px-2 py-1 rounded">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex flex-col justify-between">
+          <h3 class="font-bold text-stone-900 text-xs">Pie de Maracuyá</h3>
+          <div class="flex justify-between items-center mt-2">
+            <span class="text-amber-950 text-xs font-bold">S/. 12.00</span>
+            <button onclick="addToCart('Pie de Maracuyá', 12.00)" class="bg-stone-900 text-white text-[11px] px-2 py-1 rounded">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex flex-col justify-between">
+          <h3 class="font-bold text-stone-900 text-xs">Torta de Chocolate</h3>
+          <div class="flex justify-between items-center mt-2">
+            <span class="text-amber-950 text-xs font-bold">S/. 12.00</span>
+            <button onclick="addToCart('Torta de Chocolate', 12.00)" class="bg-stone-900 text-white text-[11px] px-2 py-1 rounded">
+              +
+            </button>
+          </div>
+        </div>
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex flex-col justify-between">
+          <h3 class="font-bold text-stone-900 text-xs">Qeqe Tradicional</h3>
+          <div class="flex justify-between items-center mt-2">
+            <span class="text-amber-950 text-xs font-bold">S/. 5.00</span>
+            <button onclick="addToCart('Qeqe', 5.00)" class="bg-stone-900 text-white text-[11px] px-2 py-1 rounded">
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="carrito-seccion" class="bg-amber-950 text-white p-4 rounded-2xl shadow-xl mt-8">
+      <h2 class="text-base font-bold mb-3 flex items-center justify-between text-amber-400">
+        🛒 Tu Carrito de Compras
+        <span id="cart-count" class="bg-amber-500 text-andean-950 px-2 py-0.5 rounded-full text-xs">0</span>
+      </h2>
+      
+      <div id="cart-items" class="space-y-2 text-xs divide-y divide-amber-900 max-h-48 overflow-y-auto pr-1">
+        <p class="text-stone-400 text-center py-4">No has seleccionado ningún plato aún.</p>
+      </div>
+
+      <div class="mt-4 pt-3 border-t border-amber-900">
+        <label class="block text-xs font-medium text-stone-300 mb-2">¿Cómo deseas tu pedido?</label>
+        <div class="grid grid-cols-2 gap-2 bg-amber-900/50 p-1 rounded-lg">
+          <button id="btn-mesa" onclick="setModalidad('Comer en el Local')" class="py-1.5 text-xs font-semibold rounded-md transition bg-amber-500 text-andean-950 shadow-sm">
+            Comer en el Local
+          </button>
+          <button id="btn-llevar" onclick="setModalidad('Para Llevar')" class="py-1.5 text-xs font-semibold rounded-md transition text-amber-200 hover:text-white">
+            Para Llevar
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-4 pt-3 border-t border-amber-900 flex flex-col gap-3">
+        <div class="flex justify-between items-center font-bold text-sm">
+          <span>Total Estimado:</span>
+          <span id="cart-total" class="text-amber-400 text-base">S/. 0.00</span>
+        </div>
+        <button onclick="sendOrderToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 active:scale-[0.98] text-white font-bold text-sm py-3 rounded-xl transition shadow flex items-center justify-center gap-2">
+          🚀 Enviar Pedido por WhatsApp
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="modal-acevichado" class="modal-backdrop fixed inset-0 z-50 items-center justify-center bg-black/70 p-4">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl relative animate-fade-in">
+      <h3 class="font-bold text-stone-900 text-base mb-2">Pollo Acevichado</h3>
+      <p class="text-xs text-stone-600 space-y-2 leading-relaxed">
+        <strong>Ingredientes:</strong> Presa de pollo perfectamente cocida, bañada en nuestra salsa cremosa acevichada secreta a base de limón, cebolla roja crujiente, ají amarillo y especias locales. Acompañado de rodajas de camote dulce y arroz blanco graneado.
+      </p>
+      <div class="mt-4 flex justify-end">
+        <a href="#" class="bg-stone-900 text-white text-xs font-medium px-4 py-2 rounded-lg">Cerrar</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-pure" class="modal-backdrop fixed inset-0 z-50 items-center justify-center bg-black/70 p-4">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl relative">
+      <h3 class="font-bold text-stone-900 text-base mb-2">Puré Campesino con Pollo a la Olla</h3>
+      <p class="text-xs text-stone-600 leading-relaxed">
+        <strong>Ingredientes:</strong> Tradicional puré rústico elaborado con zapallo de la zona y papas nativas, aromatizado con huacatay fresco, leche evaporada y queso artesanal local. Servido con una jugosa presa de pollo macerada en ají panca y mostaza, cocida lentamente a la olla. Incluye arroz.
+      </p>
+      <div class="mt-4 flex justify-end">
+        <a href="#" class="bg-stone-900 text-white text-xs font-medium px-4 py-2 rounded-lg">Cerrar</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-alpaca-chicha" class="modal-backdrop fixed inset-0 z-50 items-center justify-center bg-black/70 p-4">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl relative">
+      <h3 class="font-bold text-stone-900 text-base mb-2">Alpaca en Salsa de Chicha</h3>
+      <p class="text-xs text-stone-600 leading-relaxed">
+        <strong>Ingredientes:</strong> Tiernos trozos de carne selecta de alpaca, estofados a fuego lento en una reducción aromática de chicha de maíz cabanita. Se sirve con arroz blanco, camote dulce glaseado y una fresca sarsa criolla (cebolla, limón y cilantro).
+      </p>
+      <div class="mt-4 flex justify-end">
+        <a href="#" class="bg-stone-900 text-white text-xs font-medium px-4 py-2 rounded-lg">Cerrar</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-anticuchero" class="modal-backdrop fixed inset-0 z-50 items-center justify-center bg-black/70 p-4">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl relative">
+      <h3 class="font-bold text-stone-900 text-base mb-2">Pollo Anticuchero</h3>
+      <p class="text-xs text-stone-600 leading-relaxed">
+        <strong>Ingredientes:</strong> Jugoso filete de pechuga de pollo macerado en nuestra salsa anticuchera tradicional (ají panca, ajo, comino, vinagre). Servido con papas doradas cocidas, choclo tierno desgranado, vegetales salteados y una porción de nuestra crema huancaína de la casa.
+      </p>
+      <div class="mt-4 flex justify-end">
+        <a href="#" class="bg-stone-900 text-white text-xs font-medium px-4 py-2 rounded-lg">Cerrar</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-lomo-alpaca" class="modal-backdrop fixed inset-0 z-50 items-center justify-center bg-black/70 p-4">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl relative">
+      <h3 class="font-bold text-stone-900 text-base mb-2">Lomo Saltado de Alpaca</h3>
+      <p class="text-xs text-stone-600 leading-relaxed">
+        <strong>Ingredientes:</strong> Bastones de lomo de alpaca salteados a fuego alto en wok con cebolla morada, tomates jugosos, tiras de ajíes, cilantro fresco, ajos y nuestra mezcla de salsas asiático-peruanas. Servido con crujientes papas fritas y arroz blanco.
+      </p>
+      <div class="mt-4 flex justify-end">
+        <a href="#" class="bg-stone-900 text-white text-xs font-medium px-4 py-2 rounded-lg">Cerrar</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="floating-bar" class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-sm bg-emerald-600 text-white px-4 py-3 rounded-xl shadow-xl flex items-center justify-between z-30 transition-transform duration-300 translate-y-24 pointer-events-none opacity-0">
+    <div class="flex items-center gap-2">
+      <span class="font-bold text-sm" id="floating-count">0 items</span>
+      <span class="text-xs text-emerald-100">agregados</span>
+    </div>
+    <a href="#carrito-seccion" class="pointer-events-auto bg-amber-400 text-andean-950 text-xs font-bold px-3 py-1.5 rounded-lg shadow">
+      Ver Pedido ↑
+    </a>
+  </div>
+
+  <script>
+    // Estado del Carrito en memoria dinámica del Navegador
+    let cart = [];
+    let modalidad = "Comer en el Local";
+
+    // Añadir producto o incrementar cantidad
+    function addToCart(name, price) {
+      const existingItem = cart.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+      renderCart();
+    }
+
+    // Cambiar cantidades (+ / -)
+    function changeQuantity(name, delta) {
+      const item = cart.find(item => item.name === name);
+      if (item) {
+        item.quantity += delta;
+        if (item.quantity <= 0) {
+          cart = cart.filter(i => i.name !== name);
+        }
+      }
+      renderCart();
+    }
+
+    // Cambiar la modalidad del servicio
+    function setModalidad(nuevaModalidad) {
+      modalidad = nuevaModalidad;
+      const btnMesa = document.getElementById('btn-mesa');
+      const btnLlevar = document.getElementById('btn-llevar');
+
+      if (modalidad === "Comer en el Local") {
+        btnMesa.className = "py-1.5 text-xs font-semibold rounded-md transition bg-amber-500 text-andean-950 shadow-sm";
+        btnLlevar.className = "py-1.5 text-xs font-semibold rounded-md transition text-amber-200 hover:text-white";
+      } else {
+        btnLlevar.className = "py-1.5 text-xs font-semibold rounded-md transition bg-amber-500 text-andean-950 shadow-sm";
+        btnMesa.className = "py-1.5 text-xs font-semibold rounded-md transition text-amber-200 hover:text-white";
+      }
+    }
+
+    // Renderizar e inyectar HTML del carrito en tiempo real
+    function renderCart() {
+      const cartItemsContainer = document.getElementById('cart-items');
+      const cartTotal = document.getElementById('cart-total');
+      const cartCount = document.getElementById('cart-count');
+      const floatingBar = document.getElementById('floating-bar');
+      const floatingCount = document.getElementById('floating-count');
+
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = `<p class="text-stone-400 text-center py-4">No has seleccionado ningún plato aún.</p>`;
+        cartTotal.innerText = "S/. 0.00";
+        cartCount.innerText = "0";
+        
+        // Esconder barra flotante móvil
+        floatingBar.classList.add('translate-y-24', 'opacity-0');
+        return;
+      }
+
+      let html = "";
+      let total = 0;
+      let totalItems = 0;
+
+      cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        totalItems += item.quantity;
+
+        html += `
+          <div class="flex items-center justify-between py-2">
+            <div class="flex-1 pr-2">
+              <p class="font-semibold text-amber-200">${item.name}</p>
+              <p class="text-[10px] text-stone-400">S/. ${item.price.toFixed(2)} c/u</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="flex items-center bg-amber-900 rounded-lg overflow-hidden border border-amber-800">
+                <button onclick="changeQuantity('${item.name}', -1)" class="px-2 py-1 hover:bg-amber-800 text-amber-300 font-bold">-</button>
+                <span class="px-2 text-xs font-bold">${item.quantity}</span>
+                <button onclick="changeQuantity('${item.name}', 1)" class="px-2 py-1 hover:bg-amber-800 text-amber-300 font-bold">+</button>
+              </div>
+              <span class="font-bold text-amber-400 min-w-[55px] text-right">S/. ${subtotal.toFixed(2)}</span>
+            </div>
+          </div>
+        `;
+      });
+
+      cartItemsContainer.innerHTML = html;
+      cartTotal.innerText = `S/. ${total.toFixed(2)}`;
+      cartCount.innerText = totalItems;
+
+      // Mostrar barra flotante informativa
+      floatingCount.innerText = `${totalItems} platos`;
+      floatingBar.classList.remove('translate-y-24', 'opacity-0');
+    }
+
+    // Compilar orden y redireccionar nativamente a la API de WhatsApp
+    function sendOrderToWhatsApp() {
+      if (cart.length === 0) {
+        alert("Por favor, agrega al menos un plato a tu carrito para procesar el pedido.");
+        return;
+      }
+
+      let totalSum = 0;
+      let textoMensaje = "¡Hola, Mikuna Wassi! 🍲\nAcabo de armar mi pedido desde el menú digital:\n\n";
+
+      cart.forEach(item => {
+        const sub = item.price * item.quantity;
+        totalSum += sub;
+        textoMensaje += `• ${item.quantity}x ${item.name} (S/. ${sub.toFixed(2)})\n`;
+      });
+
+      textoMensaje += `\n*Total estimado:* S/. ${totalSum.toFixed(2)}`;
+      textoMensaje += `\n*Modalidad:* [${modalidad}]`;
+      textoMensaje += "\n\nMuchas gracias. ¡Espero mi confirmación! 👋";
+
+      // Reemplazo del número registrado del local en Perú (Prefijo +51)
+      const whatsappNumber = "51956459905";
+      const urlFinal = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(textoMensaje)}`;
+
+      // Redirección nativa
+      window.location.href = urlFinal;
+    }
+  </script>
+</body>
+</html>
