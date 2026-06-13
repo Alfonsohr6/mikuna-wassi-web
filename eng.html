@@ -37,10 +37,14 @@
 
   <header class="bg-andean-950 text-white sticky top-0 z-40 shadow-md">
     <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
-      <div>
-        <h1 class="text-xl font-bold tracking-wide text-amber-400">Mikuna Wassi</h1>
-        <p class="text-xs text-stone-300">The House of Food · Andean Flavors</p>
-      </div>
+        <div class="flex items-center gap-3">
+          <img src="assets/images/logomikunawassi.png" alt="Mikuna Wassi Logo" class="w-10 h-10 object-contain rounded-full bg-amber-400/10" onerror="this.style.display='none'">
+
+            <div>
+              <h1 class="text-xl font-bold tracking-wide text-amber-400">Mikuna Wassi</h1>
+              <p class="text-xs text-stone-300">The House of Food · Andean Flavors</p>
+            </div>
+        </div>
       <div class="flex space-x-2 text-sm font-semibold">
         <a href="index.html" class="bg-stone-800 text-stone-300 px-2 py-1 rounded hover:bg-stone-700">ES</a>
         <a href="eng.html" class="bg-amber-500 text-andean-950 px-2 py-1 rounded shadow">EN</a>
@@ -522,124 +526,6 @@
     </a>
   </div>
 
-  <script>
-    let cart = [];
-    let modalidad = "Comer en el Local"; // Default kitchen state string
-
-    function addToCart(name, price) {
-      const existingItem = cart.find(item => item.name === name);
-      if (existingItem) {
-        existingItem.quantity += 1;
-      } else {
-        cart.push({ name, price, quantity: 1 });
-      }
-      renderCart();
-    }
-
-    function changeQuantity(name, delta) {
-      const item = cart.find(item => item.name === name);
-      if (item) {
-        item.quantity += delta;
-        if (item.quantity <= 0) {
-          cart = cart.filter(i => i.name !== name);
-        }
-      }
-      renderCart();
-    }
-
-    function setModalidad(nuevaModalidad) {
-      modalidad = nuevaModalidad;
-      const btnMesa = document.getElementById('btn-mesa');
-      const btnLlevar = document.getElementById('btn-llevar');
-
-      if (modalidad === "Comer en el Local") {
-        btnMesa.className = "py-1.5 text-xs font-semibold rounded-md transition bg-amber-500 text-andean-950 shadow-sm";
-        btnLlevar.className = "py-1.5 text-xs font-semibold rounded-md transition text-amber-200 hover:text-white";
-      } else {
-        btnLlevar.className = "py-1.5 text-xs font-semibold rounded-md transition bg-amber-500 text-andean-950 shadow-sm";
-        btnMesa.className = "py-1.5 text-xs font-semibold rounded-md transition text-amber-200 hover:text-white";
-      }
-    }
-
-    function renderCart() {
-      const cartItemsContainer = document.getElementById('cart-items');
-      const cartTotal = document.getElementById('cart-total');
-      const cartCount = document.getElementById('cart-count');
-      const floatingBar = document.getElementById('floating-bar');
-      const floatingCount = document.getElementById('floating-count');
-
-      if (cart.length === 0) {
-        cartItemsContainer.innerHTML = `<p class="text-stone-400 text-center py-4">No items selected yet.</p>`;
-        cartTotal.innerText = "S/. 0.00";
-        cartCount.innerText = "0";
-        floatingBar.classList.add('translate-y-24', 'opacity-0');
-        return;
-      }
-
-      let html = "";
-      let total = 0;
-      let totalItems = 0;
-
-      cart.forEach(item => {
-        const subtotal = item.price * item.quantity;
-        total += subtotal;
-        totalItems += item.quantity;
-
-        // Clean name to display only the English translation part to the user in the cart UI
-        const displayName = item.name.includes('(') ? item.name.split('(')[1].replace(')', '') : item.name;
-
-        html += `
-          <div class="flex items-center justify-between py-2">
-            <div class="flex-1 pr-2">
-              <p class="font-semibold text-amber-200">${displayName}</p>
-              <p class="text-[10px] text-stone-400">S/. ${item.price.toFixed(2)} each</p>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="flex items-center bg-amber-900 rounded-lg overflow-hidden border border-amber-800">
-                <button onclick="changeQuantity('${item.name}', -1)" class="px-2 py-1 hover:bg-amber-800 text-amber-300 font-bold">-</button>
-                <span class="px-2 text-xs font-bold">${item.quantity}</span>
-                <button onclick="changeQuantity('${item.name}', 1)" class="px-2 py-1 hover:bg-amber-800 text-amber-300 font-bold">+</button>
-              </div>
-              <span class="font-bold text-amber-400 min-w-[55px] text-right">S/. ${subtotal.toFixed(2)}</span>
-            </div>
-          </div>
-        `;
-      });
-
-      cartItemsContainer.innerHTML = html;
-      cartTotal.innerText = `S/. ${total.toFixed(2)}`;
-      cartCount.innerText = totalItems;
-
-      floatingCount.innerText = `${totalItems} dishes`;
-      floatingBar.classList.remove('translate-y-24', 'opacity-0');
-    }
-
-    function sendOrderToWhatsApp() {
-      if (cart.length === 0) {
-        alert("Please add at least one dish to your cart before checking out.");
-        return;
-      }
-
-      let totalSum = 0;
-      // Alert the kitchen that it comes from the English menu but structured cleanly
-      let textoMensaje = "¡Hola, Mikuna Wassi! 🍲 (Pedido en Inglés / EN)\nUn cliente ha enviado su pedido:\n\n";
-
-      cart.forEach(item => {
-        const sub = item.price * item.quantity;
-        totalSum += sub;
-        // Sends both Spanish and English to the WhatsApp chat so the chef knows exactly what it is
-        textoMensaje += `• ${item.quantity}x ${item.name} (S/. ${sub.toFixed(2)})\n`;
-      });
-
-      textoMensaje += `\n*Total estimado:* S/. ${totalSum.toFixed(2)}`;
-      textoMensaje += `\n*Modalidad / Service:* [${modalidad}]`;
-      textoMensaje += "\n\nThank you! Looking forward to your confirmation. 👋";
-
-      const whatsappNumber = "51956459905";
-      const urlFinal = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(textoMensaje)}`;
-
-      window.location.href = urlFinal;
-    }
-  </script>
+  <script src="assets/scripts/carrito.js"></script>
 </body>
 </html>

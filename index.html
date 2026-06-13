@@ -38,15 +38,19 @@
 
   <header class="bg-andean-950 text-white sticky top-0 z-40 shadow-md">
     <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
-      <div>
-        <h1 class="text-xl font-bold tracking-wide text-amber-400">Mikuna Wassi</h1>
-        <p class="text-xs text-stone-300">La Casa de la Comida · Sabores Andinos</p>
-      </div>
-      <div class="flex space-x-2 text-sm font-semibold">
-        <a href="index.html" class="bg-amber-500 text-andean-950 px-2 py-1 rounded shadow">ES</a>
-        <a href="eng.html" class="bg-stone-800 text-stone-300 px-2 py-1 rounded hover:bg-stone-700">EN</a>
-        <a href="fra.html" class="bg-stone-800 text-stone-300 px-2 py-1 rounded hover:bg-stone-700">FR</a>
-      </div>
+        <div class="flex items-center gap-3">
+          <img src="assets/images/logomikunawassi.png" alt="Mikuna Wassi Logo" class="w-10 h-10 object-contain rounded-full bg-amber-400/10" onerror="this.style.display='none'">
+        
+          <div>
+            <h1 class="text-xl font-bold tracking-wide text-amber-400">Mikuna Wassi</h1>
+            <p class="text-xs text-stone-300">La Casa de la Comida · Sabores Andinos</p>
+          </div>
+        </div>
+        <div class="flex space-x-2 text-sm font-semibold">
+          <a href="index.html" class="bg-amber-500 text-andean-950 px-2 py-1 rounded shadow">ES</a>
+          <a href="eng.html" class="bg-stone-800 text-stone-300 px-2 py-1 rounded hover:bg-stone-700">EN</a>
+          <a href="fra.html" class="bg-stone-800 text-stone-300 px-2 py-1 rounded hover:bg-stone-700">FR</a>
+        </div>
     </div>
 
     <nav class="bg-amber-950 text-amber-100 text-xs font-medium border-t border-amber-900 overflow-x-auto whitespace-nowrap scrollbar-none">
@@ -523,130 +527,6 @@
     </a>
   </div>
 
-  <script>
-    // Estado del Carrito en memoria dinámica del Navegador
-    let cart = [];
-    let modalidad = "Comer en el Local";
-
-    // Añadir producto o incrementar cantidad
-    function addToCart(name, price) {
-      const existingItem = cart.find(item => item.name === name);
-      if (existingItem) {
-        existingItem.quantity += 1;
-      } else {
-        cart.push({ name, price, quantity: 1 });
-      }
-      renderCart();
-    }
-
-    // Cambiar cantidades (+ / -)
-    function changeQuantity(name, delta) {
-      const item = cart.find(item => item.name === name);
-      if (item) {
-        item.quantity += delta;
-        if (item.quantity <= 0) {
-          cart = cart.filter(i => i.name !== name);
-        }
-      }
-      renderCart();
-    }
-
-    // Cambiar la modalidad del servicio
-    function setModalidad(nuevaModalidad) {
-      modalidad = nuevaModalidad;
-      const btnMesa = document.getElementById('btn-mesa');
-      const btnLlevar = document.getElementById('btn-llevar');
-
-      if (modalidad === "Comer en el Local") {
-        btnMesa.className = "py-1.5 text-xs font-semibold rounded-md transition bg-amber-500 text-andean-950 shadow-sm";
-        btnLlevar.className = "py-1.5 text-xs font-semibold rounded-md transition text-amber-200 hover:text-white";
-      } else {
-        btnLlevar.className = "py-1.5 text-xs font-semibold rounded-md transition bg-amber-500 text-andean-950 shadow-sm";
-        btnMesa.className = "py-1.5 text-xs font-semibold rounded-md transition text-amber-200 hover:text-white";
-      }
-    }
-
-    // Renderizar e inyectar HTML del carrito en tiempo real
-    function renderCart() {
-      const cartItemsContainer = document.getElementById('cart-items');
-      const cartTotal = document.getElementById('cart-total');
-      const cartCount = document.getElementById('cart-count');
-      const floatingBar = document.getElementById('floating-bar');
-      const floatingCount = document.getElementById('floating-count');
-
-      if (cart.length === 0) {
-        cartItemsContainer.innerHTML = `<p class="text-stone-400 text-center py-4">No has seleccionado ningún plato aún.</p>`;
-        cartTotal.innerText = "S/. 0.00";
-        cartCount.innerText = "0";
-        
-        // Esconder barra flotante móvil
-        floatingBar.classList.add('translate-y-24', 'opacity-0');
-        return;
-      }
-
-      let html = "";
-      let total = 0;
-      let totalItems = 0;
-
-      cart.forEach(item => {
-        const subtotal = item.price * item.quantity;
-        total += subtotal;
-        totalItems += item.quantity;
-
-        html += `
-          <div class="flex items-center justify-between py-2">
-            <div class="flex-1 pr-2">
-              <p class="font-semibold text-amber-200">${item.name}</p>
-              <p class="text-[10px] text-stone-400">S/. ${item.price.toFixed(2)} c/u</p>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="flex items-center bg-amber-900 rounded-lg overflow-hidden border border-amber-800">
-                <button onclick="changeQuantity('${item.name}', -1)" class="px-2 py-1 hover:bg-amber-800 text-amber-300 font-bold">-</button>
-                <span class="px-2 text-xs font-bold">${item.quantity}</span>
-                <button onclick="changeQuantity('${item.name}', 1)" class="px-2 py-1 hover:bg-amber-800 text-amber-300 font-bold">+</button>
-              </div>
-              <span class="font-bold text-amber-400 min-w-[55px] text-right">S/. ${subtotal.toFixed(2)}</span>
-            </div>
-          </div>
-        `;
-      });
-
-      cartItemsContainer.innerHTML = html;
-      cartTotal.innerText = `S/. ${total.toFixed(2)}`;
-      cartCount.innerText = totalItems;
-
-      // Mostrar barra flotante informativa
-      floatingCount.innerText = `${totalItems} platos`;
-      floatingBar.classList.remove('translate-y-24', 'opacity-0');
-    }
-
-    // Compilar orden y redireccionar nativamente a la API de WhatsApp
-    function sendOrderToWhatsApp() {
-      if (cart.length === 0) {
-        alert("Por favor, agrega al menos un plato a tu carrito para procesar el pedido.");
-        return;
-      }
-
-      let totalSum = 0;
-      let textoMensaje = "¡Hola, Mikuna Wassi! 🍲\nAcabo de armar mi pedido desde el menú digital:\n\n";
-
-      cart.forEach(item => {
-        const sub = item.price * item.quantity;
-        totalSum += sub;
-        textoMensaje += `• ${item.quantity}x ${item.name} (S/. ${sub.toFixed(2)})\n`;
-      });
-
-      textoMensaje += `\n*Total estimado:* S/. ${totalSum.toFixed(2)}`;
-      textoMensaje += `\n*Modalidad:* [${modalidad}]`;
-      textoMensaje += "\n\nMuchas gracias. ¡Espero mi confirmación! 👋";
-
-      // Reemplazo del número registrado del local en Perú (Prefijo +51)
-      const whatsappNumber = "51956459905";
-      const urlFinal = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(textoMensaje)}`;
-
-      // Redirección nativa
-      window.location.href = urlFinal;
-    }
-  </script>
+    <script src="assets/scripts/carrito.js"></script>
 </body>
 </html>
