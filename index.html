@@ -24,15 +24,6 @@
       }
     }
   </script>
-  <style>
-    /* Estilos base para los modales nativos por :target */
-    .modal-backdrop {
-      display: none;
-    }
-    :target.modal-backdrop {
-      display: flex;
-    }
-  </style>
 </head>
 <body class="bg-andean-50 text-stone-800 font-sans min-h-screen pb-32">
 
@@ -101,7 +92,7 @@
               <div class="flex-1 flex flex-col justify-between">
                 <div>
                   <h3 class="font-bold text-stone-900 text-sm">Sustancia de Pollo</h3>
-                  <p class="text-xs text-stone-500 line-clamp-1">Caldo concentrado de pollo, ideal para reponer energías.</p>
+                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Caldo concentrado de pollo, ideal para reponer energías.</p>
                 </div>
                 <div class="flex justify-between items-center mt-1">
                   <span class="text-amber-950 font-bold text-sm">S/. 15.00</span>
@@ -117,8 +108,9 @@
               <div class="flex-1 flex flex-col justify-between">
                 <div>
                   <h3 class="font-bold text-stone-900 text-sm">Sopa Criolla de Pollo</h3>
-                  <p class="text-xs text-stone-500 line-clamp-1">Sopa tradicional con fideos, leche, huevo y carne de pollo.</p>
+                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Sopa tradicional con fideos, leche, huevo y carne de pollo.</p>
                 </div>
+
                 <div class="flex justify-between items-center mt-1">
                   <span class="text-amber-950 font-bold text-sm">S/. 18.00</span>
                   <button onclick="addToCart('Sopa Criolla de Pollo', 18.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
@@ -133,7 +125,7 @@
               <div class="flex-1 flex flex-col justify-between">
                 <div>
                   <h3 class="font-bold text-stone-900 text-sm">Sopa Criolla de Carne</h3>
-                  <p class="text-xs text-stone-500 line-clamp-1">Variación clásica con carne de res molida o picada, fideos y toque de leche.</p>
+                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Variación clásica con carne de res molida o picada, fideos y toque de leche.</p>
                 </div>
                 <div class="flex justify-between items-center mt-1">
                   <span class="text-amber-950 font-bold text-sm">S/. 18.00</span>
@@ -149,7 +141,7 @@
               <div class="flex-1 flex flex-col justify-between">
                 <div>
                   <h3 class="font-bold text-stone-900 text-sm">Crema de Verduras</h3>
-                  <p class="text-xs text-stone-500 line-clamp-1">Suave selección de verduras mixtas de la estación licuadas.</p>
+                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Suave selección de verduras mixtas de la estación licuadas.</p>
                 </div>
                 <div class="flex justify-between items-center mt-1">
                   <span class="text-amber-950 font-bold text-sm">S/. 18.00</span>
@@ -175,7 +167,7 @@
                     <h3 class="font-bold text-stone-900 text-sm">Pollo Acevichado</h3>
                     <a href="#modal-acevichado" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingredientes</a>
                   </div>
-                  <p class="text-xs text-stone-500 line-clamp-1">Presa de pollo en salsa acevichada con cebolla y ají amarillo.</p>
+                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Presa de pollo en salsa acevichada con cebolla y ají amarillo.</p>
                 </div>
                 <div class="flex justify-between items-center mt-1">
                   <span class="text-amber-950 font-bold text-sm">S/. 25.00</span>
@@ -194,7 +186,7 @@
                     <h3 class="font-bold text-stone-900 text-sm">Puré Campesino con Pollo a la Olla</h3>
                     <a href="#modal-pure" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingredientes</a>
                   </div>
-                  <p class="text-xs text-stone-500 line-clamp-1">Puré de zapallo con papa, huacatay, queso local y pollo macerado.</p>
+                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Puré de zapallo con papa, huacatay, queso local y pollo macerado.</p>
                 </div>
                 <div class="flex justify-between items-center mt-1">
                   <span class="text-amber-950 font-bold text-sm">S/. 25.00</span>
@@ -213,7 +205,7 @@
                     <h3 class="font-bold text-stone-900 text-sm">Alpaca en Salsa de Chicha</h3>
                     <a href="#modal-alpaca-chicha" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingredientes</a>
                   </div>
-                  <p class="text-xs text-stone-500 line-clamp-1">Carne de alpaca en salsa de chicha de maíz cabanita.</p>
+                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Carne de alpaca en salsa de chicha de maíz cabanita.</p>
                 </div>
                 <div class="flex justify-between items-center mt-1">
                   <span class="text-amber-950 font-bold text-sm">S/. 27.00</span>
@@ -239,7 +231,7 @@
                     <h3 class="font-bold text-stone-900 text-sm">Pollo Anticuchero</h3>
                     <a href="#modal-anticuchero" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingredientes</a>
                   </div>
-                  <p class="text-xs text-stone-500 line-clamp-1">Macerado en salsa anticuchera con papa, choclo y huancaína.</p>
+                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Macerado en salsa anticuchera con papa, choclo y huancaína.</p>
                 </div>
                 <div class="flex justify-between items-center mt-1">
                   <span class="text-amber-950 font-bold text-sm">S/. 30.00</span>
@@ -255,7 +247,7 @@
               <div class="flex-1 flex flex-col justify-between">
                 <div>
                   <h3 class="font-bold text-stone-900 text-sm">Pechuga de Pollo a la Plancha</h3>
-                  <p class="text-xs text-stone-500 line-clamp-1">Acompañado de papas fritas, vegetales, arroz blanco y cremas.</p>
+                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Acompañado de papas fritas, vegetales, arroz blanco y cremas.</p>
                 </div>
                 <div class="flex justify-between items-center mt-1">
                   <span class="text-amber-950 font-bold text-sm">S/. 35.00</span>
@@ -271,7 +263,7 @@
               <div class="flex-1 flex flex-col justify-between">
                 <div>
                   <h3 class="font-bold text-stone-900 text-sm">Trucha a la Parrilla</h3>
-                  <p class="text-xs text-stone-500 line-clamp-1">Filete de trucha a la plancha con papas fritas, arroz y chimichurri.</p>
+                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Filete de trucha a la plancha con papas fritas, arroz y chimichurri.</p>
                 </div>
                 <div class="flex justify-between items-center mt-1">
                   <span class="text-amber-950 font-bold text-sm">S/. 35.00</span>
@@ -290,7 +282,7 @@
                     <h3 class="font-bold text-stone-900 text-sm">Lomo Saltado de Alpaca</h3>
                     <a href="#modal-lomo-alpaca" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingredientes</a>
                   </div>
-                  <p class="text-xs text-stone-500 line-clamp-1">Salteado tradicional con cebolla, tomate, papas fritas y arroz.</p>
+                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Salteado tradicional con cebolla, tomate, papas fritas y arroz.</p>
                 </div>
                 <div class="flex justify-between items-center mt-1">
                   <span class="text-amber-950 font-bold text-sm">S/. 38.00</span>
@@ -306,7 +298,7 @@
               <div class="flex-1 flex flex-col justify-between">
                 <div>
                   <h3 class="font-bold text-stone-900 text-sm">Lomo Fino de Res al Grill</h3>
-                  <p class="text-xs text-stone-500 line-clamp-1">Chuleta de res a la parrilla con papas, ensalada, arroz y chimichurri.</p>
+                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Chuleta de res a la parrilla con papas, ensalada, arroz y chimichurri.</p>
                 </div>
                 <div class="flex justify-between items-center mt-1">
                   <span class="text-amber-950 font-bold text-sm">S/. 38.00</span>
@@ -319,6 +311,7 @@
           </div>
         </section>
     </section>
+
     <section id="seccion-vegetariano" class="space-y-10 px-4 py-6">
       <h2 class="text-lg font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
         🌽 Rincón Vegetariano
@@ -329,7 +322,7 @@
           <div class="flex-1 flex flex-col justify-between">
             <div>
               <h3 class="font-bold text-stone-900 text-sm">Spaghetti con Vegetales</h3>
-              <p class="text-xs text-stone-500 line-clamp-1">Pasta salteada con verduras frescas seleccionadas y especias.</p>
+              <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Pasta salteada con verduras frescas seleccionadas y especias.</p>
             </div>
             <div class="flex justify-between items-center mt-1">
               <span class="text-emerald-900 font-bold text-sm">S/. 23.00</span>
@@ -345,7 +338,7 @@
           <div class="flex-1 flex flex-col justify-between">
             <div>
               <h3 class="font-bold text-stone-900 text-sm">Spaghetti al Pesto</h3>
-              <p class="text-xs text-stone-500 line-clamp-1">Pasta bañada en salsa cremosa de albahaca, espinaca y queso local.</p>
+              <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Pasta bañada en salsa cremosa de albahaca, espinaca y queso local.</p>
             </div>
             <div class="flex justify-between items-center mt-1">
               <span class="text-emerald-900 font-bold text-sm">S/. 23.00</span>
