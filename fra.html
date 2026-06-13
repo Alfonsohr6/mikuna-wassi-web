@@ -52,251 +52,276 @@
       </div>
     </div>
 
-    <nav class="bg-amber-950 text-amber-100 text-xs font-medium border-t border-amber-900 overflow-x-auto whitespace-nowrap scrollbar-none">
-      <div class="max-w-md mx-auto px-2 py-2 flex space-x-4">
-        <a href="#sopas" class="px-2 py-1 hover:text-amber-400 transition">🍲Soupes</a>
-        <a href="#exclusivos" class="px-2 py-1 hover:text-amber-400 transition">⭐Spécialités</a>
-        <a href="#grill" class="px-2 py-1 hover:text-amber-400 transition">🔥Grillades & Sauté</a>
-        <a href="#vegetariano" class="px-2 py-1 hover:text-amber-400 transition">🌿Végétarien</a>
-        <a href="#bebidas" class="px-2 py-1 hover:text-amber-400 transition">🥤Boissons</a>
-        <a href="#postres" class="px-2 py-1 hover:text-amber-400 transition">🍰Desserts</a>
+    <div class="bg-andean-950 px-4 pt-2">
+      <div class="max-w-md mx-auto flex bg-amber-950/60 p-1 rounded-xl border border-amber-900/50">
+        <button id="tab-tradicional" onclick="toggleMenu('tradicional')" class="w-1/2 py-2 text-xs font-bold rounded-lg transition-all bg-amber-500 text-andean-950 shadow">
+          🫕 Menu Traditionnel
+        </button>
+        <button id="tab-vegetariano" onclick="toggleMenu('vegetariano')" class="w-1/2 py-2 text-xs font-bold rounded-lg transition-all text-amber-200/70 hover:text-white">
+          🌽 Coin Végétarien
+        </button>
+      </div>
+    </div>
+    <nav id="nav-tradicional" class="bg-amber-950 text-amber-100 text-xs font-medium border-t border-amber-900 overflow-x-auto whitespace-nowrap scrollbar-none sticky top-[56px] z-30 shadow-md">
+      <div class="max-w-md mx-auto px-4 py-2 flex space-x-4">
+        <a href="#sopas" class="px-2 py-1 hover:text-amber-400 transition-colors duration-200">🍲 Soupes</a>
+        <a href="#exclusivos" class="px-2 py-1 hover:text-amber-400 transition-colors duration-200">⭐ Exclusivités</a>
+        <a href="#grill" class="px-2 py-1 hover:text-amber-400 transition-colors duration-200">🔥 Grillades & Sauté</a>
+        <a href="#bebidas" class="px-2 py-1 hover:text-amber-400 transition-colors duration-200">🥤 Boissons</a>
+        <a href="#postres" class="px-2 py-1 hover:text-amber-400 transition-colors duration-200">🍰 Desserts</a>
+      </div>
+    </nav>
+
+    <nav id="nav-vegetariano" class="hidden bg-emerald-950 text-emerald-100 text-xs font-medium border-t border-emerald-900 overflow-x-auto whitespace-nowrap scrollbar-none sticky top-[56px] z-30 shadow-md">
+      <div class="max-w-md mx-auto px-4 py-2 flex space-x-4">
+        <a href="#veg-pastas" class="px-2 py-1 hover:text-emerald-400 transition-colors duration-200">🍝 Pâtes Végé</a>
+        <a href="#veg-menestras" class="px-2 py-1 hover:text-emerald-400 transition-colors duration-200">🍛 Ragoûts & Légumineuses</a>
+        <a href="#veg-sopas" class="px-2 py-1 hover:text-emerald-400 transition-colors duration-200">🍲 Soupes</a>
+        <a href="#veg-sandwiches" class="px-2 py-1 hover:text-emerald-400 transition-colors duration-200">🥪 Sandwiches</a>
+        <a href="#veg-ensaladas" class="px-2 py-1 hover:text-emerald-400 transition-colors duration-200">🥗 Salades</a>
+        <a href="#veg-complementos" class="px-2 py-1 hover:text-emerald-400 transition-colors duration-200">🍟 Accompagnements</a>
+        <a href="#bebidas" class="px-2 py-1 hover:text-emerald-400 transition-colors duration-200">🥤 Boissons</a>
+        <a href="#postres" class="px-2 py-1 hover:text-emerald-400 transition-colors duration-200">🍰 Desserts</a>
       </div>
     </nav>
   </header>
 
   <main class="max-w-md mx-auto px-4 mt-4 space-y-8">
 
-    <section id="sopas" class="scroll-mt-24">
-      <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
-        🍲 Soupes & Veloutés
-      </h2>
-      <div class="space-y-3">
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="images/sustancia_pollo.jpg" alt="Consommé de Poulet" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-stone-900 text-sm">Consommé de Poulet</h3>
-              <p class="text-xs text-stone-500 line-clamp-1">Bouillon de poulet concentré, idéal pour récupérer des énergies.</p>
-            </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 font-bold text-sm">S/. 15.00</span>
-              <button onclick="addToCart('Sustancia de Pollo (Consommé de Poulet)', 15.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Ajouter
-              </button>
-            </div>
-          </div>
-        </div>
+    <section id="seccion-tradicional" class="space-y-10 px-4 py-6">
 
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="images/sopa_criolla_pollo.jpg" alt="Soupe Créole au Poulet" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-stone-900 text-sm">Soupe Créole au Poulet</h3>
-              <p class="text-xs text-stone-500 line-clamp-1">Soupe traditionnelle avec des nouilles, du lait, un œuf et du poulet tendre.</p>
+        <section id="sopas" class="scroll-mt-24">
+          <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
+            🍲 Soupes & Veloutés
+          </h2>
+          <div class="space-y-3">
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+              <img src="images/sustancia_pollo.jpg" alt="Consommé de Poulet" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+              <div class="flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-bold text-stone-900 text-sm">Consommé de Poulet</h3>
+                  <p class="text-xs text-stone-500 line-clamp-1">Bouillon de poulet concentré, idéal pour récupérer des énergies.</p>
+                </div>
+                <div class="flex justify-between items-center mt-1">
+                  <span class="text-amber-950 font-bold text-sm">S/. 15.00</span>
+                  <button onclick="addToCart('Sustancia de Pollo (Consommé de Poulet)', 15.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                    + Ajouter
+                  </button>
+                </div>
+              </div>
             </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 font-bold text-sm">S/. 18.00</span>
-              <button onclick="addToCart('Sopa Criolla de Pollo (Soupe Créole au Poulet)', 18.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Ajouter
-              </button>
-            </div>
-          </div>
-        </div>
 
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="images/sopa_criolla_carne.jpg" alt="Soupe Créole au Bœuf" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-stone-900 text-sm">Soupe Créole au Bœuf</h3>
-              <p class="text-xs text-stone-500 line-clamp-1">Variation locale classique avec du bœuf haché, des nouilles et une touche de lait.</p>
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+              <img src="images/sopa_criolla_pollo.jpg" alt="Soupe Créole au Poulet" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+              <div class="flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-bold text-stone-900 text-sm">Soupe Créole au Poulet</h3>
+                  <p class="text-xs text-stone-500 line-clamp-1">Soupe traditionnelle avec des nouilles, du lait, un œuf et du poulet tendre.</p>
+                </div>
+                <div class="flex justify-between items-center mt-1">
+                  <span class="text-amber-950 font-bold text-sm">S/. 18.00</span>
+                  <button onclick="addToCart('Sopa Criolla de Pollo (Soupe Créole au Poulet)', 18.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                    + Ajouter
+                  </button>
+                </div>
+              </div>
             </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 font-bold text-sm">S/. 18.00</span>
-              <button onclick="addToCart('Sopa Criolla de Carne (Soupe Créole au Bœuf)', 18.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Ajouter
-              </button>
-            </div>
-          </div>
-        </div>
 
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="images/crema_verduras.jpg" alt="Velouté de Légumes" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-stone-900 text-sm">Velouté de Légumes</h3>
-              <p class="text-xs text-stone-500 line-clamp-1">Doux mélange de légumes frais de saison rigoureusement sélectionnés.</p>
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+              <img src="images/sopa_criolla_carne.jpg" alt="Soupe Créole au Bœuf" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+              <div class="flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-bold text-stone-900 text-sm">Soupe Créole au Bœuf</h3>
+                  <p class="text-xs text-stone-500 line-clamp-1">Variation locale classique avec du bœuf haché, des nouilles et une touche de lait.</p>
+                </div>
+                <div class="flex justify-between items-center mt-1">
+                  <span class="text-amber-950 font-bold text-sm">S/. 18.00</span>
+                  <button onclick="addToCart('Sopa Criolla de Carne (Soupe Créole au Bœuf)', 18.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                    + Ajouter
+                  </button>
+                </div>
+              </div>
             </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 font-bold text-sm">S/. 18.00</span>
-              <button onclick="addToCart('Crema de Verduras (Velouté de Légumes)', 18.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Ajouter
-              </button>
+
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+              <img src="images/crema_verduras.jpg" alt="Velouté de Légumes" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+              <div class="flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-bold text-stone-900 text-sm">Velouté de Légumes</h3>
+                  <p class="text-xs text-stone-500 line-clamp-1">Doux mélange de légumes frais de saison rigoureusement sélectionnés.</p>
+                </div>
+                <div class="flex justify-between items-center mt-1">
+                  <span class="text-amber-950 font-bold text-sm">S/. 18.00</span>
+                  <button onclick="addToCart('Crema de Verduras (Velouté de Légumes)', 18.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                    + Ajouter
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+
+        <section id="exclusivos" class="scroll-mt-24">
+          <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
+            ⭐ Spécialités de la Maison
+          </h2>
+          <div class="space-y-3">
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+              <img src="images/pollo_acevichado.jpg" alt="Poulet Acevichado" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+              <div class="flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex justify-between items-start">
+                    <h3 class="font-bold text-stone-900 text-sm">Poulet "Acevichado"</h3>
+                    <a href="#modal-acevichado" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingrédients</a>
+                  </div>
+                  <p class="text-xs text-stone-500 line-clamp-1">Morceau de poulet cuit dans une délicieuse sauce crémeuse acidulée.</p>
+                </div>
+                <div class="flex justify-between items-center mt-1">
+                  <span class="text-amber-950 font-bold text-sm">S/. 25.00</span>
+                  <button onclick="addToCart('Pollo Acevichado (Poulet Acevichado)', 25.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                    + Ajouter
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+              <img src="images/pure_campesino.jpg" alt="Purée Paysanne au Poulet" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+              <div class="flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex justify-between items-start">
+                    <h3 class="font-bold text-stone-900 text-sm">Purée Paysanne & Poulet à la Marmite</h3>
+                    <a href="#modal-pure" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingrédients</a>
+                  </div>
+                  <p class="text-xs text-stone-500 line-clamp-1">Purée de potiron local et pommes de terre au huacatay et fromage andin.</p>
+                </div>
+                <div class="flex justify-between items-center mt-1">
+                  <span class="text-amber-950 font-bold text-sm">S/. 25.00</span>
+                  <button onclick="addToCart('Puré Campesino con Pollo a la Olla (Purée Paysanne & Poulet)', 25.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                    + Ajouter
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+              <img src="images/alpaca_chicha.jpg" alt="Alpaga en Sauce de Chicha" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+              <div class="flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex justify-between items-start">
+                    <h3 class="font-bold text-stone-900 text-sm">Alpaga en Sauce de Chicha de Jora</h3>
+                    <a href="#modal-alpaca-chicha" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingrédients</a>
+                  </div>
+                  <p class="text-xs text-stone-500 line-clamp-1">Morceaux tendres d'alpaga mijotés dans une réduction de maïs Cabanita.</p>
+                </div>
+                <div class="flex justify-between items-center mt-1">
+                  <span class="text-amber-950 font-bold text-sm">S/. 27.00</span>
+                  <button onclick="addToCart('Alpaca en Salsa de Chicha (Alpaga en Sauce Chicha)', 27.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                    + Ajouter
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="grill" class="scroll-mt-24">
+          <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
+            🔥 Grillades, Sauté & Plancha
+          </h2>
+          <div class="space-y-3">
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+              <img src="images/pollo_anticuchero.jpg" alt="Poulet Anticuchero" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+              <div class="flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex justify-between items-start">
+                    <h3 class="font-bold text-stone-900 text-sm">Poulet Grillé "Anticuchero"</h3>
+                    <a href="#modal-anticuchero" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingrédients</a>
+                  </div>
+                  <p class="text-xs text-stone-500 line-clamp-1">Poulet mariné dans une sauce barbecue andine au piment panca doux.</p>
+                </div>
+                <div class="flex justify-between items-center mt-1">
+                  <span class="text-amber-950 font-bold text-sm">S/. 30.00</span>
+                  <button onclick="addToCart('Pollo Anticuchero (Poulet Anticuchero)', 30.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                    + Ajouter
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+              <img src="images/pechuga_plancha.jpg" alt="Blanc de Poulet" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+              <div class="flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-bold text-stone-900 text-sm">Blanc de Poulet à la Plancha</h3>
+                  <p class="text-xs text-stone-500 line-clamp-1">Servi avec frites croustillantes, salade fraîche, riz blanc et crèmes de la maison.</p>
+                </div>
+                <div class="flex justify-between items-center mt-1">
+                  <span class="text-amber-950 font-bold text-sm">S/. 35.00</span>
+                  <button onclick="addToCart('Pechuga de Pollo a la Plancha (Poulet Plancha)', 35.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                    + Ajouter
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+              <img src="images/trucha_parrilla.jpg" alt="Truite Andine" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+              <div class="flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-bold text-stone-900 text-sm">Truite Andine au Gril</h3>
+                  <p class="text-xs text-stone-500 line-clamp-1">Filet de truite fraîchement pêchée au gril, avec frites, riz et chimichurri.</p>
+                </div>
+                <div class="flex justify-between items-center mt-1">
+                  <span class="text-amber-950 font-bold text-sm">S/. 35.00</span>
+                  <button onclick="addToCart('Trucha a la Parrilla (Truite au Gril)', 35.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                    + Ajouter
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+              <img src="images/lomo_alpaca.jpg" alt="Lomo Saltado d'Alpaga" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+              <div class="flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex justify-between items-start">
+                    <h3 class="font-bold text-stone-900 text-sm">"Lomo Saltado" d'Alpaga</h3>
+                    <a href="#modal-lomo-alpaca" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingrédients</a>
+                  </div>
+                  <p class="text-xs text-stone-500 line-clamp-1">Sauté traditionnel au wok de filet d'alpaga avec oignons, tomates et frites.</p>
+                </div>
+                <div class="flex justify-between items-center mt-1">
+                  <span class="text-amber-950 font-bold text-sm">S/. 38.00</span>
+                  <button onclick="addToCart('Lomo Saltado de Alpaca (Lomo Saltado Alpaga)', 38.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                    + Ajouter
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+              <img src="images/lomo_res.jpg" alt="Filet de Boeuf" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+              <div class="flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-bold text-stone-900 text-sm">Filet de Bœuf au Gril</h3>
+                  <p class="text-xs text-stone-500 line-clamp-1">Filet de bœuf premium grillé, servi avec pommes de terre, riz et sauce chimichurri.</p>
+                </div>
+                <div class="flex justify-between items-center mt-1">
+                  <span class="text-amber-950 font-bold text-sm">S/. 38.00</span>
+                  <button onclick="addToCart('Lomo Fino de Res al Grill (Filet de Boeuf Gril)', 38.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                    + Ajouter
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
     </section>
 
-    <section id="exclusivos" class="scroll-mt-24">
-      <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
-        ⭐ Spécialités de la Maison
-      </h2>
-      <div class="space-y-3">
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="images/pollo_acevichado.jpg" alt="Poulet Acevichado" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex justify-between items-start">
-                <h3 class="font-bold text-stone-900 text-sm">Poulet "Acevichado"</h3>
-                <a href="#modal-acevichado" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingrédients</a>
-              </div>
-              <p class="text-xs text-stone-500 line-clamp-1">Morceau de poulet cuit dans une délicieuse sauce crémeuse acidulée.</p>
-            </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 font-bold text-sm">S/. 25.00</span>
-              <button onclick="addToCart('Pollo Acevichado (Poulet Acevichado)', 25.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Ajouter
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="images/pure_campesino.jpg" alt="Purée Paysanne au Poulet" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex justify-between items-start">
-                <h3 class="font-bold text-stone-900 text-sm">Purée Paysanne & Poulet à la Marmite</h3>
-                <a href="#modal-pure" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingrédients</a>
-              </div>
-              <p class="text-xs text-stone-500 line-clamp-1">Purée de potiron local et pommes de terre au huacatay et fromage andin.</p>
-            </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 font-bold text-sm">S/. 25.00</span>
-              <button onclick="addToCart('Puré Campesino con Pollo a la Olla (Purée Paysanne & Poulet)', 25.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Ajouter
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="images/alpaca_chicha.jpg" alt="Alpaga en Sauce de Chicha" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex justify-between items-start">
-                <h3 class="font-bold text-stone-900 text-sm">Alpaga en Sauce de Chicha de Jora</h3>
-                <a href="#modal-alpaca-chicha" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingrédients</a>
-              </div>
-              <p class="text-xs text-stone-500 line-clamp-1">Morceaux tendres d'alpaga mijotés dans une réduction de maïs Cabanita.</p>
-            </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 font-bold text-sm">S/. 27.00</span>
-              <button onclick="addToCart('Alpaca en Salsa de Chicha (Alpaga en Sauce Chicha)', 27.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Ajouter
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="grill" class="scroll-mt-24">
-      <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
-        🔥 Grillades, Sauté & Plancha
-      </h2>
-      <div class="space-y-3">
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="images/pollo_anticuchero.jpg" alt="Poulet Anticuchero" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex justify-between items-start">
-                <h3 class="font-bold text-stone-900 text-sm">Poulet Grillé "Anticuchero"</h3>
-                <a href="#modal-anticuchero" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingrédients</a>
-              </div>
-              <p class="text-xs text-stone-500 line-clamp-1">Poulet mariné dans une sauce barbecue andine au piment panca doux.</p>
-            </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 font-bold text-sm">S/. 30.00</span>
-              <button onclick="addToCart('Pollo Anticuchero (Poulet Anticuchero)', 30.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Ajouter
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="images/pechuga_plancha.jpg" alt="Blanc de Poulet" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-stone-900 text-sm">Blanc de Poulet à la Plancha</h3>
-              <p class="text-xs text-stone-500 line-clamp-1">Servi avec frites croustillantes, salade fraîche, riz blanc et crèmes de la maison.</p>
-            </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 font-bold text-sm">S/. 35.00</span>
-              <button onclick="addToCart('Pechuga de Pollo a la Plancha (Poulet Plancha)', 35.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Ajouter
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="images/trucha_parrilla.jpg" alt="Truite Andine" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-stone-900 text-sm">Truite Andine au Gril</h3>
-              <p class="text-xs text-stone-500 line-clamp-1">Filet de truite fraîchement pêchée au gril, avec frites, riz et chimichurri.</p>
-            </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 font-bold text-sm">S/. 35.00</span>
-              <button onclick="addToCart('Trucha a la Parrilla (Truite au Gril)', 35.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Ajouter
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="images/lomo_alpaca.jpg" alt="Lomo Saltado d'Alpaga" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex justify-between items-start">
-                <h3 class="font-bold text-stone-900 text-sm">"Lomo Saltado" d'Alpaga</h3>
-                <a href="#modal-lomo-alpaca" class="text-[11px] text-amber-600 underline font-medium ml-1">Ingrédients</a>
-              </div>
-              <p class="text-xs text-stone-500 line-clamp-1">Sauté traditionnel au wok de filet d'alpaga avec oignons, tomates et frites.</p>
-            </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 font-bold text-sm">S/. 38.00</span>
-              <button onclick="addToCart('Lomo Saltado de Alpaca (Lomo Saltado Alpaga)', 38.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Ajouter
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="images/lomo_res.jpg" alt="Filet de Boeuf" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-stone-900 text-sm">Filet de Bœuf au Gril</h3>
-              <p class="text-xs text-stone-500 line-clamp-1">Filet de bœuf premium grillé, servi avec pommes de terre, riz et sauce chimichurri.</p>
-            </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 font-bold text-sm">S/. 38.00</span>
-              <button onclick="addToCart('Lomo Fino de Res al Grill (Filet de Boeuf Gril)', 38.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Ajouter
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="vegetariano" class="scroll-mt-24">
+    <section id="seccion-vegetariano" class="space-y-10 px-4 py-6">
       <h2 class="text-lg font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
-        🌿 Le Coin Végétarien
+        🌽 Le Coin Végétarien
       </h2>
       <div class="space-y-3">
         <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">

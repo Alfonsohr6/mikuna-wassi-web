@@ -178,3 +178,90 @@ function sendOrderToWhatsApp() {
   // Redirección nativa
   window.location.href = urlFinal;
 }
+
+// =========================================================================
+// SAKURA & MIKUNA WASSI - ARQUITECTURA DE NAVEGACIÓN HÍBRIDA (SCROLL + TABS)
+// =========================================================================
+
+/**
+ * 1. SENSOR DE SCROLL INTELIGENTE (IntersectionObserver)
+ * Controla automáticamente el cambio de Navs y los estilos de los botones superiores.
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  const secTradicional = document.getElementById('seccion-tradicional');
+  const secVegetariano = document.getElementById('seccion-vegetariano');
+  const navTradicional = document.getElementById('nav-tradicional');
+  const navVegetariano = document.getElementById('nav-vegetariano');
+  const tabTradicional = document.getElementById('tab-tradicional');
+  const tabVegetariano = document.getElementById('tab-vegetariano');
+
+  // Control de seguridad: Si no existen estos elementos en la página actual, frena el script
+  if (!secTradicional || !secVegetariano || !navTradicional || !navVegetariano) return;
+
+  // Configuración del sensor: Se activa cuando la sección cruza la parte superior de la pantalla
+  const opcionesSensor = {
+    root: null,
+    rootMargin: "-25% 0px -55% 0px", 
+    threshold: 0
+  };
+
+  const oserbadorCallBack = (entries) => {
+    entries.forEach(entry => {
+      // CASO A: El usuario está en la zona del Rincón Vegetariano
+      if (entry.target.id === 'seccion-vegetariano' && entry.isIntersecting) {
+        // Intercambio de barras de navegación
+        navTradicional.classList.add('hidden');
+        navVegetariano.classList.remove('hidden');
+
+        // Actualizar estados visuales de los botones superiores (si existen)
+        if (tabVegetariano && tabTradicional) {
+          tabVegetariano.classList.add('bg-emerald-500', 'text-emerald-950', 'shadow');
+          tabVegetariano.classList.remove('text-amber-200/70', 'hover:text-white');
+          tabTradicional.classList.remove('bg-amber-500', 'text-andean-950', 'shadow');
+          tabTradicional.classList.add('text-amber-200/70', 'hover:text-white');
+        }
+      } 
+      // CASO B: El usuario regresa a la zona del Menú Tradicional
+      else if (entry.target.id === 'seccion-tradicional' && entry.isIntersecting) {
+        // Intercambio de barras de navegación
+        navVegetariano.classList.add('hidden');
+        navTradicional.classList.remove('hidden');
+
+        // Actualizar estados visuales de los botones superiores (si existen)
+        if (tabTradicional && tabVegetariano) {
+          tabTradicional.classList.add('bg-amber-500', 'text-andean-950', 'shadow');
+          tabTradicional.classList.remove('text-amber-200/70', 'hover:text-white');
+          tabVegetariano.classList.remove('bg-emerald-500', 'text-emerald-950', 'shadow');
+          tabVegetariano.classList.add('text-amber-200/70', 'hover:text-white');
+        }
+      }
+    });
+  };
+
+  // Activar el sensor de movimiento sobre los contenedores padres
+  const sensor = new IntersectionObserver(oserbadorCallBack, opcionesSensor);
+  sensor.observe(secTradicional);
+  sensor.observe(secVegetariano);
+});
+
+/**
+ * 2. CONTROLADOR DEL SELECTOR MAESTRO (Acción del Clic)
+ * Cuando el usuario presiona un botón, calcula la posición y desliza la pantalla elegantemente.
+ */
+function toggleMenu(menuActivo) {
+  const destinoId = menuActivo === 'tradicional' ? 'seccion-tradicional' : 'seccion-vegetariano';
+  const elementoDestino = document.getElementById(destinoId);
+
+  if (elementoDestino) {
+    // Calcula la altura de la cabecera fija para que no tape el título al llegar
+    const headerOffset = 120; 
+    const elementPosition = elementoDestino.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    // Ejecuta el desplazamiento suave y preciso
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+}
