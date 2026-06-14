@@ -313,42 +313,375 @@
     </section>
 
     <section id="seccion-vegetariano" class="space-y-10 px-4 py-6">
-      <h2 class="text-lg font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
-        🌽 Rincón Vegetariano
-      </h2>
-      <div class="space-y-3">
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="images/spaghetti_vegetales.jpg" alt="Spaghetti Vegetales" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-stone-900 text-sm">Spaghetti con Vegetales</h3>
-              <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Pasta salteada con verduras frescas seleccionadas y especias.</p>
-            </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-emerald-900 font-bold text-sm">S/. 23.00</span>
-              <button onclick="addToCart('Spaghetti con Vegetales', 23.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Agregar
-              </button>
+      <section id="veg-pastas" class="scroll-mt-28">
+        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+          🍝 Pastas Vegetarianas
+        </h2>
+        
+        <div class="space-y-3">
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <img src="images/spaghetti_vegetales.jpg" alt="Spaghetti Vegetales" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Spaghetti con Vegetales</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Pasta salteada al wok con una fina selección de verduras frescas de la estación y especias andinas.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 23.00</span>
+                <button onclick="addToCart('Spaghetti con Vegetales', 23.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="images/spaghetti_pesto.jpg" alt="Spaghetti al Pesto" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-stone-900 text-sm">Spaghetti al Pesto</h3>
-              <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Pasta bañada en salsa cremosa de albahaca, espinaca y queso local.</p>
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <img src="images/spaghetti_pesto.jpg" alt="Spaghetti al Pesto" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Spaghetti al Pesto</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Cremosa pasta bañada en salsa tradicional de albahaca fresca, espinaca y queso de la región.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 25.00</span>
+                <button onclick="addToCart('Spaghetti al Pesto', 25.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
             </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-emerald-900 font-bold text-sm">S/. 23.00</span>
-              <button onclick="addToCart('Spaghetti al Pesto', 23.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Agregar
-              </button>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <img src="images/spaghetti_alfredo.jpg" alt="Spaghetti Alfredo" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Spaghetti Alfredo Veg</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Delicada pasta en salsa blanca casera a base de mantequilla, crema de leche y queso parmesano[cite: 39].</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 25.00</span>
+                <button onclick="addToCart('Spaghetti Alfredo Veg', 25.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section id="veg-menestras" class="scroll-mt-28">
+        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+          🍛 Menestras y Guisos
+        </h2>
+        
+        <div class="space-y-3">
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <img src="images/guiso_garbanzos.jpg" alt="Guiso de Garbanzos" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Guiso de Garbanzos</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Nutritivo estofado casero de garbanzos sazonado con especias seleccionadas, servido con una porción de arroz blanco.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 23.00</span>
+                <button onclick="addToCart('Guiso de Garbanzos', 23.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <img src="images/frejoles_huevo.jpg" alt="Frejoles con Huevo Frito" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Frejoles con Huevo Frito</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Clásica porción de frejoles cremosos batidos a la manera tradicional, acompañados de arroz blanco y un huevo frito montado.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 25.00</span>
+                <button onclick="addToCart('Frejoles con Huevo Frito', 25.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <img src="images/pure_pallar.jpg" alt="Puré de Pallar con Saltado Veg" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Puré de Pallar con Saltado</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Suave puré artesanal a base de pallares locales, acompañado de un jugoso saltado vegetariano de verduras frescas al wok.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 27.00</span>
+                <button onclick="addToCart('Puré de Pallar con Saltado', 27.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="veg-sopas" class="scroll-mt-28">
+        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+          🍲 Sopas del Rincón Veg
+        </h2>
+        
+        <div class="space-y-3">
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <img src="images/crema_verduras.jpg" alt="Crema de Verduras" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Crema de Verduras</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Una reconfortante mixtura de verduras de la huerta seleccionadas, procesadas de forma artesanal, ligera y 100% vegetariana.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 18.00</span>
+                <button onclick="addToCart('Crema de Verduras', 18.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="veg-sandwiches" class="scroll-mt-28">
+        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+          🥪 Sándwiches de la Casa
+        </h2>
+        
+        <div class="space-y-3">
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Sándwich de Huevo</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Huevo preparado al momento, tierno y sazonado, servido en pan crujiente local caliente[cite: 46, 47].</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 8.00</span>
+                <button onclick="addToCart('Sándwich de Huevo', 8.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Sándwich de Avocado (Palta)</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Láminas de palta fresca y madura seleccionada de la zona, con un toque de sal y limón en pan rústico[cite: 46, 48].</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 8.00</span>
+                <button onclick="addToCart('Sándwich de Avocado', 8.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Sándwich de Queso Local</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Queso artesanal tierno y fresco de la región, servido en pan crujiente de la casa[cite: 46, 49].</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 8.00</span>
+                <button onclick="addToCart('Sándwich de Queso Local', 8.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Sándwich Triple Clásico</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Combinación perfecta de capas de palta cremosa, tomate fresco y huevo duro picado con mayonesa casera[cite: 50].</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 18.00</span>
+                <button onclick="addToCart('Sándwich Triple Clásico', 18.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Pan Campesino Especial</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Generoso sándwich en pan rústico artesanal, relleno con los mejores ingredientes seleccionados del campo[cite: 51].</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 20.00</span>
+                <button onclick="addToCart('Pan Campesino Especial', 20.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="veg-ensaladas" class="scroll-mt-28">
+        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+          🥗 Ensaladas Frescas
+        </h2>
+        
+        <div class="space-y-3">
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Solterito de Quinoa</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Tradicional receta andina a base de quinua de la región, combinada con queso fresco, habas, choclo tierno, tomate y aceitunas.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 21.00</span>
+                <button onclick="addToCart('Solterito de Quinoa', 21.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Palta Rellena</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Suave y cremosa palta entera seleccionada, rellena con una fresca mixtura de vegetales de la estación y mayonesa de la casa.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 21.00</span>
+                <button onclick="addToCart('Palta Rellena', 21.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Ensalada Mikuna Wassi</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">La especialidad fresca de la casa: una combinación de hojas verdes seleccionadas, vegetales crocantes y el aliño artesanal secreto.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 18.00</span>
+                <button onclick="addToCart('Ensalada Mikuna Wassi', 18.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Porción de Palta</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Láminas de palta fresca y sazonada, ideal para acompañar tus platos favoritos del rincón vegetariano.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 15.00</span>
+                <button onclick="addToCart('Porción de Palta', 15.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="veg-complementos" class="scroll-mt-28">
+        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+          🍟 Complementos y Acompañamientos
+        </h2>
+        
+        <div class="space-y-3">
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Tortilla de Verduras</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Tortilla clásica preparada al momento con una saludable y colorida variedad de vegetales picados frescos.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 18.00</span>
+                <button onclick="addToCart('Tortilla de Verduras', 18.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Papas Fritas de la Casa</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Generosa porción de papas locales seleccionadas, fritas al punto exacto para quedar crocantes por fuera y suaves por dentro.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 14.00</span>
+                <button onclick="addToCart('Papas Fritas de la Casa', 14.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Guacamole Artesanal</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Crema de palta fresca triturada con un toque de cebolla, tomate, limón y cilantro fresco de la huerta.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 10.00</span>
+                <button onclick="addToCart('Guacamole Artesanal', 10.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Huevos Revueltos</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Dos huevos revueltos preparados al instante, suaves, ligeros y calientitos.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 6.00</span>
+                <button onclick="addToCart('Huevos Revueltos', 6.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Banana Frita</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Clásicas rodajas de plátano frito, dulces, maduras y doraditas, ideales para acompañar cualquier plato.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 6.00</span>
+                <button onclick="addToCart('Banana Frita', 6.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
 
     <section id="bebidas" class="scroll-mt-24">

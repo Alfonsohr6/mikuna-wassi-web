@@ -312,42 +312,376 @@
     </section>
 
     <section id="seccion-vegetariano" class="space-y-10 px-4 py-6">
-      <h2 class="text-lg font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
-        🌽 Vegetarian Corner
-      </h2>
-      <div class="space-y-3">
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="images/spaghetti_vegetales.jpg" alt="Vegetable Spaghetti" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-stone-900 text-sm">Vegetable Spaghetti</h3>
-              <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Pasta tossed with fresh seasonal garden vegetables and herbs.</p>
-            </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-emerald-900 font-bold text-sm">S/. 23.00</span>
-              <button onclick="addToCart('Spaghetti con Vegetales (Vegetable Spaghetti)', 23.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Add
-              </button>
+      
+      <section id="veg-pastas" class="scroll-mt-28">
+        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+          🍝 Veggie Pastas
+        </h2>
+        
+        <div class="space-y-3">
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <img src="images/spaghetti_vegetales.jpg" alt="Veggie Spaghetti" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Spaghetti with Vegetables</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Wok-sautéed pasta with a fine selection of fresh seasonal vegetables and local Andean spices.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 23.00</span>
+                <button onclick="addToCart('Spaghetti with Vegetables', 23.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="images/spaghetti_pesto.jpg" alt="Pesto Spaghetti" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-stone-900 text-sm">Andean Pesto Spaghetti</h3>
-              <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Pasta in a rich, creamy basil and spinach sauce with local artisan cheese.</p>
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <img src="images/spaghetti_pesto.jpg" alt="Spaghetti al Pesto" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Spaghetti al Pesto</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Creamy pasta tossed in a traditional sauce made with fresh basil, spinach, and regional local cheese.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 25.00</span>
+                <button onclick="addToCart('Spaghetti al Pesto', 25.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
             </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-emerald-900 font-bold text-sm">S/. 23.00</span>
-              <button onclick="addToCart('Spaghetti al Pesto (Pesto Spaghetti)', 23.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Add
-              </button>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <img src="images/spaghetti_alfredo.jpg" alt="Veggie Spaghetti Alfredo" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Veggie Spaghetti Alfredo</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Delicate pasta in a rich homemade white sauce made with butter, heavy cream, and grated parmesan cheese.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 25.00</span>
+                <button onclick="addToCart('Veggie Spaghetti Alfredo', 25.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section id="veg-menestras" class="scroll-mt-28">
+        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+          🍛 Beans & Stews
+        </h2>
+        
+        <div class="space-y-3">
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <img src="images/guiso_garbanzos.jpg" alt="Chickpea Stew" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Chickpea Stew</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Nutritious homemade chickpea stew seasoned with select house spices, served with a side of white rice.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 23.00</span>
+                <button onclick="addToCart('Chickpea Stew', 23.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <img src="images/frejoles_huevo.jpg" alt="Beans with Fried Egg" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Beans with Fried Egg</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Classic portion of traditional creamy whipped beans, served with white rice and topped with a fried egg.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 25.00</span>
+                <button onclick="addToCart('Beans with Fried Egg', 25.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <img src="images/pure_pallar.jpg" alt="Lima Bean Purée with Stir-Fry" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Lima Bean Purée with Stir-Fry</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Smooth, artisanal local Lima bean purée, accompanied by a juicy vegetarian wok stir-fry of fresh vegetables.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 27.00</span>
+                <button onclick="addToCart('Lima Bean Purée with Stir-Fry', 27.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="veg-sopas" class="scroll-mt-28">
+        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+          🍲 Soups
+        </h2>
+        
+        <div class="space-y-3">
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <img src="images/crema_verduras.jpg" alt="Cream of Vegetable Soup" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Cream of Vegetable Soup</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">A comforting blend of selected fresh garden vegetables, crafted in-house, light and 100% vegetarian.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 18.00</span>
+                <button onclick="addToCart('Cream of Vegetable Soup', 18.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="veg-sandwiches" class="scroll-mt-28">
+        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+          🥪 Sandwiches
+        </h2>
+        
+        <div class="space-y-3">
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Egg Sandwich</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Freshly prepared egg, tender and perfectly seasoned, served in warm, crispy local bread.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 8.00</span>
+                <button onclick="addToCart('Egg Sandwich', 8.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Avocado Sandwich</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Slices of fresh, ripe locally sourced avocado with a touch of salt and lime juice on rustic bread.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 8.00</span>
+                <button onclick="addToCart('Avocado Sandwich', 8.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Local Cheese Sandwich</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Fresh and tender artisanal regional cheese, served on the house's signature crispy warm bread.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 8.00</span>
+                <button onclick="addToCart('Local Cheese Sandwich', 8.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Classic Triple Sandwich</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">A flawless combination of layered creamy avocado, fresh sliced tomatoes, and finely chopped hard-boiled egg with homemade mayo.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 18.00</span>
+                <button onclick="addToCart('Classic Triple Sandwich', 18.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Special Country Bread Sandwich</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">A hearty and generous sandwich on artisanal rustic country bread, packed with the finest select ingredients from the valley.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 20.00</span>
+                <button onclick="addToCart('Special Country Bread Sandwich', 20.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="veg-ensaladas" class="scroll-mt-28">
+        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+          🥗 Salads
+        </h2>
+        
+        <div class="space-y-3">
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Quinoa Solterito Salad</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Traditional Andean recipe featuring local regional quinoa, mixed with fresh cheese cubes, fava beans, tender corn, diced tomatoes, and black olives.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 21.00</span>
+                <button onclick="addToCart('Quinoa Solterito Salad', 21.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Stuffed Avocado</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Smooth, rich and creamy whole premium avocado, stuffed with a fresh, seasoned medley of diced seasonal vegetables and house mayonnaise.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 21.00</span>
+                <button onclick="addToCart('Stuffed Avocado', 21.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Mikuna Wassi Salad</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">The house's fresh green specialty: a crisp combination of select mixed leafy greens, crunchy garden vegetables, and our secret house vinaigrette.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 18.00</span>
+                <button onclick="addToCart('Mikuna Wassi Salad', 18.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Side of Avocado</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Slices of fresh and lightly seasoned avocado, perfect to complement any of your favorite dishes from our veggie menu.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 15.00</span>
+                <button onclick="addToCart('Side of Avocado', 15.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="veg-complementos" class="scroll-mt-28">
+        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+          🍟 Side Dishes
+        </h2>
+        
+        <div class="space-y-3">
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Vegetable Omelet</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">A classic skillet omelet prepared fresh to order with a healthy and colorful variety of finely chopped garden vegetables.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 18.00</span>
+                <button onclick="addToCart('Vegetable Omelet', 18.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">House French Fries</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">A generous portion of hand-cut local potatoes, fried to a precise golden crisp on the outside while remaining soft inside.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 14.00</span>
+                <button onclick="addToCart('House French Fries', 14.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Artisanal Guacamole</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Freshly mashed avocado dip mixed with a delicate touch of onions, tomatoes, lime juice, and fresh cilantro from the orchard.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 10.00</span>
+                <button onclick="addToCart('Artisanal Guacamole', 10.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Scrambled Eggs</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Two farm-fresh scrambled eggs whipped and prepared instantly—soft, light, fluffy, and served warm.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 6.00</span>
+                <button onclick="addToCart('Scrambled Eggs', 6.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm">Fried Banana</h3>
+                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Classic sweet, ripe banana slices fried to a beautiful caramelized golden brown finish. A perfect side sweet treat.</p>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-emerald-900 font-bold text-sm">S/. 6.00</span>
+                <button onclick="addToCart('Fried Banana', 6.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
 
     <section id="bebidas" class="scroll-mt-24">
