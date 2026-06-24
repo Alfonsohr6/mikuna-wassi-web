@@ -121,6 +121,140 @@ const MENU_DATA = {
     ]
   },
 
+  grill: {
+    categoria_id: "contenedor-grill",
+    diseno: "normal",
+    platos: [
+      {
+        id: "filete-pollo-plancha",
+        nombre: {
+          es: "Filete de pollo a la plancha",
+          en: "Grilled chicken fillet",
+          fr: "Filet de poulet à la plancha"
+        },
+        descripcion: {
+          es: "Filete de pollo acompañado de papas fritas, vegetales, arroz blanco y cremas.",
+          en: "Chicken fillet served with french fries, vegetables, white rice, and sauces.",
+          fr: "Filet de poulet accompagné de frites, légumes, riz blanc et sauces."
+        },
+        precio: 35.00,
+        imagen: "filete_pollo_plancha.jpg"
+      },
+      {
+        id: "trucha-parrilla",
+        nombre: {
+          es: "Trucha a la parrilla",
+          en: "Grilled trout",
+          fr: "Truite grillée"
+        },
+        descripcion: {
+          es: "Filete de trucha entera a la plancha acompañados de papas fritas, vegetales, arroz blanco, chimichurri y salsa picante.",
+          en: "Whole trout fillet grilled on the plate served with french fries, vegetables, white rice, chimichurri, and hot sauce.",
+          fr: "Filet de truite entière cuit à la plancha accompagné de frites, légumes, riz blanc, chimichurri et sauce piquante."
+        },
+        precio: 35.00,
+        imagen: "trucha_parrilla.jpg"
+      },
+      {
+        id: "chuleta-cerdo-parrilla",
+        nombre: {
+          es: "Chuleta de cerdo a la parrilla",
+          en: "Grilled pork chop",
+          fr: "Côtelette de porc grillée"
+        },
+        descripcion: {
+          es: "Chuleta de cerdo a la parrilla acompañado de papas fritas, vegetales, arroz, chimichurri y salsa picante.",
+          en: "Grilled pork chop served with french fries, vegetables, rice, chimichurri, and hot sauce.",
+          fr: "Côtelette de porc grillée accompagnée de frites, légumes, riz, chimichurri et sauce piquante."
+        },
+        precio: 38.00,
+        imagen: "chuleta_cerdo_parrilla.jpg"
+      },
+      {
+        id: "churrasco-res-plancha",
+        nombre: {
+          es: "Churrasco de Res a la Plancha",
+          en: "Grilled beef steak",
+          fr: "Churrasco de bœuf à la plancha"
+        },
+        descripcion: {
+          es: "Churrasco de res a la parrilla acompañado de papas fritas-vegetales, arroz, chimichurri y salsa picante.",
+          en: "Grilled beef steak served with french fries, vegetables, rice, chimichurri, and hot sauce.",
+          fr: "Steak de bœuf grillé accompagné de frites, légumes, riz, chimichurri et sauce piquante."
+        },
+        precio: 38.00,
+        imagen: "churrasco_res_plancha.jpg"
+      },
+      {
+        id: "lomo-saltado-alpaca",
+        nombre: {
+          es: "Lomo saltado de alpaca",
+          en: "Sautéed alpaca loin",
+          fr: "Lomo saltado d'alpaga"
+        },
+        descripcion: {
+          es: "Lomo fino de alpaca salteado con cebolla, tomate en gajos, ajíes, cilantro, ajos, jengibre y salsas, acompañado de papas fritas, porción de arroz blanco, cremas y salsa picante.",
+          en: "Fine alpaca loin sautéed with onion, tomato wedges, chili peppers, cilantro, garlic, ginger, and sauces, served with french fries, a side of white rice, creams, and hot sauce.",
+          fr: "Filet mignon d'alpaga sauté aux oignons, tomates en quartiers, piments, coriandre, ail, gingembre et sauces, accompagné de frites, d'une portion de riz blanc, de crèmes et de sauce piquante."
+        },
+        precio: 42.00,
+        imagen: "lomo_saltado_alpaca.jpg"
+      },
+      {
+        id: "lomo-fino-alpaca-grill",
+        nombre: {
+          es: "Lomo fino de alpaca al grill",
+          en: "Grilled fine alpaca loin",
+          fr: "Filet mignon d'alpaga au grill"
+        },
+        descripcion: {
+          es: "Filete de lomo fino de alpaca a la parrilla acompañado de papas fritas, vegetales, porción de arroz blanco, chimichurri y salsa picante.",
+          en: "Grilled fine alpaca loin fillet served with french fries, vegetables, a side of white rice, chimichurri, and hot sauce.",
+          fr: "Filet de filet mignon d'alpaga grillé accompagné de frites, légumes, une portion de riz blanc, chimichurri et sauce piquante."
+        },
+        precio: 45.00,
+        imagen: "lomo_fino_alpaca_grill.jpg"
+      }
+    ]
+  },
+
+  cocteles: {
+    categoria_id: "contenedor-cocteles",
+    diseno: "mini",
+    platos: [
+      {
+        id: "sancayo-sour",
+        nombre: {
+          es: "Sancayo sour",
+          en: "Sancayo sour",
+          fr: "Sancayo sour"
+        },
+        precio: 18.00,
+        imagen: "sancayo_sour.jpg"
+      },
+      {
+        id: "pisco-sour-maracuya",
+        nombre: {
+          es: "Pisco sour de maracuyá",
+          en: "Passion fruit pisco sour",
+          fr: "Pisco sour au fruit de la passion"
+        },
+        precio: 18.00,
+        imagen: "pisco_sour_maracuya.jpg"
+      },
+      {
+        id: "pina-colada",
+        nombre: {
+          es: "Piña colada",
+          en: "Piña colada",
+          fr: "Piña colada"
+        },
+        precio: 22.00,
+        imagen: "pina_colada.jpg"
+      }
+    ]
+  },
+
   veg_principal: {
     categoria_id: "contenedor-veg-principal",
     diseno: "normal",
@@ -216,7 +350,170 @@ const MENU_DATA = {
         imagen: "sara_api.jpg"
       }
     ]
-  }
+  },
+
+  veg_sandwiches: {
+    categoria_id: "contenedor-veg-sandwiches",
+    diseno: "mini",
+    platos: [
+      {
+        id: "huevo-sandwich",
+        nombre: {
+          es: "Huevo Sandwich",
+          en: "Egg Sandwich",
+          fr: "Sandwich aux œufs"
+        },
+        precio: 8.00,
+        imagen: "huevo_sandwich.jpg"
+      },
+      {
+        id: "avocado-sandwich",
+        nombre: {
+          es: "Avocado Sandwich",
+          en: "Avocado Sandwich",
+          fr: "Sandwich à l'avocat"
+        },
+        precio: 8.00,
+        imagen: "avocado_sandwich.jpg"
+      },
+      {
+        id: "queso-sandwich",
+        nombre: {
+          es: "Queso Sandwich",
+          en: "Cheese Sandwich",
+          fr: "Sandwich au fromage"
+        },
+        precio: 8.00,
+        imagen: "queso_sandwich.jpg"
+      },
+      {
+        id: "sandwich-triple",
+        nombre: {
+          es: "Triple",
+          en: "Triple Sandwich",
+          fr: "Sandwich Triple"
+        },
+        precio: 18.00,
+        imagen: "sandwich_triple.jpg"
+      },
+      {
+        id: "pan-campesino",
+        nombre: {
+          es: "Pan Campesino",
+          en: "Country Bread Sandwich",
+          fr: "Sandwich au pain paysan"
+        },
+        precio: 20.00,
+        imagen: "pan_campesino.jpg"
+      },
+      {
+        id: "pastel-acelga",
+        nombre: {
+          es: "Pastel de Acelga",
+          en: "Swiss Chard Pie",
+          fr: "Tourte aux blettes"
+        },
+        precio: 8.00,
+        imagen: "pastel_acelga.jpg"
+      }
+    ]
+  },
+
+  veg_ensaladas: {
+    categoria_id: "contenedor-veg-ensaladas",
+    diseno: "normal",
+    platos: [
+      {
+        id: "avocado-relleno",
+        nombre: {
+          es: "Avocado Relleno",
+          en: "Stuffed Avocado",
+          fr: "Avocat farci"
+        },
+        descripcion: {
+          es: "Palta (avocado) selecta rellena con una delicada mezcla de vegetales frescos de la estación y mayonesa casera.",
+          en: "Select avocado stuffed with a delicate mix of fresh seasonal vegetables and homemade mayonnaise.",
+          fr: "Avocat sélectionné farci d'un délicat mélange de légumes frais de saison et de mayonnaise maison."
+        },
+        precio: 21.00,
+        imagen: "avocado_relleno.jpg"
+      },
+      {
+        id: "ensalada-avocado-personal",
+        nombre: {
+          es: "Ensalada de Avocado Personal",
+          en: "Personal Avocado Salad",
+          fr: "Salade d'avocat personnelle"
+        },
+        descripcion: {
+          es: "Fresca y ligera combinación individual de láminas de avocado, lechuga orgánica y verduras del valle con el aliño especial de la casa.",
+          en: "Fresh and light individual combination of avocado slices, organic lettuce, and valley vegetables with our special house dressing.",
+          fr: "Combinaison individuelle fraîche et légère de tranches d'avocat, de laitue biologique et de légumes de la vallée avec notre vinaigrette spéciale maison."
+        },
+        precio: 12.00,
+        imagen: "ensalada_avocado.jpg"
+      }
+    ]
+  },
+
+  veg_complementos: {
+    categoria_id: "contenedor-veg-complementos",
+    diseno: "mini",
+    platos: [
+      {
+        id: "tortilla-verduras",
+        nombre: {
+          es: "Tortilla de Verduras",
+          en: "Vegetable Omelet",
+          fr: "Omelette aux légumes"
+        },
+        precio: 18.00,
+        imagen: "tortilla_verduras.jpg"
+      },
+      {
+        id: "papas-fritas",
+        nombre: {
+          es: "Papas Fritas",
+          en: "French Fries",
+          fr: "Frites"
+        },
+        precio: 14.00,
+        imagen: "papas_fritas.jpg"
+      },
+      {
+        id: "huacamole",
+        nombre: {
+          es: "Huacamole",
+          en: "Guacamole",
+          fr: "Guacamole"
+        },
+        precio: 10.00,
+        imagen: "huacamole.jpg"
+      },
+      {
+        id: "huevos-revueltos",
+        nombre: {
+          es: "Huevos Revueltos",
+          en: "Scrambled Eggs",
+          fr: "Œufs brouillés"
+        },
+        precio: 6.00,
+        imagen: "huevos_revueltos.jpg"
+      },
+      {
+        id: "banana-frita",
+        nombre: {
+          es: "Banana Frita",
+          en: "Fried Banana",
+          fr: "Banane frite"
+        },
+        precio: 6.00,
+        imagen: "banana_frita.jpg"
+      }
+    ]
+  },
+
+
 };
 
 // =========================================================================
