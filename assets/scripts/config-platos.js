@@ -89,19 +89,19 @@ const MENU_DATA = {
         imagen: "pure_campesino_avocado.jpg"
       },
       {
-        id: "pure-campesino-pollo",
+        id: "pollo-olla-ensalada-avocado",
         nombre: {
-          es: "Puré campesino con pollo a la olla",
-          en: "Peasant puree with pot-roasted chicken",
-          fr: "Purée paysanne con poulet à la casserole"
+          es: "Pollo a la olla con ensalada de avocado",
+          en: "Pot-roasted chicken with avocado salad",
+          fr: "Poulet à la casserole avec salade d'avocat"
         },
         descripcion: {
-          es: "Puré de zapallo con papa, huacatay, leche, queso local y presa de pollo macerado en ají panca y mostaza, acompañado de arroz.",
-          en: "Squash puree with potato, huacatay, milk, local cheese, and chicken marinated in aji panca and mustard, served with rice.",
-          fr: "Purée de potiron avec pomme de terre, huacatay, lait, fromage local et morceau de poulet mariné au piment panca et moutarde, avec du riz."
+          es: "Presa de pollo macerada en ají panca y mostaza cocida a la olla, acompañada de una fresca ensalada de vegetales y avocado del valle.",
+          en: "Pot-roasted chicken marinated in aji panca and mustard, served with a fresh vegetable and valley avocado salad.",
+          fr: "Morceau de poulet mariné au piment panca et moutarde cuit à la casserole, accompagné d'une salade fraîche de légumes et d'avocat de la vallée."
         },
         precio: 25.00,
-        imagen: "pure_campesino_pollo.jpg"
+        imagen: "pollo_olla_ensalada_avocado.jpg"
       },
       {
         id: "alpaca-salsa-chicha",
@@ -513,6 +513,139 @@ const MENU_DATA = {
     ]
   },
 
+  bebidas: {
+    categoria_id: "contenedor-bebidas",
+    diseno: "mini",
+    platos: [
+      {
+        id: "vino-tinto-seco",
+        nombre: {
+          es: "Copa de vino tinto (seco)",
+          en: "Glass of red wine (dry)",
+          fr: "Verre de vin rouge (sec)"
+        },
+        precio: 16.00,
+        imagen: "vino_tinto_seco.jpg"
+      },
+      {
+        id: "vino-tinto-semiseco",
+        nombre: {
+          es: "Copa de vino tinto (semi seco)",
+          en: "Glass of red wine (semi-dry)",
+          fr: "Verre de vin rouge (demi-sec)"
+        },
+        precio: 12.00,
+        imagen: "vino_tinto_semiseco.jpg"
+      },
+      {
+        id: "cerveza-cusquena",
+        nombre: {
+          es: "Cerveza Cusqueña 310 ml.",
+          en: "Cusqueña Beer 310 ml.",
+          fr: "Bière Cusqueña 310 ml."
+        },
+        precio: 10.00,
+        imagen: "cerveza_cusquena.jpg"
+      },
+      {
+        id: "chicha-morada",
+        nombre: {
+          es: "Chicha morada",
+          en: "Chicha morada",
+          fr: "Chicha morada"
+        },
+        precio: 6.00,
+        imagen: "chicha_morada.jpg"
+      },
+      {
+        id: "inka-kola",
+        nombre: {
+          es: "Inka Kola 600 ml",
+          en: "Inka Kola 600 ml",
+          fr: "Inka Kola 600 ml"
+        },
+        precio: 5.00,
+        imagen: "inka_kola.jpg"
+      },
+      {
+        id: "coca-cola",
+        nombre: {
+          es: "Coca-Cola 600ml",
+          en: "Coca-Cola 600ml",
+          fr: "Coca-Cola 600ml"
+        },
+        precio: 5.00,
+        imagen: "coca_cola.jpg"
+      },
+      {
+        id: "refresco-maracuya",
+        nombre: {
+          es: "Refresco de Maracuyá",
+          en: "Passion fruit juice",
+          fr: "Jus de fruit de la passion"
+        },
+        precio: 5.00,
+        imagen: "refresco_maracuya.jpg"
+      },
+      {
+        id: "refresco-sancayo",
+        nombre: {
+          es: "Refresco de sancayo",
+          en: "Sancayo juice",
+          fr: "Jus de sancayo"
+        },
+        precio: 5.00,
+        imagen: "refresco_sancayo.jpg"
+      }
+    ]
+  },
+
+  postres: {
+    categoria_id: "contenedor-postres",
+    diseno: "mini",
+    platos: [
+      {
+        id: "pie-sancayo",
+        nombre: {
+          es: "Pie de sancayo",
+          en: "Sancayo pie",
+          fr: "Tarte au sancayo"
+        },
+        precio: 8.00,
+        imagen: "pie_sancayo.jpg"
+      },
+      {
+        id: "pie-maracuya",
+        nombre: {
+          es: "Pie de maracuyá",
+          en: "Passion fruit pie",
+          fr: "Tarte au fruit de la passion"
+        },
+        precio: 8.00,
+        imagen: "pie_maracuya.jpg"
+      },
+      {
+        id: "budin-arandanos",
+        nombre: {
+          es: "Budín de Arándanos",
+          en: "Blueberry pudding",
+          fr: "Pouding aux myrtilles"
+        },
+        precio: 12.00,
+        imagen: "budin_arandanos.jpg"
+      },
+      {
+        id: "torta-chocolate",
+        nombre: {
+          es: "Torta de Chocolate",
+          en: "Chocolate cake",
+          fr: "Gâteau au chocolat"
+        },
+        precio: 12.00,
+        imagen: "torta_chocolate.jpg"
+      }
+    ]
+  }
 
 };
 
@@ -539,7 +672,7 @@ function renderizarMenu(idioma) {
           <div class="bg-white p-2 rounded-xl shadow-sm border border-andean-100 flex gap-2">
             <img src="assets/images/dishes/${plato.imagen}" alt="${plato.nombre[idioma]}" class="w-12 h-12 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/100?text=${plato.id}'">
             <div class="flex-1 flex flex-col justify-between min-w-0">
-              <h3 class="font-bold text-stone-900 text-xs truncate" title="${plato.nombre[idioma]}">${plato.nombre[idioma]}</h3>
+              <h3 class="font-bold text-stone-900 text-xs line-clamp-2 leading-tight" title="${plato.nombre[idioma]}">${plato.nombre[idioma]}</h3>
               <div class="flex justify-between items-center mt-1">
                 <span class="text-amber-950 text-[11px] font-bold">S/. ${plato.precio.toFixed(2)}</span>
                 <button onclick="addToCart('${plato.nombre[idioma].replace(/'/g, "\\'")}', ${plato.precio})" class="bg-stone-900 text-white text-[11px] px-2 py-0.5 rounded active:scale-95 transition-transform">
