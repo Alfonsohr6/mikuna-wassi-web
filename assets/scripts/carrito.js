@@ -169,7 +169,7 @@ function sendOrderToWhatsApp() {
   });
 
   textoMensaje += `\n*${t.wsTotal}:* S/. ${totalSum.toFixed(2)}`;
-  textoMensaje += `\n*${t.wsModalidad}:* [${modalidad}]`;
+  textoMensaje += `\n*${t.wsModalidad}:* ${modalidad}`;
   textoMensaje += t.wsFooter;
 
   const whatsappNumber = "51956459905";
@@ -207,31 +207,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const oserbadorCallBack = (entries) => {
     entries.forEach(entry => {
-      // CASO A: El usuario está en la zona del Rincón Vegetariano
+      // 🥑 CASO A: El usuario está en la zona del Rincón Vegetariano
       if (entry.target.id === 'seccion-vegetariano' && entry.isIntersecting) {
         // Intercambio de barras de navegación
         navTradicional.classList.add('hidden');
         navVegetariano.classList.remove('hidden');
 
-        // Actualizar estados visuales de los botones superiores (si existen)
+        // Actualizar estados visuales de los botones superiores (Estilo Ámbar Unificado)
         if (tabVegetariano && tabTradicional) {
-          tabVegetariano.classList.add('bg-emerald-500', 'text-emerald-950', 'shadow');
+          // El botón vegetariano se activa con el color ámbar original
+          tabVegetariano.classList.add('bg-amber-500', 'text-andean-950', 'shadow');
           tabVegetariano.classList.remove('text-amber-200/70', 'hover:text-white');
+          
+          // El botón tradicional pasa a estado inactivo de forma limpia
           tabTradicional.classList.remove('bg-amber-500', 'text-andean-950', 'shadow');
           tabTradicional.classList.add('text-amber-200/70', 'hover:text-white');
         }
       } 
-      // CASO B: El usuario regresa a la zona del Menú Tradicional
+      // 🍲 CASO B: El usuario regresa a la zona del Menú Tradicional
       else if (entry.target.id === 'seccion-tradicional' && entry.isIntersecting) {
         // Intercambio de barras de navegación
         navVegetariano.classList.add('hidden');
         navTradicional.classList.remove('hidden');
 
-        // Actualizar estados visuales de los botones superiores (si existen)
+        // Actualizar estados visuales de los botones superiores (Estilo Ámbar Unificado)
         if (tabTradicional && tabVegetariano) {
+          // El botón tradicional se activa con el color ámbar original
           tabTradicional.classList.add('bg-amber-500', 'text-andean-950', 'shadow');
           tabTradicional.classList.remove('text-amber-200/70', 'hover:text-white');
-          tabVegetariano.classList.remove('bg-emerald-500', 'text-emerald-950', 'shadow');
+          
+          // El botón vegetariano pasa a estado inactivo (removiendo el ámbar)
+          tabVegetariano.classList.remove('bg-amber-500', 'text-andean-950', 'shadow');
           tabVegetariano.classList.add('text-amber-200/70', 'hover:text-white');
         }
       }
@@ -254,7 +260,7 @@ function toggleMenu(menuActivo) {
 
   if (elementoDestino) {
     // Calcula la altura de la cabecera fija para que no tape el título al llegar
-    const headerOffset = 120; 
+    const headerOffset = 140; 
     const elementPosition = elementoDestino.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
