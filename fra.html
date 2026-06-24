@@ -56,830 +56,108 @@
         </button>
       </div>
     </div>
-    <nav id="nav-tradicional" class="bg-amber-950 text-amber-100 text-xs font-medium border-t border-amber-900 overflow-x-auto whitespace-nowrap scrollbar-none sticky top-[56px] z-30 shadow-md">
-      <div class="max-w-md mx-auto px-4 py-2 flex space-x-4">
-        <a href="#sopas" class="px-2 py-1 hover:text-amber-400 transition-colors duration-200">🍲 Soupes</a>
-        <a href="#exclusivos" class="px-2 py-1 hover:text-amber-400 transition-colors duration-200">⭐ Exclusivités</a>
-        <a href="#grill" class="px-2 py-1 hover:text-amber-400 transition-colors duration-200">🔥 Grillades & Sauté</a>
-        <a href="#bebidas" class="px-2 py-1 hover:text-amber-400 transition-colors duration-200">🥤 Boissons</a>
-        <a href="#postres" class="px-2 py-1 hover:text-amber-400 transition-colors duration-200">🍰 Desserts</a>
-      </div>
+
+    <nav id="nav-tradicional" class="bg-amber-950 text-amber-100 text-xs font-medium border-t border-amber-900 overflow-x-auto whitespace-nowrap scrollbar-none sticky top-[56px] z-30 shadow-md flex items-center space-x-4 px-4 py-2.5">
+      <a href="#sopas" class="px-2 py-1 hover:text-amber-400 transition-colors flex-shrink-0">🍲 Soupes</a>
+      <a href="#exclusivos" class="px-2 py-1 hover:text-amber-400 transition-colors flex-shrink-0">⭐ Exclusivités</a>
+      <a href="#grill" class="px-2 py-1 hover:text-amber-400 transition-colors flex-shrink-0">🔥 Grillades & Sauté</a>
+      <a href="#cocteles" class="px-2 py-1 hover:text-amber-400 transition-colors flex-shrink-0">🍹 Cocktails</a>
+      <a href="#bebidas" class="px-2 py-1 hover:text-amber-400 transition-colors flex-shrink-0">🥤 Boissons</a>
+      <a href="#postres" class="px-2 py-1 hover:text-amber-400 transition-colors flex-shrink-0">🍰 Desserts</a>
     </nav>
 
-    <nav id="nav-vegetariano" class="hidden bg-emerald-950 text-emerald-100 text-xs font-medium border-t border-emerald-900 overflow-x-auto whitespace-nowrap scrollbar-none sticky top-[56px] z-30 shadow-md">
-      <div class="max-w-md mx-auto px-4 py-2 flex space-x-4">
-        <a href="#veg-pastas" class="px-2 py-1 hover:text-emerald-400 transition-colors duration-200">🍝 Pâtes Végé</a>
-        <a href="#veg-menestras" class="px-2 py-1 hover:text-emerald-400 transition-colors duration-200">🍛 Ragoûts & Légumineuses</a>
-        <a href="#veg-sopas" class="px-2 py-1 hover:text-emerald-400 transition-colors duration-200">🍲 Soupes</a>
-        <a href="#veg-sandwiches" class="px-2 py-1 hover:text-emerald-400 transition-colors duration-200">🥪 Sandwiches</a>
-        <a href="#veg-ensaladas" class="px-2 py-1 hover:text-emerald-400 transition-colors duration-200">🥗 Salades</a>
-        <a href="#veg-complementos" class="px-2 py-1 hover:text-emerald-400 transition-colors duration-200">🍟 Accompagnements</a>
-        <a href="#bebidas" class="px-2 py-1 hover:text-emerald-400 transition-colors duration-200">🥤 Boissons</a>
-        <a href="#postres" class="px-2 py-1 hover:text-emerald-400 transition-colors duration-200">🍰 Desserts</a>
-      </div>
+    <nav id="nav-vegetariano" class="hidden bg-emerald-950 text-emerald-100 text-xs font-medium border-t border-emerald-900 overflow-x-auto whitespace-nowrap scrollbar-none sticky top-[56px] z-30 shadow-md flex items-center space-x-4 px-4 py-2.5">
+      <a href="#veg-principal" class="px-2 py-1 hover:text-emerald-400 transition-colors flex-shrink-0">🍛 Plats Principaux</a>
+      <a href="#veg-sandwiches" class="px-2 py-1 hover:text-emerald-400 transition-colors flex-shrink-0">🥪 Sandwiches</a>
+      <a href="#veg-ensaladas" class="px-2 py-1 hover:text-emerald-400 transition-colors flex-shrink-0">🥗 Salades</a>
+      <a href="#veg-complementos" class="px-2 py-1 hover:text-emerald-400 transition-colors flex-shrink-0">🍟 Accompagnements</a>
+      <a href="#bebidas" class="px-2 py-1 hover:text-emerald-400 transition-colors flex-shrink-0">🥤 Boissons</a>
+      <a href="#postres" class="px-2 py-1 hover:text-emerald-400 transition-colors flex-shrink-0">🍰 Desserts</a>
     </nav>
   </header>
 
   <main class="max-w-md mx-auto px-4 mt-4 space-y-8">
 
-    <section id="seccion-tradicional" class="space-y-10 px-4 py-6">
-
-        <section id="sopas" class="scroll-mt-24">
-          <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
-            🍲 Soupes & Veloutés
-          </h2>
-          <div class="space-y-3">
-            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-              <img src="assets/images/dishes/sustancia_pollo.jpg" alt="Consommé de Poulet" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-              <div class="flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 class="font-bold text-stone-900 text-sm">Consommé de Poulet</h3>
-                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Bouillon de poulet concentré, idéal pour récupérer des énergies.</p>
-                </div>
-                <div class="flex justify-between items-center mt-1">
-                  <span class="text-amber-950 font-bold text-sm">S/. 15.00</span>
-                  <button onclick="addToCart('Sustancia de Pollo (Consommé de Poulet)', 15.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                    + Ajouter
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-              <img src="assets/images/dishes/sopa_criolla_pollo.jpg" alt="Soupe Créole au Poulet" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-              <div class="flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 class="font-bold text-stone-900 text-sm">Soupe Créole au Poulet</h3>
-                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Soupe traditionnelle avec des nouilles, du lait, un œuf et du poulet tendre.</p>
-                </div>
-                <div class="flex justify-between items-center mt-1">
-                  <span class="text-amber-950 font-bold text-sm">S/. 18.00</span>
-                  <button onclick="addToCart('Sopa Criolla de Pollo (Soupe Créole au Poulet)', 18.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                    + Ajouter
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-              <img src="assets/images/dishes/sopa_criolla_carne.jpg" alt="Soupe Créole au Bœuf" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-              <div class="flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 class="font-bold text-stone-900 text-sm">Soupe Créole au Bœuf</h3>
-                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Variation locale classique avec du bœuf haché, des nouilles et une touche de lait.</p>
-                </div>
-                <div class="flex justify-between items-center mt-1">
-                  <span class="text-amber-950 font-bold text-sm">S/. 18.00</span>
-                  <button onclick="addToCart('Sopa Criolla de Carne (Soupe Créole au Bœuf)', 18.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                    + Ajouter
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-              <img src="assets/images/dishes/crema_verduras.jpg" alt="Velouté de Légumes" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-              <div class="flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 class="font-bold text-stone-900 text-sm">Velouté de Légumes</h3>
-                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Doux mélange de légumes frais de saison rigoureusement sélectionnés.</p>
-                </div>
-                <div class="flex justify-between items-center mt-1">
-                  <span class="text-amber-950 font-bold text-sm">S/. 18.00</span>
-                  <button onclick="addToCart('Crema de Verduras (Velouté de Légumes)', 18.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                    + Ajouter
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="exclusivos" class="scroll-mt-24">
-          <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
-            ⭐ Exclusivités de la Maison
-          </h2>
-          <div class="space-y-3">
-            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-              <img src="assets/images/dishes/pollo_acevichado.jpg" alt="Poulet Acevichado" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-              <div class="flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 class="font-bold text-stone-900 text-sm">Poulet Acevichado</h3>
-                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Morceau de poulet cuit dans une sauce acevichada crémeuse avec oignon et piment jaune, accompagné de patate douce et de riz blanc.</p>
-                </div>
-                <div class="flex justify-between items-center mt-1">
-                  <span class="text-amber-950 font-bold text-sm">S/. 25.00</span>
-                  <button onclick="addToCart('Poulet Acevichado', 25.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                    + Ajouter
-                  </button>
-                </div>
-              </div>
-            </div>
-          
-            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-              <img src="assets/images/dishes/pure_campesino.jpg" alt="Purée Paysanne et Poulet" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-              <div class="flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 class="font-bold text-stone-900 text-sm">Purée Paysanne et Poulet à la Cocotte</h3>
-                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Purée de courge et pommes de terre parfumée au huacatay, lait, fromage local, accompagnée d'un morceau de poulet mariné au piment panca et à la moutarde, servie avec du riz.</p>
-                </div>
-                <div class="flex justify-between items-center mt-1">
-                  <span class="text-amber-950 font-bold text-sm">S/. 25.00</span>
-                  <button onclick="addToCart('Purée Paysanne et Poulet à la Cocotte', 25.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                    + Ajouter
-                  </button>
-                </div>
-              </div>
-            </div>
-          
-            <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-              <img src="assets/images/dishes/alpaca_chicha.jpg" alt="Alpaga en Sauce de Chicha" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-              <div class="flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 class="font-bold text-stone-900 text-sm">Alpaga en Sauce de Chicha</h3>
-                  <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Viande d'alpaga dans une sauce à la chicha de maïs Cabanita, accompagnée de riz blanc, patate douce et sarsa criolla.</p>
-                </div>
-                <div class="flex justify-between items-center mt-1">
-                  <span class="text-amber-950 font-bold text-sm">S/. 27.00</span>
-                  <button onclick="addToCart('Alpaga en Sauce de Chicha', 27.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                    + Ajouter
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-    <section id="grill" class="scroll-mt-24">
-      <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
-        🔥 Sautés, Grill & Plancha
-      </h2>
-      <div class="space-y-3">
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="assets/images/dishes/pollo_anticuchero.jpg" alt="Poulet Anticuchero" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-stone-900 text-sm">Poulet Anticuchero</h3>
-              <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Filet de poulet mariné dans une sauce anticuchera, accompagné de pommes de terre bouillies, de maïs blanc, de légumes et de sauce huancaína.</p>
-            </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 font-bold text-sm">S/. 30.00</span>
-              <button onclick="addToCart('Poulet Anticuchero', 30.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Ajouter
-              </button>
-            </div>
-          </div>
-        </div>
+    <section id="seccion-tradicional" class="space-y-8">
       
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="assets/images/dishes/pechuga_plancha.jpg" alt="Blanc de Poulet à la Plancha" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-stone-900 text-sm">Blanc de Poulet à la Plancha</h3>
-              <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Filet de poulet accompagné de frites, de légumes, de riz blanc et de sauces crémeuses.</p>
-            </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 font-bold text-sm">S/. 35.00</span>
-              <button onclick="addToCart('Blanc de Poulet à la Plancha', 35.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Ajouter
-              </button>
-            </div>
-          </div>
-        </div>
-      
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="assets/images/dishes/trucha_parrilla.jpg" alt="Truite Grillée" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-stone-900 text-sm">Truite Grillée</h3>
-              <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Filet de truite cuit à la plancha, accompagné de frites, de légumes, de riz blanc et de chimichurri.</p>
-            </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 font-bold text-sm">S/. 35.00</span>
-              <button onclick="addToCart('Truite Grillée', 35.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Ajouter
-              </button>
-            </div>
-          </div>
-        </div>
-      
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="assets/images/dishes/lomo_alpaca.jpg" alt="Lomo Saltado d'Alpaga" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-stone-900 text-sm">Lomo Saltado d'Alpaga</h3>
-              <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Filet d'alpaga sauté aux oignons, tomates, piments, coriandre, ail et sauce, accompagné de frites, de riz blanc et de sauces crémeuses.</p>
-            </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 font-bold text-sm">S/. 38.00</span>
-              <button onclick="addToCart('Alpaca Lomo Saltado', 38.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Ajouter
-              </button>
-            </div>
-          </div>
-        </div>
-      
-        <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-          <img src="assets/images/dishes/lomo_res.jpg" alt="Filet de Bœuf au Grill" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="font-bold text-stone-900 text-sm">Filet de Bœuf au Grill</h3>
-              <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Côte de bœuf grillée accompagnée de frites, d'une salade de légumes, de riz et de sauce chimichurri.</p>
-            </div>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 font-bold text-sm">S/. 38.00</span>
-              <button onclick="addToCart('Filet de Bœuf au Grill', 38.00)" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                + Ajouter
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="bebidas" class="scroll-mt-24">
-      <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
-        🥤 Drinks & Refreshments
-      </h2>
-      <div class="grid grid-cols-2 gap-3">
-        <div class="bg-white p-2 rounded-xl shadow-sm border border-andean-100 flex gap-2">
-          <img src="assets/images/dishes/copa_vino.jpg" alt="Glass of Wine" class="w-12 h-12 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/100?text=Wine'">
-          <div class="flex-1 flex flex-col justify-between min-w-0">
-            <h3 class="font-bold text-stone-900 text-xs truncate">Glass of Wine</h3>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 text-[11px] font-bold">S/. 12.00</span>
-              <button onclick="addToCart('Glass of Wine', 12.00)" class="bg-stone-900 text-white text-[11px] px-2 py-0.5 rounded active:scale-95 transition-transform">
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-      
-        <div class="bg-white p-2 rounded-xl shadow-sm border border-andean-100 flex gap-2">
-          <img src="assets/images/dishes/cerveza_cusquena.jpg" alt="Cusqueña Beer" class="w-12 h-12 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/100?text=Beer'">
-          <div class="flex-1 flex flex-col justify-between min-w-0">
-            <h3 class="font-bold text-stone-900 text-xs truncate">Cusqueña Beer</h3>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 text-[11px] font-bold">S/. 10.00</span>
-              <button onclick="addToCart('Cusqueña Beer 310ml', 10.00)" class="bg-stone-900 text-white text-[11px] px-2 py-0.5 rounded active:scale-95 transition-transform">
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-      
-        <div class="bg-white p-2 rounded-xl shadow-sm border border-andean-100 flex gap-2">
-          <img src="assets/images/dishes/chicha_morada.jpg" alt="Chicha Morada" class="w-12 h-12 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/100?text=Chicha'">
-          <div class="flex-1 flex flex-col justify-between min-w-0">
-            <h3 class="font-bold text-stone-900 text-xs truncate">Chicha Morada</h3>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 text-[11px] font-bold">S/. 6.00</span>
-              <button onclick="addToCart('Chicha Morada', 6.00)" class="bg-stone-900 text-white text-[11px] px-2 py-0.5 rounded active:scale-95 transition-transform">
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-      
-        <div class="bg-white p-2 rounded-xl shadow-sm border border-andean-100 flex gap-2">
-          <img src="assets/images/dishes/refresco_maracuya.jpg" alt="Passion Fruit Juice" class="w-12 h-12 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/100?text=Fruit'">
-          <div class="flex-1 flex flex-col justify-between min-w-0">
-            <h3 class="font-bold text-stone-900 text-xs truncate">Passion Fruit Juice</h3>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 text-[11px] font-bold">S/. 5.00</span>
-              <button onclick="addToCart('Passion Fruit Juice', 5.00)" class="bg-stone-900 text-white text-[11px] px-2 py-0.5 rounded active:scale-95 transition-transform">
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-      
-        <div class="bg-white p-2 rounded-xl shadow-sm border border-andean-100 flex gap-2">
-          <img src="assets/images/dishes/inka_kola.jpg" alt="Inka Kola" class="w-12 h-12 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/100?text=Inka+Kola'">
-          <div class="flex-1 flex flex-col justify-between min-w-0">
-            <h3 class="font-bold text-stone-900 text-xs truncate">Inka Kola 600ml</h3>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 text-[11px] font-bold">S/. 5.00</span>
-              <button onclick="addToCart('Inka Kola 600ml', 5.00)" class="bg-stone-900 text-white text-[11px] px-2 py-0.5 rounded active:scale-95 transition-transform">
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-      
-        <div class="bg-white p-2 rounded-xl shadow-sm border border-andean-100 flex gap-2">
-          <img src="assets/images/dishes/coca_cola.jpg" alt="Coca Cola" class="w-12 h-12 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/100?text=Coca+Cola'">
-          <div class="flex-1 flex flex-col justify-between min-w-0">
-            <h3 class="font-bold text-stone-900 text-xs truncate">Coca Cola 600ml</h3>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 text-[11px] font-bold">S/. 5.00</span>
-              <button onclick="addToCart('Coca Cola 600ml', 5.00)" class="bg-stone-900 text-white text-[11px] px-2 py-0.5 rounded active:scale-95 transition-transform">
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="postres" class="scroll-mt-24">
-      <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
-        🍰 Traditional Desserts
-      </h2>
-      <div class="grid grid-cols-2 gap-3">
-        <div class="bg-white p-2 rounded-xl shadow-sm border border-andean-100 flex gap-2">
-          <img src="assets/images/dishes/pie_sancayo.jpg" alt="Sancayo Pie" class="w-12 h-12 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/100?text=Sancayo'">
-          <div class="flex-1 flex flex-col justify-between min-w-0">
-            <h3 class="font-bold text-stone-900 text-xs truncate">Sancayo Pie</h3>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 text-[11px] font-bold">S/. 12.00</span>
-              <button onclick="addToCart('Sancayo Pie', 12.00)" class="bg-stone-900 text-white text-[11px] px-2 py-0.5 rounded active:scale-95 transition-transform">
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-      
-        <div class="bg-white p-2 rounded-xl shadow-sm border border-andean-100 flex gap-2">
-          <img src="assets/images/dishes/pie_maracuya.jpg" alt="Passion Fruit Pie" class="w-12 h-12 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/100?text=Pie'">
-          <div class="flex-1 flex flex-col justify-between min-w-0">
-            <h3 class="font-bold text-stone-900 text-xs truncate">Passion Fruit Pie</h3>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 text-[11px] font-bold">S/. 12.00</span>
-              <button onclick="addToCart('Passion Fruit Pie', 12.00)" class="bg-stone-900 text-white text-[11px] px-2 py-0.5 rounded active:scale-95 transition-transform">
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-      
-        <div class="bg-white p-2 rounded-xl shadow-sm border border-andean-100 flex gap-2">
-          <img src="assets/images/dishes/torta_chocolate.jpg" alt="Chocolate Cake" class="w-12 h-12 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/100?text=Cake'">
-          <div class="flex-1 flex flex-col justify-between min-w-0">
-            <h3 class="font-bold text-stone-900 text-xs truncate">Chocolate Cake</h3>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 text-[11px] font-bold">S/. 12.00</span>
-              <button onclick="addToCart('Chocolate Cake', 12.00)" class="bg-stone-900 text-white text-[11px] px-2 py-0.5 rounded active:scale-95 transition-transform">
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-      
-        <div class="bg-white p-2 rounded-xl shadow-sm border border-andean-100 flex gap-2">
-          <img src="assets/images/dishes/budin_arandanos.jpg" alt="Blueberry Pudding" class="w-12 h-12 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/100?text=Pudding'">
-          <div class="flex-1 flex flex-col justify-between min-w-0">
-            <h3 class="font-bold text-stone-900 text-xs truncate">Blueberry Pudding</h3>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 text-[11px] font-bold">S/. 12.00</span>
-              <button onclick="addToCart('Blueberry Pudding', 12.00)" class="bg-stone-900 text-white text-[11px] px-2 py-0.5 rounded active:scale-95 transition-transform">
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-      
-        <div class="bg-white p-2 rounded-xl shadow-sm border border-andean-100 flex gap-2">
-          <img src="assets/images/dishes/mango_flameado.jpg" alt="Flambéed Mango" class="w-12 h-12 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/100?text=Mango'">
-          <div class="flex-1 flex flex-col justify-between min-w-0">
-            <h3 class="font-bold text-stone-900 text-xs truncate">Flambéed Mango</h3>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 text-[11px] font-bold">S/. 12.00</span>
-              <button onclick="addToCart('Flambéed Mango', 12.00)" class="bg-stone-900 text-white text-[11px] px-2 py-0.5 rounded active:scale-95 transition-transform">
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-      
-        <div class="bg-white p-2 rounded-xl shadow-sm border border-andean-100 flex gap-2">
-          <img src="assets/images/dishes/qarnabal_frutas.jpg" alt="Fruit Qarnabal" class="w-12 h-12 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/100?text=Fruit'">
-          <div class="flex-1 flex flex-col justify-between min-w-0">
-            <h3 class="font-bold text-stone-900 text-xs truncate">Fruit Qarnabal</h3>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 text-[11px] font-bold">S/. 12.00</span>
-              <button onclick="addToCart('Fruit Qarnabal', 12.00)" class="bg-stone-900 text-white text-[11px] px-2 py-0.5 rounded active:scale-95 transition-transform">
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-      
-        <div class="bg-white p-2 rounded-xl shadow-sm border border-andean-100 flex gap-2">
-          <img src="assets/images/dishes/brownie.jpg" alt="Brownie" class="w-12 h-12 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/100?text=Brownie'">
-          <div class="flex-1 flex flex-col justify-between min-w-0">
-            <h3 class="font-bold text-stone-900 text-xs truncate">Brownie</h3>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 text-[11px] font-bold">S/. 8.00</span>
-              <button onclick="addToCart('Brownie', 8.00)" class="bg-stone-900 text-white text-[11px] px-2 py-0.5 rounded active:scale-95 transition-transform">
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-      
-        <div class="bg-white p-2 rounded-xl shadow-sm border border-andean-100 flex gap-2">
-          <img src="assets/images/dishes/qeqe.jpg" alt="Qeqe" class="w-12 h-12 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/100?text=Qeqe'">
-          <div class="flex-1 flex flex-col justify-between min-w-0">
-            <h3 class="font-bold text-stone-900 text-xs truncate">Qeqe Cake</h3>
-            <div class="flex justify-between items-center mt-1">
-              <span class="text-amber-950 text-[11px] font-bold">S/. 5.00</span>
-              <button onclick="addToCart('Qeqe Cake', 5.00)" class="bg-stone-900 text-white text-[11px] px-2 py-0.5 rounded active:scale-95 transition-transform">
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    </section>
-
-    <section id="seccion-vegetariano" class="space-y-10 px-4 py-6">
-      
-      <section id="veg-pastas" class="scroll-mt-28">
-        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
-          🍝 Pâtes Végé
-        </h2>
-        
-        <div class="space-y-3">
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/spaghetti_vegetales.jpg" alt="Spaghetti aux Légumes" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Spaghetti aux Légumes</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Pâtes sautées au wok avec une fine sélection de légumes frais de saison et d'épices andines locales.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 23.00</span>
-                <button onclick="addToCart('Spaghetti aux Légumes', 23.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/spaghetti_pesto.jpg" alt="Spaghetti au Pesto" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Spaghetti au Pesto</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Pâtes crémeuses enrobées d'une sauce traditionnelle à base de basilic frais, d'épinards et de fromage régional local.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 25.00</span>
-                <button onclick="addToCart('Spaghetti au Pesto', 25.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/spaghetti_alfredo.jpg" alt="Spaghetti Alfredo Végé" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Spaghetti Alfredo Végé</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Pâtes délicates dans une riche sauce blanche maison à base de beurre, de crème épaisse et de parmesan râpé.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 25.00</span>
-                <button onclick="addToCart('Spaghetti Alfredo Végé', 25.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="veg-menestras" class="scroll-mt-28">
-        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
-          🍛 Ragoûts & Légumineuses
-        </h2>
-        
-        <div class="space-y-3">
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/guiso_garbanzos.jpg" alt="Ragoût de Pois Chiches" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Ragoût de Pois Chiches</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Ragoût de pois chiches maison nutritif assaisonné d'épices sélectionnées de la maison, servi avec une garniture de riz blanc.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 23.00</span>
-                <button onclick="addToCart('Ragoût de Pois Chiches', 23.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/frejoles_huevo.jpg" alt="Haricots avec Œuf au Plat" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Haricots avec Œuf au Plat</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Portion classique de haricots crémeux traditionnels fouettés, servie avec du riz blanc et surmontée d'un œuf au plat.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 25.00</span>
-                <button onclick="addToCart('Haricots avec Œuf au Plat', 25.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/pure_pallar.jpg" alt="Purée de Haricots de Lima et son Sauté" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Purée de Haricots de Lima et son Sauté</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Purée onctueuse et artisanale de haricots de Lima locaux, accompagnée d'un sauté végétarien juteux de légumes frais au wok.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 27.00</span>
-                <button onclick="addToCart('Purée de Haricots de Lima et son Sauté', 27.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="veg-sopas" class="scroll-mt-28">
-        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+      <section id="sopas" class="scroll-mt-24">
+        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
           🍲 Soupes
         </h2>
-        
-        <div class="space-y-3">
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/crema_verduras.jpg" alt="Crème de Légumes" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Crème de Légumes</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Un mélange réconfortant de légumes frais du jardin sélectionnés, fait maison, léger et 100% végétarien.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 18.00</span>
-                <button onclick="addToCart('Crème de Légumes', 18.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="contenedor-sopas" class="space-y-3"></div>
       </section>
 
-      <section id="veg-sandwiches" class="scroll-mt-28">
-        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
-          🥪 Sandwiches
+      <section id="exclusivos" class="scroll-mt-24">
+        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
+          ⭐ Exclusivités
         </h2>
-        
-        <div class="space-y-3">
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/sandwich_huevo.jpg" alt="Sandwich à l'Œuf" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Sandwich à l'Œuf</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Œuf fraîchement préparé, tendre et parfaitement assaisonné, servi dans un pain local chaud et croustillant.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 8.00</span>
-                <button onclick="addToCart('Sandwich à l\'Œuf', 8.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-        
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/sandwich_avocado.jpg" alt="Sandwich à l'Avocat" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Sandwich à l'Avocat</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Tranches d'avocat frais et mûr d'origine locale avec une touche de sel et de jus de citron vert sur du pain rustique.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 8.00</span>
-                <button onclick="addToCart('Sandwich à l\'Avocat', 8.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-        
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/sandwich_queso.jpg" alt="Sandwich au Fromage Local" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Sandwich au Fromage Local</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Fromage régional artisanal frais et tendre, servi sur le pain chaud et croustillant signature de la maison.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 8.00</span>
-                <button onclick="addToCart('Sandwich au Fromage Local', 8.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-        
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/sandwich_triple.jpg" alt="Sandwich Triple Classique" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Sandwich Triple Classique</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Une combinaison parfaite de couches d'avocat crémeux, de tomates fraîches en tranches et d'œuf dur finement haché avec de la mayonnaise maison.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 18.00</span>
-                <button onclick="addToCart('Sandwich Triple Classique', 18.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-        
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/pan_campesino.jpg" alt="Sandwich Spécial au Pain de Campagne" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Sandwich Spécial au Pain de Campagne</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Un sandwich copieux et généreux sur du pain de campagne rustique artisanal, garni des meilleurs ingrédients sélectionnés de la vallée.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 20.00</span>
-                <button onclick="addToCart('Sandwich Spécial au Pain de Campagne', 20.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="contenedor-exclusivos" class="space-y-3"></div>
       </section>
-      
-      <section id="veg-ensaladas" class="scroll-mt-28">
-        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
-          🥗 Salades
+
+      <section id="grill" class="scroll-mt-24">
+        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
+          🔥 Grillades & Sauté
         </h2>
-        
-        <div class="space-y-3">
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/solterito_quinoa.jpg" alt="Salade de Quinoa Solterito" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Quinoa'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Salade de Quinoa Solterito</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Recette andine traditionnelle à base de quinoa régional local, mélangé avec des dés de fromage frais, des fèves, du maïs tendre, des tomates en dés et des olives noires.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 21.00</span>
-                <button onclick="addToCart('Salade de Quinoa Solterito', 21.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-        
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/palta_rellena.jpg" alt="Avocat Farci" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Avocado'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Avocat Farci</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Avocat entier de qualité supérieure, onctueux, riche et crémeux, farci d'un mélange frais et assaisonné de légumes de saison en dés et de mayonnaise maison.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 21.00</span>
-                <button onclick="addToCart('Avocat Farci', 21.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-        
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/ensalada_mikuna.jpg" alt="Salade Mikuna Wassi" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Salad'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Salade Mikuna Wassi</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">La spécialité verte et fraîche de la maison : une combinaison croquante d'un mélange de feuilles vertes sélectionnées, de légumes croquants du jardin et de notre vinaigrette secrète maison.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 18.00</span>
-                <button onclick="addToCart('Salade Mikuna Wassi', 18.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-        
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/porcion_palta.jpg" alt="Portion d'Avocat" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Avocado'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Portion d'Avocat</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Tranches d'avocat frais et légèrement assaisonné, parfaites pour compléter n'importe quel plat préféré de notre menu végétarien.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 15.00</span>
-                <button onclick="addToCart('Portion d\'Avocat', 15.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="contenedor-grill" class="space-y-3"></div>
       </section>
-      
-      <section id="veg-complementos" class="scroll-mt-28">
-        <h2 class="text-base font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
-          🍟 Accompagnements
+
+      <section id="cocteles" class="scroll-mt-24">
+        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
+          🍹 Cocktails
         </h2>
-        
-        <div class="space-y-3">
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/tortilla_verduras.jpg" alt="Omelette aux Légumes" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Omelet'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Omelette aux Légumes</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Une omelette classique à la poêle, préparée à la commande avec une variété saine et colorée de légumes du jardin finement hachés.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 18.00</span>
-                <button onclick="addToCart('Omelette aux Légumes', 18.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-        
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/papas_fritas.jpg" alt="Frites de la Maison" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Fries'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Frites de la Maison</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Une portion généreuse de pommes de terre locales coupées à la main, frites pour un croustillant doré précis à l'extérieur tout en restant moelleuses à l'intérieur.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 14.00</span>
-                <button onclick="addToCart('Frites de la Maison', 14.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-        
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/guacamole.jpg" alt="Guacamole Artisanal" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Guacamole'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Guacamole Artisanal</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Trempette d'avocat fraîchement écrasé mélangé avec une touche délicate d'oignons, de tomates, de jus de citron vert et de coriandre fraîche du verger.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 10.00</span>
-                <button onclick="addToCart('Guacamole Artisanal', 10.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-        
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/huevos_revueltos.jpg" alt="Œufs Brouillés" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Eggs'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Œufs Brouillés</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Deux œufs brouillés frais de la ferme, battus et préparés instantanément — doux, légers, moelleux et servis chauds.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 6.00</span>
-                <button onclick="addToCart('Œufs Brouillés', 6.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-        
-          <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
-            <img src="assets/images/dishes/banana_frita.jpg" alt="Banane Frite" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Banana'">
-            <div class="flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="font-bold text-stone-900 text-sm">Banane Frite</h3>
-                <p class="text-xs text-stone-500 leading-relaxed mt-0.5">Tranches classiques de banane douce et mûre frites pour une belle finition dorée et caramélisée. Une parfaite douceur en accompagnement.</p>
-              </div>
-              <div class="flex justify-between items-center mt-2">
-                <span class="text-emerald-900 font-bold text-sm">S/. 6.00</span>
-                <button onclick="addToCart('Banane Frite', 6.00)" class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
-                  + Ajouter
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="contenedor-cocteles" class="grid grid-cols-2 gap-3"></div>
       </section>
+
+    </section>
+
+    <section id="seccion-vegetariano" class="space-y-8">
+
+      <section id="veg-principal" class="scroll-mt-24">
+        <h2 class="text-lg font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+          (Veg) 🍛 Plats Principaux
+        </h2>
+        <div id="contenedor-veg-principal" class="space-y-3"></div>
+      </section>
+
+      <section id="veg-sandwiches" class="scroll-mt-24">
+        <h2 class="text-lg font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+          (Veg) 🥪 Sandwiches
+        </h2>
+        <div id="contenedor-veg-sandwiches" class="space-y-3"></div>
+      </section>
+
+      <section id="veg-ensaladas" class="scroll-mt-24">
+        <h2 class="text-lg font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+          (Veg) 🥗 Salades
+        </h2>
+        <div id="contenedor-veg-ensaladas" class="space-y-3"></div>
+      </section>
+
+      <section id="veg-complementos" class="scroll-mt-24">
+        <h2 class="text-lg font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
+          (Veg) 🍟 Accompagnements
+        </h2>
+        <div id="contenedor-veg-complementos" class="grid grid-cols-2 gap-3"></div>
+      </section>
+
+    </section>
+
+    <section id="secciones-compartidas" class="space-y-8 border-t border-amber-900/20 pt-6">
+
+      <section id="bebidas" class="scroll-mt-24">
+        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
+          🥤 Boissons
+        </h2>
+        <div id="contenedor-bebidas" class="grid grid-cols-2 gap-3"></div>
+      </section>
+
+      <section id="postres" class="scroll-mt-24">
+        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
+          🍰 Desserts
+        </h2>
+        <div id="contenedor-postres" class="grid grid-cols-2 gap-3"></div>
+      </section>
+
     </section>
 
     <section id="carrito-seccion" class="bg-amber-950 text-white p-4 rounded-2xl shadow-xl mt-8">
@@ -929,5 +207,9 @@
   </div>
 
   <script src="assets/scripts/carrito.js"></script>
+  <script src="assets/scripts/config-platos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => renderizarMenu('fr'));
+  </script>
 </body>
 </html>
