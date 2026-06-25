@@ -159,7 +159,7 @@
 
     <section id="carrito-seccion" class="bg-amber-950 text-white p-4 rounded-2xl shadow-xl mt-8">
       <h2 class="text-base font-bold mb-3 flex items-center justify-between text-amber-400">
-        🛒 Your Current Order
+        🛒 Your Shopping Cart
         <span id="cart-count" class="bg-amber-500 text-andean-950 px-2 py-0.5 rounded-full text-xs">0</span>
       </h2>
       
@@ -168,13 +168,27 @@
       </div>
 
       <div class="mt-4 pt-3 border-t border-amber-900">
-        <label class="block text-xs font-medium text-stone-300 mb-2">How would you like your order?</label>
+        <label for="client-name" class="block text-xs font-medium text-stone-300 mb-1.5 flex items-center gap-1">
+          👤 Name for the order? <span class="text-amber-400 font-bold">*</span>
+        </label>
+        <input 
+          type="text" 
+          id="client-name" 
+          required
+          autocomplete="off"
+          placeholder="Enter your first and last name" 
+          class="w-full bg-amber-900/30 border border-amber-900/70 rounded-xl px-3 py-2.5 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-500 transition-all font-medium"
+        >
+      </div>
+
+      <div class="mt-4 pt-3 border-t border-amber-900">
+        <label class="block text-xs font-medium text-stone-300 mb-2">How do you want your order?</label>
         <div class="grid grid-cols-2 gap-2 bg-amber-900/50 p-1 rounded-lg">
           <button id="btn-mesa" onclick="setModalidad('Comer en el Local')" class="py-1.5 text-xs font-semibold rounded-md transition bg-amber-500 text-andean-950 shadow-sm">
-            Dine-In (Table)
+            Dine In
           </button>
           <button id="btn-llevar" onclick="setModalidad('Para Llevar')" class="py-1.5 text-xs font-semibold rounded-md transition text-amber-200 hover:text-white">
-            Takeaway
+            To Go
           </button>
         </div>
       </div>

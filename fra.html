@@ -160,9 +160,9 @@
 
     </section>
 
-    <section id="carrito-seccion" class="bg-amber-950 text-white p-4 rounded-2xl shadow-xl mt-8">
+<section id="carrito-seccion" class="bg-amber-950 text-white p-4 rounded-2xl shadow-xl mt-8">
       <h2 class="text-base font-bold mb-3 flex items-center justify-between text-amber-400">
-        🛒 Votre Commande Actuelle
+        🛒 Votre Panier
         <span id="cart-count" class="bg-amber-500 text-andean-950 px-2 py-0.5 rounded-full text-xs">0</span>
       </h2>
       
@@ -171,10 +171,24 @@
       </div>
 
       <div class="mt-4 pt-3 border-t border-amber-900">
+        <label for="client-name" class="block text-xs font-medium text-stone-300 mb-1.5 flex items-center gap-1">
+          👤 Au nom de qui sera la commande ? <span class="text-amber-400 font-bold">*</span>
+        </label>
+        <input 
+          type="text" 
+          id="client-name" 
+          required
+          autocomplete="off"
+          placeholder="Écrivez votre nom et prénom" 
+          class="w-full bg-amber-900/30 border border-amber-900/70 rounded-xl px-3 py-2.5 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-500 transition-all font-medium"
+        >
+      </div>
+
+      <div class="mt-4 pt-3 border-t border-amber-900">
         <label class="block text-xs font-medium text-stone-300 mb-2">Comment souhaitez-vous votre commande ?</label>
         <div class="grid grid-cols-2 gap-2 bg-amber-900/50 p-1 rounded-lg">
           <button id="btn-mesa" onclick="setModalidad('Comer en el Local')" class="py-1.5 text-xs font-semibold rounded-md transition bg-amber-500 text-andean-950 shadow-sm">
-            Sur Place (Table)
+            Manger sur Place
           </button>
           <button id="btn-llevar" onclick="setModalidad('Para Llevar')" class="py-1.5 text-xs font-semibold rounded-md transition text-amber-200 hover:text-white">
             À Emporter
@@ -188,7 +202,7 @@
           <span id="cart-total" class="text-amber-400 text-base">S/. 0.00</span>
         </div>
         <button onclick="sendOrderToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 active:scale-[0.98] text-white font-bold text-sm py-3 rounded-xl transition shadow flex items-center justify-center gap-2">
-          🚀 Envoyer la Commande via WhatsApp
+          🚀 Envoyer la Commande par WhatsApp
         </button>
       </div>
     </section>
@@ -203,7 +217,7 @@
     </div>
     <a href="#carrito-seccion" class="pointer-events-auto bg-amber-400 text-andean-950 text-xs font-bold px-3 py-1.5 rounded-lg shadow">
       Voir Commande ↑
-    </button>
+    </a>
   </div>
 
   <script src="assets/scripts/carrito.js"></script>

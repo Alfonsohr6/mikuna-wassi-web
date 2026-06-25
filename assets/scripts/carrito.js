@@ -3,6 +3,7 @@
 // ==========================================
 let cart = [];
 let modalidad = "Comer en el Local"; // Se mantiene en español para la cocina nativa
+let isCartSectionVisible = false;
 
 // Detectar el idioma automáticamente desde el tag <html lang="...">
 const lang = document.documentElement.lang || "es";
@@ -16,7 +17,11 @@ const translations = {
     each: "c/u",
     floatingItems: (count) => `${count} plato${count !== 1 ? 's' : ''}`,
     alertEmpty: "Por favor, agrega al menos un plato a tu carrito para procesar el pedido.",
-    wsHeader: "¡Hola, Mikuna Wassi! 🍲\nAcabo de armar mi pedido desde el menú digital:\n\n",
+    alertNameEmpty: "Por favor, ingresa tu nombre y apellido para continuar con el pedido.",
+    alertNameInvalid: "El nombre no es válido. Solo se permiten letras (sin números, símbolos ni caracteres especiales).",
+// Textos del mensaje de WhatsApp (Llegan al cajero en Perú)
+    wsHeader: "¡Hola, Mikuna Wassi! 🍲 (Pedido de cliente Español / ES)\nAcabo de armar mi pedido desde la web:\n\n",
+    wsClient: "Mi nombre es:", 
     wsTotal: "Total estimado",
     wsModalidad: "Modalidad",
     wsFooter: "\n\nMuchas gracias. ¡Espero mi confirmación! 👋"
@@ -26,7 +31,11 @@ const translations = {
     each: "chacun",
     floatingItems: (count) => `${count} plat${count !== 1 ? 's' : ''}`,
     alertEmpty: "Veuillez sélectionner au moins un plat.",
-    wsHeader: "¡Hola, Mikuna Wassi! 🍲 (Pedido del extranjero/FR)\nAcabo de armar mi pedido desde la web:\n\n",
+    alertNameEmpty: "Veuillez entrer votre nom et prénom para continuer.",
+    alertNameInvalid: "Nom invalide. Seules les lettres et les espaces sont autorisés (pas de chiffres ou de symboles).",
+// Textos del mensaje de WhatsApp (Llegan al cajero en Perú)
+    wsHeader: "¡Hola, Mikuna Wassi! 🍲 (Pedido de cliente Francés / FR)\nAcabo de armar mi pedido desde la web:\n\n",
+    wsClient: "Mi nombre es: ", 
     wsTotal: "Total estimado",
     wsModalidad: "Modalidad",
     wsFooter: "\n\nMerci beaucoup ! J'attends votre confirmation. 👋"
@@ -36,9 +45,13 @@ const translations = {
     each: "each",
     floatingItems: (count) => `${count} dish${count !== 1 ? 'es' : ''}`,
     alertEmpty: "Please add at least one dish to your cart before checking out.",
-    wsHeader: "¡Hola, Mikuna Wassi! 🍲 (Pedido en Inglés / EN)\nUn cliente ha enviado su pedido:\n\n",
+    alertNameEmpty: "Please enter your first and last name to proceed with your order.",
+    alertNameInvalid: "Invalid name. Only letters and spaces are allowed (no numbers or special characters).",
+// Textos del mensaje de WhatsApp (Llegan al cajero en Perú)
+    wsHeader: "¡Hola, Mikuna Wassi! 🍲 (Pedido de cliente Inglés / EN)\nAcabo de armar mi pedido desde la web:\n\n",
+    wsClient: "Mi nombre es:", 
     wsTotal: "Total estimado",
-    wsModalidad: "Modalidad / Service",
+    wsModalidad: "Modalidad",
     wsFooter: "\n\nThank you! Looking forward to your confirmation. 👋"
   }
 };
@@ -114,6 +127,7 @@ function renderCart() {
   let total = 0;
   let totalItems = 0;
 
+  // 🔄 1. PROCESAMIENTO DE DATOS (Bucle puro)
   cart.forEach(item => {
     const subtotal = item.price * item.quantity;
     total += subtotal;
@@ -140,31 +154,64 @@ function renderCart() {
         </div>
       </div>
     `;
-  });
+  }); // 👈 ¡CLAVE! El bucle termina aquí. Ya procesamos todo el array.
 
+  // 🏢 2. ACTUALIZACIÓN ÚNICA DEL DOM (Fuera del bucle)
   cartItemsContainer.innerHTML = html;
   cartTotal.innerText = `S/. ${total.toFixed(2)}`;
   cartCount.innerText = totalItems;
-
-  // Mostrar barra flotante informativa adaptada al idioma
+  
   floatingCount.innerText = t.floatingItems(totalItems);
-  floatingBar.classList.remove('translate-y-24', 'opacity-0');
+  
+  // 🧭 3. CONTROL DE VISIBILIDAD DE LA BARRA FLOTANTE
+  if (isCartSectionVisible) {
+    // Si el carrito ya se ve en la página, escondemos la barra flotante
+    floatingBar.classList.add('translate-y-24', 'opacity-0');
+  } else {
+    // Si el carrito está oculto en el scroll, mostramos la barra flotante
+    floatingBar.classList.remove('translate-y-24', 'opacity-0');
+  }
 }
 
 // Compilar orden y redireccionar nativamente a la API de WhatsApp
 function sendOrderToWhatsApp() {
+  // 1. Validación de carrito vacío
   if (cart.length === 0) {
     alert(t.alertEmpty);
     return;
   }
 
+  // 👤 CAPTURA Y VALIDACIÓN ANTE CUALQUIER ERROR DEL NOMBRE
+  const nameInput = document.getElementById('client-name');
+  const clientName = nameInput ? nameInput.value.trim() : "";
+
+  // Error A: Si el campo está vacío o el usuario metió puros espacios en blanco
+  if (clientName === "") {
+    alert(t.alertNameEmpty);
+    if (nameInput) nameInput.focus(); // Enfoca la cajita automáticamente
+    return;
+  }
+
+  // Error B: Filtro contra números, símbolos, emojis o caracteres extraños. 
+  // Solo permite letras de la A a la Z (mayúsculas/minúsculas), eñes, tildes y espacios intermedios.
+  const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/;
+  if (!nameRegex.test(clientName)) {
+    alert(t.alertNameInvalid);
+    if (nameInput) nameInput.focus(); // Regresa el cursor para que corrija
+    return;
+  }
+
+  // Si todo está bien, construimos el mensaje
   let totalSum = 0;
   let textoMensaje = t.wsHeader;
+
+  // Insertar el nombre validado justo al inicio del reporte
+  textoMensaje += `*${t.wsClient}:* ${clientName}\n\n`;
 
   cart.forEach(item => {
     const sub = item.price * item.quantity;
     totalSum += sub;
-    // Envía el item.name original (que tiene el nombre en español completo) para la cocina
+    // Envía el item.name original (en español) para control de la cocina
     textoMensaje += `• ${item.quantity}x ${item.name} (S/. ${sub.toFixed(2)})\n`;
   });
 
@@ -184,8 +231,8 @@ function sendOrderToWhatsApp() {
 // =========================================================================
 
 /**
- * 1. SENSOR DE SCROLL INTELIGENTE (IntersectionObserver)
- * Controla automáticamente el cambio de Navs y los estilos de los botones superiores.
+ * 1. SENSORES DE SCROLL INTELIGENTES (IntersectionObserver)
+ * Controla automáticamente el cambio de Navs y la visibilidad de la barra flotante.
  */
 document.addEventListener("DOMContentLoaded", () => {
   const secTradicional = document.getElementById('seccion-tradicional');
@@ -195,79 +242,75 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabTradicional = document.getElementById('tab-tradicional');
   const tabVegetariano = document.getElementById('tab-vegetariano');
 
-  // Control de seguridad: Si no existen estos elementos en la página actual, frena el script
-  if (!secTradicional || !secVegetariano || !navTradicional || !navVegetariano) return;
+  // Elementos del carrito para el control de la barra flotante
+  const carritoSeccion = document.getElementById('carrito-seccion');
+  const floatingBar = document.getElementById('floating-bar');
 
-  // Configuración del sensor: Se activa cuando la sección cruza la parte superior de la pantalla
-  const opcionesSensor = {
-    root: null,
-    rootMargin: "-25% 0px -55% 0px", 
-    threshold: 0
-  };
+  // --- SENSOR A: CONTROL DE SECCIONES DEL MENÚ ---
+  if (secTradicional && secVegetariano && navTradicional && navVegetariano) {
+    const opcionesSensor = {
+      root: null,
+      rootMargin: "-25% 0px -55% 0px", 
+      threshold: 0
+    };
 
-  const oserbadorCallBack = (entries) => {
-    entries.forEach(entry => {
-      // 🥑 CASO A: El usuario está en la zona del Rincón Vegetariano
-      if (entry.target.id === 'seccion-vegetariano' && entry.isIntersecting) {
-        // Intercambio de barras de navegación
-        navTradicional.classList.add('hidden');
-        navVegetariano.classList.remove('hidden');
+    const oserbadorCallBack = (entries) => {
+      entries.forEach(entry => {
+        if (entry.target.id === 'seccion-vegetariano' && entry.isIntersecting) {
+          navTradicional.classList.add('hidden');
+          navVegetariano.classList.remove('hidden');
 
-        // Actualizar estados visuales de los botones superiores (Estilo Ámbar Unificado)
-        if (tabVegetariano && tabTradicional) {
-          // El botón vegetariano se activa con el color ámbar original
-          tabVegetariano.classList.add('bg-amber-500', 'text-andean-950', 'shadow');
-          tabVegetariano.classList.remove('text-amber-200/70', 'hover:text-white');
-          
-          // El botón tradicional pasa a estado inactivo de forma limpia
-          tabTradicional.classList.remove('bg-amber-500', 'text-andean-950', 'shadow');
-          tabTradicional.classList.add('text-amber-200/70', 'hover:text-white');
+          if (tabVegetariano && tabTradicional) {
+            tabVegetariano.classList.add('bg-amber-500', 'text-andean-950', 'shadow');
+            tabVegetariano.classList.remove('text-amber-200/70', 'hover:text-white');
+            tabTradicional.classList.remove('bg-amber-500', 'text-andean-950', 'shadow');
+            tabTradicional.classList.add('text-amber-200/70', 'hover:text-white');
+          }
+        } 
+        else if (entry.target.id === 'seccion-tradicional' && entry.isIntersecting) {
+          navVegetariano.classList.add('hidden');
+          navTradicional.classList.remove('hidden');
+
+          if (tabTradicional && tabVegetariano) {
+            tabTradicional.classList.add('bg-amber-500', 'text-andean-950', 'shadow');
+            tabTradicional.classList.remove('text-amber-200/70', 'hover:text-white');
+            tabVegetariano.classList.remove('bg-amber-500', 'text-andean-950', 'shadow');
+            tabVegetariano.classList.add('text-amber-200/70', 'hover:text-white');
+          }
         }
-      } 
-      // 🍲 CASO B: El usuario regresa a la zona del Menú Tradicional
-      else if (entry.target.id === 'seccion-tradicional' && entry.isIntersecting) {
-        // Intercambio de barras de navegación
-        navVegetariano.classList.add('hidden');
-        navTradicional.classList.remove('hidden');
+      });
+    };
 
-        // Actualizar estados visuales de los botones superiores (Estilo Ámbar Unificado)
-        if (tabTradicional && tabVegetariano) {
-          // El botón tradicional se activa con el color ámbar original
-          tabTradicional.classList.add('bg-amber-500', 'text-andean-950', 'shadow');
-          tabTradicional.classList.remove('text-amber-200/70', 'hover:text-white');
-          
-          // El botón vegetariano pasa a estado inactivo (removiendo el ámbar)
-          tabVegetariano.classList.remove('bg-amber-500', 'text-andean-950', 'shadow');
-          tabVegetariano.classList.add('text-amber-200/70', 'hover:text-white');
-        }
-      }
-    });
-  };
-
-  // Activar el sensor de movimiento sobre los contenedores padres
-  const sensor = new IntersectionObserver(oserbadorCallBack, opcionesSensor);
-  sensor.observe(secTradicional);
-  sensor.observe(secVegetariano);
-});
-
-/**
- * 2. CONTROLADOR DEL SELECTOR MAESTRO (Acción del Clic)
- * Cuando el usuario presiona un botón, calcula la posición y desliza la pantalla elegantemente.
- */
-function toggleMenu(menuActivo) {
-  const destinoId = menuActivo === 'tradicional' ? 'seccion-tradicional' : 'seccion-vegetariano';
-  const elementoDestino = document.getElementById(destinoId);
-
-  if (elementoDestino) {
-    // Calcula la altura de la cabecera fija para que no tape el título al llegar
-    const headerOffset = 140; 
-    const elementPosition = elementoDestino.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-    // Ejecuta el desplazamiento suave y preciso
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
+    const sensor = new IntersectionObserver(oserbadorCallBack, opcionesSensor);
+    sensor.observe(secTradicional);
+    sensor.observe(secVegetariano);
   }
-}
+
+  // --- SENSOR B: DETECTOR DE PRESENCIA DEL CARRITO PRINCIPAL (El que faltaba) ---
+  if (carritoSeccion && floatingBar) {
+    const cartObserverOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.05 // Se activa en cuanto asoma un 5% de la sección en pantalla
+    };
+
+    const cartObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // Actualiza dinámicamente la variable global según el scroll del usuario
+        isCartSectionVisible = entry.isIntersecting;
+
+        // Si el usuario tiene productos agregados, reacciona al scroll de inmediato
+        if (cart.length > 0) {
+          if (isCartSectionVisible) {
+            floatingBar.classList.add('translate-y-24', 'opacity-0');
+          } else {
+            floatingBar.classList.remove('translate-y-24', 'opacity-0');
+          }
+        }
+      });
+    }, cartObserverOptions);
+
+    // Activamos la vigilancia sobre el contenedor del carrito
+    cartObserver.observe(carritoSeccion);
+  }
+});
