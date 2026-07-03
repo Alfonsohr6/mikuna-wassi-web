@@ -21,7 +21,7 @@ const translations = {
     alertNameInvalid: "El nombre no es válido. Solo se permiten letras (sin números, símbolos ni caracteres especiales).",
 // Textos del mensaje de WhatsApp (Llegan al cajero en Perú)
     wsHeader: "¡Hola, Mikuna Wassi! 🍲 (Pedido de cliente Español / ES)\nAcabo de armar mi pedido desde la web:\n\n",
-    wsClient: "Mi nombre es:", 
+    wsClient: "Mi nombre es", 
     wsTotal: "Total estimado",
     wsModalidad: "Modalidad",
     wsFooter: "\n\nMuchas gracias. ¡Espero mi confirmación! 👋"
@@ -35,7 +35,7 @@ const translations = {
     alertNameInvalid: "Nom invalide. Seules les lettres et les espaces sont autorisés (pas de chiffres ou de symboles).",
 // Textos del mensaje de WhatsApp (Llegan al cajero en Perú)
     wsHeader: "¡Hola, Mikuna Wassi! 🍲 (Pedido de cliente Francés / FR)\nAcabo de armar mi pedido desde la web:\n\n",
-    wsClient: "Mi nombre es: ", 
+    wsClient: "Mi nombre es", 
     wsTotal: "Total estimado",
     wsModalidad: "Modalidad",
     wsFooter: "\n\nMerci beaucoup ! J'attends votre confirmation. 👋"
@@ -49,7 +49,7 @@ const translations = {
     alertNameInvalid: "Invalid name. Only letters and spaces are allowed (no numbers or special characters).",
 // Textos del mensaje de WhatsApp (Llegan al cajero en Perú)
     wsHeader: "¡Hola, Mikuna Wassi! 🍲 (Pedido de cliente Inglés / EN)\nAcabo de armar mi pedido desde la web:\n\n",
-    wsClient: "Mi nombre es:", 
+    wsClient: "Mi nombre es", 
     wsTotal: "Total estimado",
     wsModalidad: "Modalidad",
     wsFooter: "\n\nThank you! Looking forward to your confirmation. 👋"
@@ -64,23 +64,28 @@ const t = translations[lang] || translations.es;
 // ==========================================
 
 // Añadir producto o incrementar cantidad
-function addToCart(name, price) {
-  const existingItem = cart.find(item => item.name === name);
+// 🔄 FUNCIÓN CORREGIDA: Ahora acepta el ID en primer lugar, luego Nombre y Precio
+function addToCart(id, name, price) {
+  // Buscamos de forma ultra segura usando el ID único
+  const existingItem = cart.find(item => item.id === id);
   if (existingItem) {
     existingItem.quantity += 1;
   } else {
-    cart.push({ name, price, quantity: 1 });
+    // Guardamos los 3 datos ordenados en la memoria, incluyendo el id oculto
+    cart.push({ id, name, price, quantity: 1 });
   }
   renderCart();
 }
 
-// Cambiar cantidades (+ / -)
-function changeQuantity(name, delta) {
-  const item = cart.find(item => item.name === name);
+// 🔄 FUNCIÓN CORREGIDA: Ahora opera y filtra usando el ID único
+function changeQuantity(id, delta) {
+  // Busca el plato por su ID en lugar de su nombre
+  const item = cart.find(item => item.id === id);
   if (item) {
     item.quantity += delta;
     if (item.quantity <= 0) {
-      cart = cart.filter(i => i.name !== name);
+      // Si llega a cero, lo elimina usando el ID
+      cart = cart.filter(i => i.id !== id);
     }
   }
   renderCart();
@@ -127,28 +132,23 @@ function renderCart() {
   let total = 0;
   let totalItems = 0;
 
-  // 🔄 1. PROCESAMIENTO DE DATOS (Bucle puro)
+ // 🔄 1. PROCESAMIENTO DE DATOS (Bucle puro y optimizado)
   cart.forEach(item => {
     const subtotal = item.price * item.quantity;
     total += subtotal;
     totalItems += item.quantity;
 
-    // Si no es español, extrae el nombre limpio dentro de los paréntesis para el cliente
-    const displayName = lang === "es" 
-      ? item.name 
-      : (item.name.includes('(') ? item.name.split('(')[1].replace(')', '') : item.name);
-
     html += `
       <div class="flex items-center justify-between py-2">
         <div class="flex-1 pr-2">
-          <p class="font-semibold text-amber-200">${displayName.trim()}</p>
+          <p class="font-semibold text-amber-200">${item.name.trim()}</p>
           <p class="text-[10px] text-stone-400">S/. ${item.price.toFixed(2)} ${t.each}</p>
         </div>
         <div class="flex items-center gap-3">
           <div class="flex items-center bg-amber-900 rounded-lg overflow-hidden border border-amber-800">
-            <button onclick="changeQuantity('${item.name}', -1)" class="px-2 py-1 hover:bg-amber-800 text-amber-300 font-bold">-</button>
+            <button onclick="changeQuantity('${item.id}', -1)" class="px-2 py-1 hover:bg-amber-800 text-amber-300 font-bold">-</button>
             <span class="px-2 text-xs font-bold">${item.quantity}</span>
-            <button onclick="changeQuantity('${item.name}', 1)" class="px-2 py-1 hover:bg-amber-800 text-amber-300 font-bold">+</button>
+            <button onclick="changeQuantity('${item.id}', 1)" class="px-2 py-1 hover:bg-amber-800 text-amber-300 font-bold">+</button>
           </div>
           <span class="font-bold text-amber-400 min-w-[55px] text-right">S/. ${subtotal.toFixed(2)}</span>
         </div>

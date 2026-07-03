@@ -649,11 +649,82 @@ const MENU_DATA = {
 
 };
 
-// =========================================================================
-// 🚀 MOTOR DE RENDERIZADO DINÁMICO E INTELIGENTE
-// =========================================================================
+// ==========================================
+// ESTADO GLOBAL DEL CARRITO (Memoria Dinámica)
+// ==========================================
+let cart = [];
+let modalidad = "Comer en el Local"; // Se mantiene fijo en español para la cocina nativa
+let isCartSectionVisible = false;
+
+// Detectar el idioma automáticamente desde el tag <html lang="...">
+const lang = document.documentElement.lang || "es";
+
+// ==========================================
+// DICCIONARIO DE TEXTOS MULTILINGÜE
+// ==========================================
+const translations = {
+  es: {
+    emptyCart: "No has seleccionado ningún plato aún.",
+    each: "c/u",
+    floatingItems: (count) => `${count} plato${count !== 1 ? 's' : ''}`,
+    alertEmpty: "Por favor, agrega al menos un plato a tu carrito para procesar el pedido.",
+    alertNameEmpty: "Por favor, ingresa tu nombre y apellido para continuar con el pedido.",
+    alertNameInvalid: "El nombre no es válido. Solo se permiten letras (sin números, símbolos ni caracteres especiales).",
+    wsHeader: "¡Hola, Mikuna Wassi! 🍲 (Pedido de cliente Español / ES)\nAcabo de armar mi pedido desde la web:\n\n",
+    wsClient: "Mi nombre es:", 
+    wsTotal: "Total estimado",
+    wsModalidad: "Modalidad",
+    wsFooter: "\n\nMuchas gracias. ¡Espero mi confirmación! 👋"
+  },
+  en: {
+    emptyCart: "You haven't selected any dishes yet.",
+    each: "each",
+    floatingItems: (count) => `${count} dish${count !== 1 ? 'es' : ''}`,
+    alertEmpty: "Please add at least one dish to your cart to process the order.",
+    alertNameEmpty: "Please enter your first and last name to continue with the order.",
+    alertNameInvalid: "The name is not valid. Only letters are allowed (no numbers, symbols, or special characters).",
+    wsHeader: "¡Hola, Mikuna Wassi! 🍲 (Pedido de cliente Inglés / EN)\nAcabo de armar mi pedido desde la web:\n\n",
+    wsClient: "Mi nombre es:", 
+    wsTotal: "Total estimado",
+    wsModalidad: "Modalidad",
+    wsFooter: "\n\nMuchas gracias. ¡Espero mi confirmación! 👋"
+  },
+  fr: {
+    emptyCart: "Vous n'avez pas encore sélectionné de plats.",
+    each: "ch.",
+    floatingItems: (count) => `${count} plat${count !== 1 ? 's' : ''}`,
+    alertEmpty: "Veuillez ajouter au moins un plat à votre panier pour traiter la commande.",
+    alertNameEmpty: "Veuillez entrer votre nom et prénom pour continuer la commande.",
+    alertNameInvalid: "Le nom n'est pas valide. Seules les lettres sont autorisées.",
+    wsHeader: "¡Hola, Mikuna Wassi! 🍲 (Pedido de cliente Francés / FR)\nAcabo de armar mi pedido desde la web:\n\n",
+    wsClient: "Mi nombre es:", 
+    wsTotal: "Total estimado",
+    wsModalidad: "Modalidad",
+    wsFooter: "\n\nMuchas gracias. ¡Espero mi confirmación! 👋"
+  }
+};
+
+// Traducción activa según la página actual
+const t = translations[lang] || translations.es;
+
+// ==========================================
+// 🔍 FUNCIÓN TRADUCTORA: OBTENER NOMBRE EN ESPAÑOL
+// ==========================================
+function obtenerNombreEnEspanol(id) {
+  // Recorre dinámicamente las categorías del menú buscando el ID único del plato
+  for (const categoria in MENU_DATA) {
+    const platoEncontrado = MENU_DATA[categoria].platos.find(p => p.id === id);
+    if (platoEncontrado) {
+      return platoEncontrado.nombre.es; // Devuelve estrictamente el nombre en español para la cocina
+    }
+  }
+  return null; // Fallback seguro por si ocurre un imprevisto
+}
+
+// ==========================================
+// 🎨 RENDERIZADO DEL MENÚ DINÁMICO
+// ==========================================
 function renderizarMenu(idioma) {
-  // Recorremos todas las categorías definidas en la base de datos superior
   for (const categoria in MENU_DATA) {
     const infoCat = MENU_DATA[categoria];
     const contenedor = document.getElementById(infoCat.categoria_id);
@@ -690,7 +761,6 @@ function renderizarMenu(idioma) {
     } else {
       // --- DISEÑO DE TARJETA NORMAL (GRANDE CON DESCRIPCIÓN) ---
       infoCat.platos.forEach(plato => {
-
         const tarjetaHTML = `
           <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
             <img src="assets/images/dishes/${plato.imagen}" alt="${plato.nombre[idioma]}" class="w-20 h-20 object-cover rounded-lg bg-stone-100 flex-shrink-0" onerror="this.src='https://placehold.co/150?text=Mikuna'">
@@ -717,3 +787,297 @@ function renderizarMenu(idioma) {
     }
   }
 }
+
+// ==========================================
+// 🛒 LÓGICA DEL CARRITO (CORREGIDA Y COMPLETA)
+// ==========================================
+
+// Añadir producto o incrementar cantidad
+function addToCart(id, name, price) {
+  // Buscamos de forma ultra segura usando el ID único
+  const existingItem = cart.find(item => item.id === id);
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    // Guardamos los 3 datos ordenados en la memoria, incluyendo el id oculto
+    cart.push({ id, name, price, quantity: 1 });
+  }
+  renderCart();
+}
+
+// Opera y filtra usando el ID único
+function changeQuantity(id, delta) {
+  // Busca el plato por su ID en lugar de su nombre
+  const item = cart.find(item => item.id === id);
+  if (item) {
+    item.quantity += delta;
+    if (item.quantity <= 0) {
+      // Si llega a cero, lo elimina usando el ID
+      cart = cart.filter(i => i.id !== id);
+    }
+  }
+  renderCart();
+}
+
+// Cambiar la modalidad del servicio (Mesa / Llevar)
+function setModalidad(nuevaModalidad) {
+  modalidad = nuevaModalidad;
+  const btnMesa = document.getElementById('btn-mesa');
+  const btnLlevar = document.getElementById('btn-llevar');
+
+  if (!btnMesa || !btnLlevar) return;
+
+  if (modalidad === "Comer en el Local") {
+    btnMesa.className = "py-1.5 text-xs font-semibold rounded-md transition bg-amber-500 text-andean-950 shadow-sm";
+    btnLlevar.className = "py-1.5 text-xs font-semibold rounded-md transition text-amber-200 hover:text-white";
+  } else {
+    btnLlevar.className = "py-1.5 text-xs font-semibold rounded-md transition bg-amber-500 text-andean-950 shadow-sm";
+    btnMesa.className = "py-1.5 text-xs font-semibold rounded-md transition text-amber-200 hover:text-white";
+  }
+}
+
+// Renderizar e inyectar HTML del carrito en tiempo real
+function renderCart() {
+  const cartItemsContainer = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  const cartCount = document.getElementById('cart-count');
+  const floatingBar = document.getElementById('floating-bar');
+  const floatingCount = document.getElementById('floating-count');
+
+  if (!cartItemsContainer || !cartTotal || !cartCount || !floatingBar || !floatingCount) return;
+
+  if (cart.length === 0) {
+    cartItemsContainer.innerHTML = `<p class="text-stone-400 text-center py-4">${t.emptyCart}</p>`;
+    cartTotal.innerText = "S/. 0.00";
+    cartCount.innerText = "0";
+    
+    // Esconder barra flotante móvil
+    floatingBar.classList.add('translate-y-24', 'opacity-0');
+    return;
+  }
+
+  let html = "";
+  let total = 0;
+  let totalItems = 0;
+
+  // 1. PROCESAMIENTO DE DATOS (Bucle puro y optimizado)
+  cart.forEach(item => {
+    const subtotal = item.price * item.quantity;
+    total += subtotal;
+    totalItems += item.quantity;
+
+    html += `
+      <div class="flex items-center justify-between py-2 border-b border-amber-950/30 last:border-0">
+        <div class="flex-1 pr-2">
+          <p class="font-semibold text-amber-200 text-xs">${item.name.trim()}</p>
+          <p class="text-[10px] text-stone-400">S/. ${item.price.toFixed(2)} ${t.each}</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="flex items-center bg-amber-900 rounded-lg overflow-hidden border border-amber-800">
+            <button onclick="changeQuantity('${item.id}', -1)" class="px-2 py-1 hover:bg-amber-800 text-amber-300 font-bold text-xs">-</button>
+            <span class="px-2 text-xs font-bold text-white">${item.quantity}</span>
+            <button onclick="changeQuantity('${item.id}', 1)" class="px-2 py-1 hover:bg-amber-800 text-amber-300 font-bold text-xs">+</button>
+          </div>
+          <span class="font-bold text-amber-400 text-xs min-w-[55px] text-right">S/. ${subtotal.toFixed(2)}</span>
+        </div>
+      </div>
+    `;
+  });
+
+  // 2. INYECCIÓN Y CIERRE DE TRABAJO (Lo que completamos)
+  cartItemsContainer.innerHTML = html;
+  cartTotal.innerText = `S/. ${total.toFixed(2)}`;
+  cartCount.innerText = totalItems; // 🎯 AQUÍ se arregla el conteo del carrito principal
+
+  // Control dinámico de la barra flotante según la posición de la pantalla
+  if (floatingBar && !isCartSectionVisible) {
+    floatingCount.textContent = t.floatingItems(totalItems);
+    floatingBar.classList.remove('translate-y-24', 'opacity-0');
+  } else if (floatingBar && isCartSectionVisible) {
+    floatingBar.classList.add('translate-y-24', 'opacity-0');
+  }
+}
+
+
+// 🔔 FUNCIÓN PARA MOSTRAR LA NOTIFICACIÓN FLOTANTE PERSONALIZADA
+function showCustomAlert(mensaje) {
+  const alertContainer = document.getElementById('custom-alert');
+  const alertText = document.getElementById('custom-alert-text');
+
+  if (!alertContainer || !alertText) return;
+
+  // Inyectamos el texto correspondiente según la validación y el idioma activo
+  alertText.innerText = mensaje;
+
+  // Quitamos las clases ocultas y activamos la animación para que suba elegantemente
+  alertContainer.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+  alertContainer.classList.add('translate-y-0', 'opacity-100');
+
+  // Se oculta automáticamente después de 3.5 segundos
+  setTimeout(() => {
+    alertContainer.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+    alertContainer.classList.remove('translate-y-0', 'opacity-100');
+  }, 3500);
+}
+
+// 🚀 FUNCIÓN DE ENVÍO CON VALIDACIONES PROTEGIDAS Y OPTIMIZADAS
+function sendOrderToWhatsApp() {
+  // 1. Validación de Carrito Vacío (¡Siempre va primero para proteger el flujo!)
+  if (cart.length === 0) {
+    showCustomAlert(t.alertEmpty); 
+    return;
+  }
+
+  // 👤 Captura segura del input del nombre del cliente
+  const nameInput = document.getElementById('client-name');
+  const nombreCliente = nameInput ? nameInput.value.trim() : "";
+
+  // 2. Validación de Nombre Vacío
+  if (!nombreCliente) {
+    showCustomAlert(t.alertNameEmpty); 
+    if (nameInput) nameInput.focus(); // Enfoca el campo para que el usuario escriba rápido
+    return;
+  }
+
+  // 3. Validación de Expresión Regular para el Nombre (Añadido soporte para diéresis ü Ü por el menú en Francés)
+  const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/;
+  if (!nameRegex.test(nombreCliente)) {
+    showCustomAlert(t.alertNameInvalid); 
+    if (nameInput) nameInput.focus();
+    return;
+  }
+
+  // 📋 COMPILACIÓN DEL MENSAJE PARA WHATSAPP
+  let textoMensaje = t.wsHeader;
+  textoMensaje += `👤 *${t.wsClient}* ${nombreCliente}\n\n`;
+  textoMensaje += `📋 *DETALLE DEL PEDIDO:*\n`;
+
+  let total = 0;
+  cart.forEach(item => {
+    const subtotal = item.price * item.quantity;
+    total += subtotal;
+    
+    // El "Mesero" hace su magia: Traduce el ID al nombre nativo en español para el cocinero
+    const nombreCocina = obtenerNombreEnEspanol(item.id) || item.name;
+    
+    textoMensaje += `• ${item.quantity}x ${nombreCocina} (S/. ${item.price.toFixed(2)} c/u) -> S/. ${subtotal.toFixed(2)}\n`;
+  });
+
+  textoMensaje += `\n💰 *${t.wsTotal}:* S/. ${total.toFixed(2)}`;
+  textoMensaje += `\n🛵 *${t.wsModalidad}:* ${modalidad}`;
+  textoMensaje += t.wsFooter;
+
+  const whatsappNumber = "51956459905";
+  const urlUrlEncoded = encodeURIComponent(textoMensaje);
+  
+  // Abre WhatsApp limpiamente en una pestaña nueva
+  window.open(`https://wa.me/${whatsappNumber}?text=${urlUrlEncoded}`, "_blank");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const secTradicional = document.getElementById('seccion-tradicional');
+  const secVegetariano = document.getElementById('seccion-vegetariano');
+  const tabTradicional = document.getElementById('tab-tradicional');
+  const tabVegetariano = document.getElementById('tab-vegetariano');
+  
+  // 🛠️ AGREGAMOS ESTAS DOS LÍNEAS QUE FALTABAN:
+  const navTradicional = document.getElementById('nav-tradicional');
+  const navVegetariano = document.getElementById('nav-vegetariano');
+
+  const carritoSeccion = document.getElementById('carrito-seccion');
+  const floatingBar = document.getElementById('floating-bar');
+
+  // --- SENSOR A: CONTROL DEL SELECTOR SUPERIOR Y NAV SUB-CATEGORÍAS ---
+  if (secTradicional && secVegetariano && tabTradicional && tabVegetariano) {
+    const opcionesSensor = {
+      root: null,
+      rootMargin: '-25% 0px -55% 0px', // Margen optimizado para detectar el cambio a tiempo
+      threshold: 0
+    };
+
+    const oserbadorCallBack = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target.id === 'seccion-vegetariano') {
+            // Intercambio de Navs (Esconde tradicional, muestra vegetariano)
+            if (navTradicional) navTradicional.classList.add('hidden');
+            if (navVegetariano) navVegetariano.classList.remove('hidden');
+
+            // Estado visual del botón superior
+            tabVegetariano.classList.add('bg-amber-500', 'text-andean-950', 'shadow');
+            tabVegetariano.classList.remove('text-amber-200/70', 'hover:text-white');
+            tabTradicional.classList.remove('bg-amber-500', 'text-andean-950', 'shadow');
+            tabTradicional.classList.add('text-amber-200/70', 'hover:text-white');
+          } else {
+            // Intercambio de Navs (Esconde vegetariano, muestra tradicional)
+            if (navVegetariano) navVegetariano.classList.add('hidden');
+            if (navTradicional) navTradicional.classList.remove('hidden');
+
+            // Estado visual del botón superior
+            tabTradicional.classList.add('bg-amber-500', 'text-andean-950', 'shadow');
+            tabTradicional.classList.remove('text-amber-200/70', 'hover:text-white');
+            tabVegetariano.classList.remove('bg-amber-500', 'text-andean-950', 'shadow');
+            tabVegetariano.classList.add('text-amber-200/70', 'hover:text-white');
+          }
+        }
+      });
+    };
+
+    const sensor = new IntersectionObserver(oserbadorCallBack, opcionesSensor);
+    sensor.observe(secTradicional);
+    sensor.observe(secVegetariano);
+  }
+
+  // --- SENSOR B: DETECTOR DE PRESENCIA DEL CARRITO PRINCIPAL ---
+  // (Este déjalo tal cual como estaba abajo...)
+
+  // --- SENSOR B: DETECTOR DE PRESENCIA DEL CARRITO PRINCIPAL ---
+  if (carritoSeccion && floatingBar) {
+    const cartObserverOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.05
+    };
+
+    const cartObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isCartSectionVisible = entry.isIntersecting;
+
+        if (cart.length > 0) {
+          if (isCartSectionVisible) {
+            floatingBar.classList.add('translate-y-24', 'opacity-0');
+            floatingBar.classList.remove('translate-y-0', 'opacity-100');
+          } else {
+            floatingBar.classList.remove('translate-y-24', 'opacity-0');
+            floatingBar.classList.add('translate-y-0', 'opacity-100');
+          }
+        }
+      });
+    }, cartObserverOptions);
+    cartObserver.observe(carritoSeccion);
+  }
+});
+
+// --- ACCIÓN CLIC DEL SELECTOR MAESTRO ---
+function toggleMenu(menuActivo) {
+  const destinoId = menuActivo === 'tradicional' ? 'seccion-tradicional' : 'seccion-vegetariano';
+  const elementoDestino = document.getElementById(destinoId);
+
+  if (elementoDestino) {
+    const headerOffset = 140; 
+    const elementPosition = elementoDestino.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+}
+
+// ==========================================
+// ⚡ INICIALIZACIÓN AUTOMÁTICA DEL MESERO
+// ==========================================
+// El mesero se despierta, lee el idioma nativo del HTML e inicializa todo de golpe
+renderizarMenu(lang);
+renderCart();

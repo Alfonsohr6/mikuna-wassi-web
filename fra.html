@@ -166,7 +166,7 @@
         <span id="cart-count" class="bg-amber-500 text-andean-950 px-2 py-0.5 rounded-full text-xs">0</span>
       </h2>
       
-      <div id="cart-items" class="space-y-2 text-xs divide-y divide-amber-900 max-h-48 overflow-y-auto pr-1">
+      <div id="cart-items" class="text-xs max-h-48 overflow-y-auto pr-1">
         <p class="text-stone-400 text-center py-4">Aucun plat sélectionné pour le moment.</p>
       </div>
 
@@ -220,8 +220,41 @@
     </a>
   </div>
 
-  <script src="assets/scripts/carrito.js"></script>
-  <script src="assets/scripts/config-platos.js"></script>
+  <div id="custom-alert" class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-sm bg-amber-950 border border-amber-800/80 text-white rounded-2xl shadow-2xl z-50 transition-all duration-300 translate-y-24 opacity-0 pointer-events-none overflow-hidden flex flex-col">
+    
+    <div class="bg-amber-900/40 px-4 py-2.5 border-b border-amber-900/50 flex items-center justify-between">
+      <span class="text-[10px] font-bold tracking-wider text-amber-400 uppercase flex items-center gap-1.5">
+        📋 Commande en Cours
+      </span>
+      <span class="text-[10px] font-semibold text-stone-400">Mikuna Wassi</span>
+    </div>
+  
+    <div class="p-4 flex items-center gap-4 bg-gradient-to-b from-transparent to-amber-950/30">
+      <div class="bg-amber-900/60 p-2.5 rounded-xl flex-shrink-0 flex items-center justify-center border border-amber-800/40 shadow-inner">
+        <img 
+          src="assets/images/icons/user-search.svg" 
+          alt="Icône Recherche Utilisateur" 
+          class="w-6 h-6 object-contain"
+        >
+      </div>
+      
+      <div class="flex-1 min-w-0">
+        <p id="custom-alert-text" class="text-xs font-bold text-stone-100 leading-relaxed">
+          Vérification des détails de votre commande...
+        </p>
+      </div>
+    </div>
+  
+    <div class="bg-amber-900/10 px-4 py-3 border-t border-amber-900/40">
+      <p class="text-[11px] text-stone-300 leading-normal text-center font-medium">
+        ⚠️ Veuillez écrire votre nom pour que l'on sache comment vous appeler quand votre commande sera prête.
+      </p>
+    </div>
+  
+  </div>
+
+
+  <script src="assets/scripts/mesero.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => renderizarMenu('fr'));
   </script>
