@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mikuna Wassi - Menu Interactif</title>
+  <!-- 🌐 CONFIGURACIÓN PARA RECONOCIMIENTO DE PESTAÑA -->
+  <title>Mikuna Wassi | Menu Interactif</title>
+  <link rel="icon" type="image/png" href="assets/images/logomikunawassi.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -27,7 +29,7 @@
 
   </style>
 </head>
-<body class="bg-andean-50 text-stone-800 font-sans min-h-screen pb-32">
+<body class="bg-andean-50 text-stone-800 font-sans min-h-screen pb-0">
 
   <header class="bg-andean-950 text-white sticky top-0 z-40 shadow-md">
     <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
@@ -209,6 +211,29 @@
 
   </main>
 
+  <footer class="bg-andean-950 text-stone-400 py-6 px-4 border-t border-amber-900/20 mt-12">
+    <div class="max-w-md mx-auto flex flex-col items-center gap-4 text-center">
+
+      <a 
+        href="https://www.google.com/maps/place/Mikuna+Wassi/@-15.6225661,-71.9809589,17z/data=!4m12!1m5!8m4!1e2!2s109993981465421718146!3m1!1e1!3m5!1s0x916a035d3525d87d:0x49769510b69d1523!8m2!3d-15.6225661!4d-71.9809589!16s%2Fg%2F11h8fbrjg8?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="w-full bg-andean-900/30 hover:bg-andean-900/50 border border-amber-900/30 rounded-xl py-3 px-4 flex items-center justify-center gap-2.5 transition-colors text-xs font-bold text-amber-400"
+      >
+      <img 
+        src="assets/images/icons/geo-fill.svg" 
+        alt="Ubicación" 
+        class="w-4 h-4 object-contain brightness-0 [filter:invert(81%)_sepia(62%)_saturate(1692%)_hue-rotate(338deg)_brightness(102%)_contrast(98%)]"
+      >
+        <span>Lieu de Retrait : Voir sur Google Maps</span>
+      </a>
+
+      <p class="text-[10px] text-stone-500 tracking-widest uppercase mt-1">
+        © 2026 Mikuna Wassi • Fin du Menu
+      </p>
+
+    </div>
+  </footer>
   
   <div id="floating-bar" class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-sm bg-emerald-600 text-white px-4 py-3 rounded-xl shadow-xl flex items-center justify-between z-30 transition-transform duration-300 translate-y-24 pointer-events-none opacity-0">
     <div class="flex items-center gap-2">
@@ -221,36 +246,36 @@
   </div>
 
   <div id="custom-alert" class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-sm bg-amber-950 border border-amber-800/80 text-white rounded-2xl shadow-2xl z-50 transition-all duration-300 translate-y-24 opacity-0 pointer-events-none overflow-hidden flex flex-col">
-    
+
     <div class="bg-amber-900/40 px-4 py-2.5 border-b border-amber-900/50 flex items-center justify-between">
       <span class="text-[10px] font-bold tracking-wider text-amber-400 uppercase flex items-center gap-1.5">
         📋 Commande en Cours
       </span>
       <span class="text-[10px] font-semibold text-stone-400">Mikuna Wassi</span>
     </div>
-  
+
     <div class="p-4 flex items-center gap-4 bg-gradient-to-b from-transparent to-amber-950/30">
       <div class="bg-amber-900/60 p-2.5 rounded-xl flex-shrink-0 flex items-center justify-center border border-amber-800/40 shadow-inner">
         <img 
           src="assets/images/icons/user-search.svg" 
           alt="Icône Recherche Utilisateur" 
-          class="w-6 h-6 object-contain"
+          class="w-6 h-6 object-contain brightness-0 [filter:invert(81%)_sepia(62%)_saturate(1692%)_hue-rotate(338deg)_brightness(102%)_contrast(98%)]"
         >
       </div>
-      
+
       <div class="flex-1 min-w-0">
         <p id="custom-alert-text" class="text-xs font-bold text-stone-100 leading-relaxed">
           Vérification des détails de votre commande...
         </p>
       </div>
     </div>
-  
+
     <div class="bg-amber-900/10 px-4 py-3 border-t border-amber-900/40">
       <p class="text-[11px] text-stone-300 leading-normal text-center font-medium">
         ⚠️ Veuillez écrire votre nom pour que l'on sache comment vous appeler quand votre commande sera prête.
       </p>
     </div>
-  
+
   </div>
 
 
