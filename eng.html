@@ -33,176 +33,183 @@
     <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
         <div class="flex items-center gap-3">
           <img src="assets/images/logomikunawassi.png" alt="Mikuna Wassi Logo" class="w-10 h-10 object-contain rounded-full bg-amber-400/10" onerror="this.style.display='none'">
-
-            <div>
-              <h1 class="text-xl font-bold tracking-wide text-amber-400">Mikuna Wassi</h1>
-              <p class="text-xs text-stone-300">The House of Food · Andean Flavors</p>
-            </div>
+        
+          <div>
+            <h1 class="text-xl font-bold tracking-wide text-amber-400">Mikuna Wassi</h1>
+            <p class="text-xs text-stone-300">The House of Food · Andean Flavors</p>
+          </div>
         </div>
-      <div class="flex space-x-2 text-sm font-semibold">
-        <a href="index.html" class="bg-stone-800 text-stone-300 px-2 py-1 rounded hover:bg-stone-700">ES</a>
-        <a href="eng.html" class="bg-amber-500 text-andean-950 px-2 py-1 rounded shadow">EN</a>
-        <a href="fra.html" class="bg-stone-800 text-stone-300 px-2 py-1 rounded hover:bg-stone-700">FR</a>
-      </div>
+        
+        <div class="flex items-center gap-3">
+          <div class="flex space-x-1.5 text-xs font-semibold">
+            <a href="index.html" class="bg-stone-800 text-stone-300 px-2 py-1 rounded hover:bg-stone-700">ES</a>
+            <a href="eng.html" class="bg-amber-500 text-andean-950 px-2 py-1 rounded shadow">EN</a>
+            <a href="fra.html" class="bg-stone-800 text-stone-300 px-2 py-1 rounded hover:bg-stone-700">FR</a>
+          </div>
+        </div>
     </div>
 
-    <div class="bg-andean-950 px-4 pt-2">
-      <div class="max-w-md mx-auto flex bg-amber-950/60 p-1 rounded-xl border border-amber-900/50">
-        <button id="tab-tradicional" onclick="toggleMenu('tradicional')" class="w-1/2 py-2 text-xs font-bold rounded-lg transition-all bg-amber-500 text-andean-950 shadow">
-          🫕 Traditional Menu
+    <!-- Pestañas de Navegación Principal (4 Hojas) -->
+    <div class="bg-andean-950 px-4 pt-2 pb-3">
+      <div class="max-w-md mx-auto grid grid-cols-4 gap-1 bg-amber-950/60 p-1 rounded-xl border border-amber-900/50">
+        <button id="tab-tradicional" onclick="cambiarVista('tradicional')" class="py-2 text-[11px] font-bold rounded-lg transition-all bg-amber-500 text-andean-950 shadow text-center truncate px-1">
+          🫕 Traditional
         </button>
-        <button id="tab-vegetariano" onclick="toggleMenu('vegetariano')" class="w-1/2 py-2 text-xs font-bold rounded-lg transition-all text-amber-200/70 hover:text-white">
-          🥑 Vegetarian Corner
+        <button id="tab-vegetariano" onclick="cambiarVista('vegetariano')" class="py-2 text-[11px] font-bold rounded-lg transition-all text-amber-200/70 hover:text-white text-center truncate px-1">
+          🥑 Vegetarian
+        </button>
+        <button id="tab-desayunos" onclick="cambiarVista('desayunos')" class="py-2 text-[11px] font-bold rounded-lg transition-all text-amber-200/70 hover:text-white text-center truncate px-1">
+          🍳 Breakfast
+        </button>
+        <!-- 🛒 Acceso Directo al Carrito con tu SVG cart-fill -->
+        <button onclick="cambiarVista('carrito')" class="relative bg-amber-900/40 border border-amber-800/60 p-2 rounded-xl flex items-center justify-center hover:bg-amber-900/70 transition">
+            <img 
+              src="assets/images/icons/cart-fill.svg" 
+              alt="Cart" 
+              class="w-5 h-5 object-contain brightness-0 [filter:invert(81%)_sepia(62%)_saturate(1692%)_hue-rotate(338deg)_brightness(102%)_contrast(98%)]"
+            >
+            <span id="header-cart-count" class="absolute -top-1.5 -right-1.5 bg-amber-500 text-andean-950 text-[10px] font-bold px-1.5 py-0.2 rounded-full shadow">0</span>
         </button>
       </div>
     </div>
-
-    <nav id="nav-tradicional" class="bg-amber-950 text-amber-100 text-xs font-medium border-t border-amber-900 overflow-x-auto whitespace-nowrap scrollbar-none sticky top-[56px] z-30 shadow-md flex items-center space-x-4 px-4 py-2.5">
-      <a href="#sopas" class="px-2 py-1 hover:text-amber-400 transition-colors flex-shrink-0">🍲 Soups</a>
-      <a href="#exclusivos" class="px-2 py-1 hover:text-amber-400 transition-colors flex-shrink-0">⭐ House Specialties</a>
-      <a href="#grill" class="px-2 py-1 hover:text-amber-400 transition-colors flex-shrink-0">🔥 Grill & Stir-fries</a>
-      <a href="#cocteles" class="px-2 py-1 hover:text-amber-400 transition-colors flex-shrink-0">🍹 Cocktails</a>
-      <a href="#bebidas" class="px-2 py-1 hover:text-amber-400 transition-colors flex-shrink-0">🥤 Drinks</a>
-      <a href="#postres" class="px-2 py-1 hover:text-amber-400 transition-colors flex-shrink-0">🍰 Desserts</a>
-    </nav>
-
-    <nav id="nav-vegetariano" class="hidden bg-emerald-950 text-emerald-100 text-xs font-medium border-t border-emerald-900 overflow-x-auto whitespace-nowrap scrollbar-none sticky top-[56px] z-30 shadow-md flex items-center space-x-4 px-4 py-2.5">
-      <a href="#veg-principal" class="px-2 py-1 hover:text-emerald-400 transition-colors flex-shrink-0">🍛 Main Dishes</a>
-      <a href="#veg-sandwiches" class="px-2 py-1 hover:text-emerald-400 transition-colors flex-shrink-0">🥪 Sandwiches</a>
-      <a href="#veg-ensaladas" class="px-2 py-1 hover:text-emerald-400 transition-colors flex-shrink-0">🥗 Salads</a>
-      <a href="#veg-complementos" class="px-2 py-1 hover:text-emerald-400 transition-colors flex-shrink-0">🍟 Sides</a>
-      <a href="#bebidas" class="px-2 py-1 hover:text-emerald-400 transition-colors flex-shrink-0">🥤 Drinks</a>
-      <a href="#postres" class="px-2 py-1 hover:text-emerald-400 transition-colors flex-shrink-0">🍰 Desserts</a>
-    </nav>
   </header>
 
   <main class="max-w-md mx-auto px-4 mt-4 space-y-8">
+
+    <!-- 🫕 BLOQUE: MENÚ TRADICIONAL -->
     <section id="seccion-tradicional" class="space-y-8">
-      
       <section id="sopas" class="scroll-mt-36">
-        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
-          🍲 Soups
-        </h2>
+        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">🍲 Soups & Creams</h2>
         <div id="contenedor-sopas" class="space-y-3"></div>
       </section>
 
       <section id="exclusivos" class="scroll-mt-36">
-        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
-          ⭐ House Specialties
-        </h2>
+        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">⭐ House Specialties</h2>
         <div id="contenedor-exclusivos" class="space-y-3"></div>
       </section>
 
       <section id="grill" class="scroll-mt-36">
-        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
-          🔥 Grill & Stir-fries
-        </h2>
+        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">🔥 Grill & Stir-fries</h2>
         <div id="contenedor-grill" class="space-y-3"></div>
       </section>
 
       <section id="cocteles" class="scroll-mt-36">
-        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
-          🍹 Cocktails
-        </h2>
+        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">🍹 Cocktails</h2>
         <div id="contenedor-cocteles" class="grid grid-cols-2 gap-3"></div>
       </section>
-
     </section>
 
-    <section id="seccion-vegetariano" class="space-y-8">
-
+    <!-- 🥑 BLOQUE: MENÚ VEGETARIANO -->
+    <section id="seccion-vegetariano" class="hidden space-y-8">
       <section id="veg-principal" class="scroll-mt-36">
-        <h2 class="text-lg font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
-          (Veg) 🍛 Main Dishes
-        </h2>
+        <h2 class="text-lg font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">🍛 Main Dishes</h2>
         <div id="contenedor-veg-principal" class="space-y-3"></div>
       </section>
 
       <section id="veg-sandwiches" class="scroll-mt-36">
-        <h2 class="text-lg font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
-          (Veg) 🥪 Sandwiches
-        </h2>
+        <h2 class="text-lg font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">🥪 Sandwiches</h2>
         <div id="contenedor-veg-sandwiches" class="grid grid-cols-2 gap-3"></div>
       </section>
 
       <section id="veg-ensaladas" class="scroll-mt-36">
-        <h2 class="text-lg font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
-          (Veg) 🥗 Salads
-        </h2>
+        <h2 class="text-lg font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">🥗 Salads</h2>
         <div id="contenedor-veg-ensaladas" class="space-y-3"></div>
       </section>
 
       <section id="veg-complementos" class="scroll-mt-36">
-        <h2 class="text-lg font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">
-          (Veg) 🍟 Sides
-        </h2>
+        <h2 class="text-lg font-bold text-emerald-800 border-b-2 border-emerald-200 pb-1 mb-3 flex items-center gap-2">🍟 Sides</h2>
         <div id="contenedor-veg-complementos" class="grid grid-cols-2 gap-3"></div>
       </section>
-
     </section>
 
-    <section id="secciones-compartidas" class="space-y-8 border-t border-amber-900/20 pt-6">
+    <!-- 🍳 BLOQUE: DESAYUNOS -->
+    <section id="seccion-desayunos" class="hidden space-y-8">
+      <section id="desayunos-fruta-cereales" class="scroll-mt-36">
+        <h2 class="text-lg font-bold text-amber-800 border-b-2 border-amber-300 pb-1 mb-3 flex items-center gap-2">🥣 Fruits & Cereals</h2>
+        <div id="contenedor-desayunos-fruta-cereales" class="space-y-3"></div>
+      </section>
 
+      <section id="desayunos-sandwiches" class="scroll-mt-36">
+        <h2 class="text-lg font-bold text-amber-800 border-b-2 border-amber-300 pb-1 mb-3 flex items-center gap-2">🥪 Breakfast Sandwiches</h2>
+        <div id="contenedor-desayunos-sandwiches" class="grid grid-cols-2 gap-3"></div>
+      </section>
+
+      <section id="platos-mananeros" class="scroll-mt-36">
+        <h2 class="text-lg font-bold text-amber-800 border-b-2 border-amber-300 pb-1 mb-3 flex items-center gap-2">🍳 Morning Plates</h2>
+        <div id="contenedor-platos-mananeros" class="space-y-3"></div>
+      </section>
+
+      <section id="desayunos-empanadas" class="scroll-mt-36">
+        <h2 class="text-lg font-bold text-amber-800 border-b-2 border-amber-300 pb-1 mb-3 flex items-center gap-2">🥟 Empanadas</h2>
+        <div id="contenedor-desayunos-empanadas" class="grid grid-cols-2 gap-3"></div>
+      </section>
+
+      <section id="desayunos-bebidas" class="scroll-mt-36">
+        <h2 class="text-lg font-bold text-amber-800 border-b-2 border-amber-300 pb-1 mb-3 flex items-center gap-2">☕ Hot Drinks & Juices</h2>
+        <div id="contenedor-desayunos-bebidas" class="grid grid-cols-2 gap-3"></div>
+      </section>
+    </section>
+
+    <!-- SECCIONES COMPARTIDAS (Bebidas y Postres) -->
+    <section id="secciones-compartidas" class="space-y-8 border-t border-amber-900/20 pt-6">
       <section id="bebidas" class="scroll-mt-36">
-        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
-          🥤 Drinks
-        </h2>
+        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">🥤 Drinks</h2>
         <div id="contenedor-bebidas" class="grid grid-cols-2 gap-3"></div>
       </section>
 
       <section id="postres" class="scroll-mt-36">
-        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">
-          🍰 Desserts
-        </h2>
+        <h2 class="text-lg font-bold text-andean-800 border-b-2 border-amber-200 pb-1 mb-3 flex items-center gap-2">🍰 Desserts</h2>
         <div id="contenedor-postres" class="grid grid-cols-2 gap-3"></div>
       </section>
-
     </section>
 
-    <section id="carrito-seccion" class="bg-amber-950 text-white p-4 rounded-2xl shadow-xl mt-8">
-      <h2 class="text-base font-bold mb-3 flex items-center justify-between text-amber-400">
-        🛒 Your Shopping Cart
-        <span id="cart-count" class="bg-amber-500 text-andean-950 px-2 py-0.5 rounded-full text-xs">0</span>
-      </h2>
+    <!-- 🛒 CARRITO DE COMPRAS COMO VISTA INDEPENDIENTE -->
+    <section id="seccion-carrito" class="hidden space-y-4">
+      <div class="bg-amber-950 text-white p-4 rounded-2xl shadow-xl">
+        <h2 class="text-base font-bold mb-3 flex items-center justify-between text-amber-400">
+          🛒 Your Shopping Cart
+          <span id="cart-count" class="bg-amber-500 text-andean-950 px-2 py-0.5 rounded-full text-xs">0</span>
+        </h2>
+        
+        <div id="cart-items" class="text-xs max-h-48 overflow-y-auto pr-1">
+          <p class="text-stone-400 text-center py-4">No items selected yet.</p>
+        </div>
       
-      <div id="cart-items" class="text-xs max-h-48 overflow-y-auto pr-1">
-        <p class="text-stone-400 text-center py-4">No items selected yet.</p>
-      </div>
-
-      <div class="mt-4 pt-3 border-t border-amber-900">
-        <label for="client-name" class="block text-xs font-medium text-stone-300 mb-1.5 flex items-center gap-1">
-          👤 Name for the order? <span class="text-amber-400 font-bold">*</span>
-        </label>
-        <input 
-          type="text" 
-          id="client-name" 
-          required
-          autocomplete="off"
-          placeholder="Enter your first and last name" 
-          class="w-full bg-amber-900/30 border border-amber-900/70 rounded-xl px-3 py-2.5 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-500 transition-all font-medium"
-        >
-      </div>
-
-      <div class="mt-4 pt-3 border-t border-amber-900">
-        <label class="block text-xs font-medium text-stone-300 mb-2">How do you want your order?</label>
-        <div class="grid grid-cols-2 gap-2 bg-amber-900/50 p-1 rounded-lg">
-          <button id="btn-mesa" onclick="setModalidad('Comer en el Local')" class="py-1.5 text-xs font-semibold rounded-md transition bg-amber-500 text-andean-950 shadow-sm">
-            Dine In
-          </button>
-          <button id="btn-llevar" onclick="setModalidad('Para Llevar')" class="py-1.5 text-xs font-semibold rounded-md transition text-amber-200 hover:text-white">
-            To Go
+        <div class="mt-4 pt-3 border-t border-amber-900">
+          <label for="client-name" class="block text-xs font-medium text-stone-300 mb-1.5 flex items-center gap-1">
+            👤 What name is the order for? <span class="text-amber-400 font-bold">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="client-name" 
+            required
+            autocomplete="off"
+            placeholder="Enter your first and last name" 
+            class="w-full bg-amber-900/30 border border-amber-900/70 rounded-xl px-3 py-2.5 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-500 transition-all font-medium"
+          >
+        </div>
+        
+        <div class="mt-4 pt-3 border-t border-amber-900">
+          <label class="block text-xs font-medium text-stone-300 mb-2">How would you like your order?</label>
+          <div class="grid grid-cols-2 gap-2 bg-amber-900/50 p-1 rounded-lg">
+            <button id="btn-mesa" onclick="setModalidad('Comer en el Local')" class="py-1.5 text-xs font-semibold rounded-md transition bg-amber-500 text-andean-950 shadow-sm">
+              Dine In
+            </button>
+            <button id="btn-llevar" onclick="setModalidad('Para Llevar')" class="py-1.5 text-xs font-semibold rounded-md transition text-amber-200 hover:text-white">
+              To Go
+            </button>
+          </div>
+        </div>
+      
+        <div class="mt-4 pt-3 border-t border-amber-900 flex flex-col gap-3">
+          <div class="flex justify-between items-center font-bold text-sm">
+            <span>Estimated Total:</span>
+            <span id="cart-total" class="text-amber-400 text-base">S/. 0.00</span>
+          </div>
+          <button onclick="sendOrderToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 active:scale-[0.98] text-white font-bold text-sm py-3 rounded-xl transition shadow flex items-center justify-center gap-2">
+            🚀 Send Order via WhatsApp
           </button>
         </div>
-      </div>
-
-      <div class="mt-4 pt-3 border-t border-amber-900 flex flex-col gap-3">
-        <div class="flex justify-between items-center font-bold text-sm">
-          <span>Estimated Total:</span>
-          <span id="cart-total" class="text-amber-400 text-base">S/. 0.00</span>
-        </div>
-        <button onclick="sendOrderToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 active:scale-[0.98] text-white font-bold text-sm py-3 rounded-xl transition shadow flex items-center justify-center gap-2">
-          🚀 Send Order via WhatsApp
-        </button>
       </div>
     </section>
 
@@ -210,74 +217,24 @@
 
   <footer class="bg-andean-950 text-stone-400 py-6 px-4 border-t border-amber-900/20 mt-12">
     <div class="max-w-md mx-auto flex flex-col items-center gap-4 text-center">
-
       <a 
-        href="https://www.google.com/maps/place/Mikuna+Wassi/@-15.6225661,-71.9809589,17z/data=!4m12!1m5!8m4!1e2!2s109993981465421718146!3m1!1e1!3m5!1s0x916a035d3525d87d:0x49769510b69d1523!8m2!3d-15.6225661!4d-71.9809589!16s%2Fg%2F11h8fbrjg8?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" 
+        href="https://www.google.com/maps/place/Mikuna+Wassi/@-15.6225661,-71.9809589,17z" 
         target="_blank" 
         rel="noopener noreferrer"
         class="w-full bg-andean-900/30 hover:bg-andean-900/50 border border-amber-900/30 rounded-xl py-3 px-4 flex items-center justify-center gap-2.5 transition-colors text-xs font-bold text-amber-400"
       >
-      <img 
-        src="assets/images/icons/geo-fill.svg" 
-        alt="Ubicación" 
-        class="w-4 h-4 object-contain brightness-0 [filter:invert(81%)_sepia(62%)_saturate(1692%)_hue-rotate(338deg)_brightness(102%)_contrast(98%)]"
-      >
         <span>Pickup Location: View on Google Maps</span>
       </a>
-
       <p class="text-[10px] text-stone-500 tracking-widest uppercase mt-1">
-        © 2026 Mikuna Wassi • End of Menu
+        © 2026 Mikuna Wassi
       </p>
-
     </div>
   </footer>
-
-  <div id="floating-bar" class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-sm bg-emerald-600 text-white px-4 py-3 rounded-xl shadow-xl flex items-center justify-between z-30 transition-transform duration-300 translate-y-24 pointer-events-none opacity-0">
-    <div class="flex items-center gap-2">
-      <span class="font-bold text-sm" id="floating-count">0 items</span>
-      <span class="text-xs text-emerald-100">added</span>
-    </div>
-    <a href="#carrito-seccion" class="pointer-events-auto bg-amber-400 text-andean-950 text-xs font-bold px-3 py-1.5 rounded-lg shadow">
-      View Order ↑
-    </a>
-  </div>
-
-  <div id="custom-alert" class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-sm bg-amber-950 border border-amber-800/80 text-white rounded-2xl shadow-2xl z-50 transition-all duration-300 translate-y-24 opacity-0 pointer-events-none overflow-hidden flex flex-col">
-  
-  <div class="bg-amber-900/40 px-4 py-2.5 border-b border-amber-900/50 flex items-center justify-between">
-      <span class="text-[10px] font-bold tracking-wider text-amber-400 uppercase flex items-center gap-1.5">
-        📋 Processing Order
-      </span>
-      <span class="text-[10px] font-semibold text-stone-400">Mikuna Wassi</span>
-    </div>
-
-    <div class="p-4 flex items-center gap-4 bg-gradient-to-b from-transparent to-amber-950/30">
-      <div class="bg-amber-900/60 p-2.5 rounded-xl flex-shrink-0 flex items-center justify-center border border-amber-800/40 shadow-inner">
-        <img 
-          src="assets/images/icons/user-search.svg" 
-          alt="Search User Icon" 
-          class="w-6 h-6 object-contain brightness-0 [filter:invert(81%)_sepia(62%)_saturate(1692%)_hue-rotate(338deg)_brightness(102%)_contrast(98%)]"
-        >
-      </div>
-
-      <div class="flex-1 min-w-0">
-        <p id="custom-alert-text" class="text-xs font-bold text-stone-100 leading-relaxed">
-          Verifying your order details...
-        </p>
-      </div>
-    </div>
-
-    <div class="bg-amber-900/10 px-4 py-3 border-t border-amber-900/40">
-      <p class="text-[11px] text-stone-300 leading-normal text-center font-medium">
-        ⚠️ Please enter your name so we know how to call you when your order is ready.
-      </p>
-    </div>
-
-  </div>
 
   <script src="assets/scripts/mesero.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => renderizarMenu('en'));
   </script>
+
 </body>
 </html>

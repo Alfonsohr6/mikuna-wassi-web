@@ -413,7 +413,7 @@ const MENU_DATA = {
           en: "Swiss Chard Pie",
           fr: "Tourte aux blettes"
         },
-        precio: 8.00,
+        precio: 12.00,
         imagen: "pastel_acelga.jpg"
       }
     ]
@@ -645,15 +645,310 @@ const MENU_DATA = {
         imagen: "torta_chocolate.jpg"
       }
     ]
-  }
+  },
+  desayunos_fruta_cereales: {
+    categoria_id: "contenedor-desayunos-fruta-cereales",
+    diseno: "normal",
+    platos: [
+      {
+        id: "copa-yogurt-frutas-valle",
+        nombre: {
+          es: "Copa de yogurt con frutas del valle y cereal",
+          en: "Yogurt cup with valley fruits and cereal",
+          fr: "Coupe de yaourt aux fruits de la vallée et aux céréales"
+        },
+        descripcion: {
+          es: "Copa de yogurt natural acompañada de una selección de frutas frescas del valle y cereal crujiente.",
+          en: "Natural yogurt cup accompanied by a selection of fresh valley fruits and crunchy cereal.",
+          fr: "Coupe de yaourt nature accompagnée d'une sélection de fruits frais de la vallée et de céréales croquantes."
+        },
+        precio: 15.00,
+        imagen: "copa_yogurt_frutas_valle.jpg"
+      },
+      {
+        id: "tazon-avena-yogurt-griego",
+        nombre: {
+          es: "Tazón de Avena con yogurt griego y miel",
+          en: "Oatmeal bowl with Greek yogurt and honey",
+          fr: "Bol de flocons d'avoine au yaourt grec et au miel"
+        },
+        descripcion: {
+          es: "Nutritivo tazón de avena caliente o fría combinado con cremoso yogurt griego y un toque de miel natural.",
+          en: "Nutritive bowl of oatmeal combined with creamy Greek yogurt and a touch of natural honey.",
+          fr: "Bol nutritif de flocons d'avoine combiné avec du yaourt grec crémeux et une touche de miel naturel."
+        },
+        precio: 22.00,
+        imagen: "tazon_avena_yogurt_griego.jpg"
+      },
+      {
+        id: "mix-frutas-temporada-granola",
+        nombre: {
+          es: "Mix de frutas de temporada con miel y granola",
+          en: "Seasonal fruit mix with honey and granola",
+          fr: "Mélange de fruits de saison avec du miel et du granola"
+        },
+        descripcion: {
+          es: "Surtido de frutas frescas de temporada endulzado con miel de la casa y acompañado de granola crujiente.",
+          en: "Assortment of fresh seasonal fruits sweetened with house honey and accompanied by crunchy granola.",
+          fr: "Assortiment de fruits frais de saison adouci avec du miel de la maison et accompagné de granola croquant."
+        },
+        precio: 18.00,
+        imagen: "mix_frutas_temporada_granola.jpg"
+      }
+    ]
+  },
 
+  desayunos_sandwiches: {
+    categoria_id: "contenedor-desayunos-sandwiches",
+    diseno: "mini",
+    platos: [
+      {
+        id: "pollo-parrillero",
+        nombre: {
+          es: "Pollo parrillero",
+          en: "Grilled chicken sandwich",
+          fr: "Sandwich au poulet grillé"
+        },
+        precio: 22.00,
+        imagen: "pollo_parrillero.jpg"
+      },
+      {
+        id: "lomo-fino-res-parrillero",
+        nombre: {
+          es: "Lomo fino de res parrillero",
+          en: "Grilled beef tenderloin sandwich",
+          fr: "Sandwich de filet de bœuf grillé"
+        },
+        precio: 22.00,
+        imagen: "lomo_fino_res_parrillero.jpg"
+      },
+      {
+        id: "lomo-saltado-alpaca-desayuno",
+        nombre: {
+          es: "Lomo saltado de alpaca",
+          en: "Sautéed alpaca loin sandwich",
+          fr: "Sandwich de lomo saltado d'alpaga"
+        },
+        precio: 22.00,
+        imagen: "lomo_saltado_alpaca_desayuno.jpg"
+      },
+      {
+        id: "huevo-sandwich",
+        nombre: {
+          es: "Huevo Sandwich",
+          en: "Egg Sandwich",
+          fr: "Sandwich aux œufs"
+        },
+        precio: 8.00,
+        imagen: "huevo_sandwich.jpg"
+      },
+      {
+        id: "avocado-sandwich",
+        nombre: {
+          es: "Avocado Sandwich",
+          en: "Avocado Sandwich",
+          fr: "Sandwich à l'avocat"
+        },
+        precio: 8.00,
+        imagen: "avocado_sandwich.jpg"
+      },
+      {
+        id: "queso-sandwich",
+        nombre: {
+          es: "Queso Sandwich",
+          en: "Cheese Sandwich",
+          fr: "Sandwich au fromage"
+        },
+        precio: 8.00,
+        imagen: "queso_sandwich.jpg"
+      },
+      {
+        id: "sandwich-triple",
+        nombre: {
+          es: "Triple",
+          en: "Triple Sandwich",
+          fr: "Sandwich Triple"
+        },
+        precio: 18.00,
+        imagen: "sandwich_triple.jpg"
+      }
+    ]
+  },
+  platos_mananeros: {
+    categoria_id: "contenedor-platos-mananeros",
+    diseno: "normal",
+    platos: [
+      {
+        id: "pan-campesino-huevos",
+        nombre: {
+          es: "Pan campesino con huevos",
+          en: "Country bread with eggs",
+          fr: "Pain paysan aux œufs"
+        },
+        descripcion: {
+          es: "Huevos al gusto sobre mitad de pan tostado con queso local, tomate, finas hierbas, aceituna y aceite de oliva.",
+          en: "Eggs to taste on half toasted bread with local cheese, tomato, fine herbs, olive, and olive oil.",
+          fr: "Œufs au choix sur moitié de pain grillé avec fromage local, tomate, fines herbes, olive et huile d'olive."
+        },
+        precio: 20.00,
+        imagen: "pan_campesino.jpg"
+      },
+      {
+        id: "tamales-pollo-salsa-criolla",
+        nombre: {
+          es: "Tamales de maíz con pollo",
+          en: "Chicken corn tamales",
+          fr: "Tamales de maïs au poulet"
+        },
+        descripcion: {
+          es: "Tradicionales tamales de maíz rellenos de pollo tierno y acompañados de fresca salsa criolla.",
+          en: "Traditional corn tamales stuffed with tender chicken and accompanied by fresh criolla sauce.",
+          fr: "Tamales de maïs traditionnels farcis de poulet tendre et accompagnés de sauce criolla fraîche."
+        },
+        precio: 15.00,
+        imagen: "tamales_pollo.jpg"
+      }
+    ]
+  },
+  desayunos_empanadas: {
+    categoria_id: "contenedor-desayunos-empanadas",
+    diseno: "mini",
+    platos: [
+      {
+        id: "empanada-pollo",
+        nombre: {
+          es: "Empanada de Pollo",
+          en: "Chicken Empanada",
+          fr: "Empanada au poulet"
+        },
+        precio: 9.00,
+        imagen: "empanada_pollo.jpg"
+      },
+      {
+        id: "empanada-alpaca",
+        nombre: {
+          es: "Empanada de Alpaca",
+          en: "Alpaca Empanada",
+          fr: "Empanada à l'alpaga"
+        },
+        precio: 9.00,
+        imagen: "empanada_alpaca.jpg"
+      },
+      {
+        id: "empanada-queso",
+        nombre: {
+          es: "Empanada de Queso",
+          en: "Cheese Empanada",
+          fr: "Empanada au fromage"
+        },
+        precio: 9.00,
+        imagen: "empanada_queso.jpg"
+      },
+      {
+        id: "empanada-vegetariana",
+        nombre: {
+          es: "Empanada Vegetariana",
+          en: "Vegetarian Empanada",
+          fr: "Empanada végétarienne"
+        },
+        precio: 9.00,
+        imagen: "empanada_vegetariana.jpg"
+      }
+    ]
+  },
+  desayunos_bebidas: {
+    categoria_id: "contenedor-desayunos-bebidas",
+    diseno: "mini",
+    platos: [
+      {
+        id: "jugos",
+        nombre: {
+          es: "Jugos",
+          en: "Juices",
+          fr: "Jus"
+        },
+        precio: 10.00,
+        imagen: "jugos.jpg"
+      },
+      {
+        id: "jugos-con-leche",
+        nombre: {
+          es: "Jugos con Leche",
+          en: "Juices with Milk",
+          fr: "Jus au lait"
+        },
+        precio: 12.00,
+        imagen: "jugos_con_leche.jpg"
+      },
+      {
+        id: "quinua-saltadita",
+        nombre: {
+          es: "Quinua Saltadita",
+          en: "Quinoa drink",
+          fr: "Boisson de quinoa"
+        },
+        precio: 14.00,
+        imagen: "quinua_saltadita.jpg"
+      },
+      {
+        id: "cafe-americano",
+        nombre: {
+          es: "Café Americano",
+          en: "American Coffee",
+          fr: "Café Américain"
+        },
+        precio: 7.00,
+        imagen: "cafe_americano.jpg"
+      },
+      {
+        id: "cafe-expreso",
+        nombre: {
+          es: "Café Expreso",
+          en: "Espresso",
+          fr: "Café Expresso"
+        },
+        precio: 12.00,
+        imagen: "cafe_expreso.jpg"
+      },
+      {
+        id: "cafe-con-leche",
+        nombre: {
+          es: "Café con Leche",
+          en: "Coffee with Milk",
+          fr: "Café au lait"
+        },
+        precio: 12.00,
+        imagen: "cafe_con_leche.jpg"
+      },
+      {
+        id: "chocolate-caliente",
+        nombre: {
+          es: "Chocolate Caliente",
+          en: "Hot Chocolate",
+          fr: "Chocolat Chaud"
+        },
+        precio: 14.00,
+        imagen: "chocolate_caliente.jpg"
+      },
+      {
+        id: "infusion",
+        nombre: {
+          es: "Infusión",
+          en: "Herbal Tea",
+          fr: "Infusion"
+        },
+        precio: 5.00,
+        imagen: "infusion.jpg"
+      }
+    ]
+  }
 };
 
 // ==========================================
 // ESTADO GLOBAL DEL CARRITO (Memoria Dinámica)
 // ==========================================
 let cart = [];
-let modalidad = "Comer en el Local"; // Se mantiene fijo en español para la cocina nativa
+let modalidad = "Comer en el Local"; 
 let isCartSectionVisible = false;
 
 // Detectar el idioma automáticamente desde el tag <html lang="...">
@@ -666,10 +961,9 @@ const translations = {
   es: {
     emptyCart: "No has seleccionado ningún plato aún.",
     each: "c/u",
-    floatingItems: (count) => `${count} plato${count !== 1 ? 's' : ''}`,
     alertEmpty: "Por favor, agrega al menos un plato a tu carrito para procesar el pedido.",
     alertNameEmpty: "Por favor, ingresa tu nombre y apellido para continuar con el pedido.",
-    alertNameInvalid: "El nombre no es válido. Solo se permiten letras (sin números, símbolos ni caracteres especiales).",
+    alertNameInvalid: "El nombre no es válido. Solo se permiten letras (nos números, símbolos ni caracteres especiales).",
     wsHeader: "¡Hola, Mikuna Wassi! 🍲 (Pedido de cliente Español / ES)\nAcabo de armar mi pedido desde la web:\n\n",
     wsClient: "Mi nombre es:", 
     wsTotal: "Total estimado",
@@ -679,10 +973,9 @@ const translations = {
   en: {
     emptyCart: "You haven't selected any dishes yet.",
     each: "each",
-    floatingItems: (count) => `${count} dish${count !== 1 ? 'es' : ''}`,
     alertEmpty: "Please add at least one dish to your cart to process the order.",
     alertNameEmpty: "Please enter your first and last name to continue with the order.",
-    alertNameInvalid: "The name is not valid. Only letters are allowed (no numbers, symbols, or special characters).",
+    alertNameInvalid: "The name is not valid. Only letters are allowed.",
     wsHeader: "¡Hola, Mikuna Wassi! 🍲 (Pedido de cliente Inglés / EN)\nAcabo de armar mi pedido desde la web:\n\n",
     wsClient: "Mi nombre es:", 
     wsTotal: "Total estimado",
@@ -692,7 +985,6 @@ const translations = {
   fr: {
     emptyCart: "Vous n'avez pas encore sélectionné de plats.",
     each: "ch.",
-    floatingItems: (count) => `${count} plat${count !== 1 ? 's' : ''}`,
     alertEmpty: "Veuillez ajouter au moins un plat à votre panier pour traiter la commande.",
     alertNameEmpty: "Veuillez entrer votre nom et prénom pour continuer la commande.",
     alertNameInvalid: "Le nom n'est pas valide. Seules les lettres sont autorisées.",
@@ -704,21 +996,19 @@ const translations = {
   }
 };
 
-// Traducción activa según la página actual
 const t = translations[lang] || translations.es;
 
 // ==========================================
 // 🔍 FUNCIÓN TRADUCTORA: OBTENER NOMBRE EN ESPAÑOL
 // ==========================================
 function obtenerNombreEnEspanol(id) {
-  // Recorre dinámicamente las categorías del menú buscando el ID único del plato
   for (const categoria in MENU_DATA) {
     const platoEncontrado = MENU_DATA[categoria].platos.find(p => p.id === id);
     if (platoEncontrado) {
-      return platoEncontrado.nombre.es; // Devuelve estrictamente el nombre en español para la cocina
+      return platoEncontrado.nombre.es;
     }
   }
-  return null; // Fallback seguro por si ocurre un imprevisto
+  return null;
 }
 
 // ==========================================
@@ -729,15 +1019,11 @@ function renderizarMenu(idioma) {
     const infoCat = MENU_DATA[categoria];
     const contenedor = document.getElementById(infoCat.categoria_id);
     
-    // Si la página HTML actual NO tiene este contenedor, lo ignora limpiamente sin errores
     if (!contenedor) continue;
     
-    // Limpiamos el contenido viejo antes de inyectar el nuevo
     contenedor.innerHTML = "";
     
-    // Evaluamos qué plantilla usar según la propiedad 'diseno'
     if (infoCat.diseno === "mini") {
-      // --- DISEÑO DE TARJETA PEQUEÑA (GRID DE 2 COLUMNAS) ---
       infoCat.platos.forEach(plato => {
         const miniTarjetaHTML = `
           <div class="bg-white p-2 rounded-xl shadow-sm border border-andean-100 flex gap-2">
@@ -746,20 +1032,16 @@ function renderizarMenu(idioma) {
               <h3 class="font-bold text-stone-900 text-xs line-clamp-2 leading-tight" title="${plato.nombre[idioma]}">${plato.nombre[idioma]}</h3>
               <div class="flex justify-between items-center mt-1">
                 <span class="text-amber-950 text-[11px] font-bold">S/. ${plato.precio.toFixed(2)}</span>
-                
                 <button onclick="addToCart('${plato.id}', '${plato.nombre[idioma].replace(/'/g, "\\'")}', ${plato.precio})" class="bg-stone-900 text-white text-[11px] px-2 py-0.5 rounded active:scale-95 transition-transform">
                   +
                 </button>
-                
               </div>
             </div>
           </div>
         `;
         contenedor.innerHTML += miniTarjetaHTML;
       });
-      
     } else {
-      // --- DISEÑO DE TARJETA NORMAL (GRANDE CON DESCRIPCIÓN) ---
       infoCat.platos.forEach(plato => {
         const tarjetaHTML = `
           <div class="bg-white p-3 rounded-xl shadow-sm border border-andean-100 flex gap-3">
@@ -773,11 +1055,9 @@ function renderizarMenu(idioma) {
               </div>
               <div class="flex justify-between items-center mt-1">
                 <span class="text-amber-950 font-bold text-sm">S/. ${plato.precio.toFixed(2)}</span>
-                
                 <button onclick="addToCart('${plato.id}', '${plato.nombre[idioma].replace(/'/g, "\\'")}', ${plato.precio})" class="bg-amber-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg active:scale-95 transition-transform">
                   + ${idioma === 'es' ? 'Agregar' : idioma === 'en' ? 'Add' : 'Ajouter'}
                 </button>
-                
               </div>
             </div>
           </div>
@@ -789,37 +1069,29 @@ function renderizarMenu(idioma) {
 }
 
 // ==========================================
-// 🛒 LÓGICA DEL CARRITO (CORREGIDA Y COMPLETA)
+// 🛒 LÓGICA DEL CARRITO
 // ==========================================
-
-// Añadir producto o incrementar cantidad
 function addToCart(id, name, price) {
-  // Buscamos de forma ultra segura usando el ID único
   const existingItem = cart.find(item => item.id === id);
   if (existingItem) {
     existingItem.quantity += 1;
   } else {
-    // Guardamos los 3 datos ordenados en la memoria, incluyendo el id oculto
     cart.push({ id, name, price, quantity: 1 });
   }
   renderCart();
 }
 
-// Opera y filtra usando el ID único
 function changeQuantity(id, delta) {
-  // Busca el plato por su ID en lugar de su nombre
   const item = cart.find(item => item.id === id);
   if (item) {
     item.quantity += delta;
     if (item.quantity <= 0) {
-      // Si llega a cero, lo elimina usando el ID
       cart = cart.filter(i => i.id !== id);
     }
   }
   renderCart();
 }
 
-// Cambiar la modalidad del servicio (Mesa / Llevar)
 function setModalidad(nuevaModalidad) {
   modalidad = nuevaModalidad;
   const btnMesa = document.getElementById('btn-mesa');
@@ -836,35 +1108,34 @@ function setModalidad(nuevaModalidad) {
   }
 }
 
-// Renderizar e inyectar HTML del carrito en tiempo real
 function renderCart() {
   const cartItemsContainer = document.getElementById('cart-items');
   const cartTotal = document.getElementById('cart-total');
   const cartCount = document.getElementById('cart-count');
-  const floatingBar = document.getElementById('floating-bar');
-  const floatingCount = document.getElementById('floating-count');
+  const headerCartCount = document.getElementById('header-cart-count');
 
-  if (!cartItemsContainer || !cartTotal || !cartCount || !floatingBar || !floatingCount) return;
+  if (!cartItemsContainer || !cartTotal || !cartCount) return;
+
+  let totalItems = 0;
+  cart.forEach(item => { totalItems += item.quantity; });
+
+  if (headerCartCount) {
+    headerCartCount.innerText = totalItems;
+  }
 
   if (cart.length === 0) {
     cartItemsContainer.innerHTML = `<p class="text-stone-400 text-center py-4">${t.emptyCart}</p>`;
     cartTotal.innerText = "S/. 0.00";
     cartCount.innerText = "0";
-    
-    // Esconder barra flotante móvil
-    floatingBar.classList.add('translate-y-24', 'opacity-0');
     return;
   }
 
   let html = "";
   let total = 0;
-  let totalItems = 0;
 
-  // 1. PROCESAMIENTO DE DATOS (Bucle puro y optimizado)
   cart.forEach(item => {
     const subtotal = item.price * item.quantity;
     total += subtotal;
-    totalItems += item.quantity;
 
     html += `
       <div class="flex items-center justify-between py-2 border-b border-amber-950/30 last:border-0">
@@ -884,62 +1155,32 @@ function renderCart() {
     `;
   });
 
-  // 2. INYECCIÓN Y CIERRE DE TRABAJO (Lo que completamos)
   cartItemsContainer.innerHTML = html;
   cartTotal.innerText = `S/. ${total.toFixed(2)}`;
-  cartCount.innerText = totalItems; // 🎯 AQUÍ se arregla el conteo del carrito principal
-
-  // Control dinámico de la barra flotante según la posición de la pantalla
-  if (floatingBar && !isCartSectionVisible) {
-    floatingCount.textContent = t.floatingItems(totalItems);
-    floatingBar.classList.remove('translate-y-24', 'opacity-0');
-  } else if (floatingBar && isCartSectionVisible) {
-    floatingBar.classList.add('translate-y-24', 'opacity-0');
-  }
+  cartCount.innerText = totalItems;
 }
 
-
-// 🔔 FUNCIÓN PARA MOSTRAR LA NOTIFICACIÓN FLOTANTE PERSONALIZADA
+// 🔔 FUNCIÓN DE ALERTA O MENSAJE EN PANTALLA
 function showCustomAlert(mensaje) {
-  const alertContainer = document.getElementById('custom-alert');
-  const alertText = document.getElementById('custom-alert-text');
-
-  if (!alertContainer || !alertText) return;
-
-  // Inyectamos el texto correspondiente según la validación y el idioma activo
-  alertText.innerText = mensaje;
-
-  // Quitamos las clases ocultas y activamos la animación para que suba elegantemente
-  alertContainer.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
-  alertContainer.classList.add('translate-y-0', 'opacity-100');
-
-  // Se oculta automáticamente después de 3.5 segundos
-  setTimeout(() => {
-    alertContainer.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
-    alertContainer.classList.remove('translate-y-0', 'opacity-100');
-  }, 3500);
+  alert(mensaje);
 }
 
-// 🚀 FUNCIÓN DE ENVÍO CON VALIDACIONES PROTEGIDAS Y OPTIMIZADAS
+// 🚀 FUNCIÓN DE ENVÍO A WHATSAPP
 function sendOrderToWhatsApp() {
-  // 1. Validación de Carrito Vacío (¡Siempre va primero para proteger el flujo!)
   if (cart.length === 0) {
     showCustomAlert(t.alertEmpty); 
     return;
   }
 
-  // 👤 Captura segura del input del nombre del cliente
   const nameInput = document.getElementById('client-name');
   const nombreCliente = nameInput ? nameInput.value.trim() : "";
 
-  // 2. Validación de Nombre Vacío
   if (!nombreCliente) {
     showCustomAlert(t.alertNameEmpty); 
-    if (nameInput) nameInput.focus(); // Enfoca el campo para que el usuario escriba rápido
+    if (nameInput) nameInput.focus();
     return;
   }
 
-  // 3. Validación de Expresión Regular para el Nombre (Añadido soporte para diéresis ü Ü por el menú en Francés)
   const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/;
   if (!nameRegex.test(nombreCliente)) {
     showCustomAlert(t.alertNameInvalid); 
@@ -947,7 +1188,6 @@ function sendOrderToWhatsApp() {
     return;
   }
 
-  // 📋 COMPILACIÓN DEL MENSAJE PARA WHATSAPP
   let textoMensaje = t.wsHeader;
   textoMensaje += `👤 *${t.wsClient}* ${nombreCliente}\n\n`;
   textoMensaje += `📋 *DETALLE DEL PEDIDO:*\n`;
@@ -956,10 +1196,7 @@ function sendOrderToWhatsApp() {
   cart.forEach(item => {
     const subtotal = item.price * item.quantity;
     total += subtotal;
-    
-    // El "Mesero" hace su magia: Traduce el ID al nombre nativo en español para el cocinero
     const nombreCocina = obtenerNombreEnEspanol(item.id) || item.name;
-    
     textoMensaje += `• ${item.quantity}x ${nombreCocina} (S/. ${item.price.toFixed(2)} c/u) -> S/. ${subtotal.toFixed(2)}\n`;
   });
 
@@ -970,114 +1207,59 @@ function sendOrderToWhatsApp() {
   const whatsappNumber = "51956459905";
   const urlUrlEncoded = encodeURIComponent(textoMensaje);
   
-  // Abre WhatsApp limpiamente en una pestaña nueva
   window.open(`https://wa.me/${whatsappNumber}?text=${urlUrlEncoded}`, "_blank");
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+// ==========================================
+// ⚡ CONTROL DE NAVEGACIÓN Y VISTAS
+// ==========================================
+function cambiarVista(vista) {
   const secTradicional = document.getElementById('seccion-tradicional');
   const secVegetariano = document.getElementById('seccion-vegetariano');
+  const secDesayunos = document.getElementById('seccion-desayunos');
+  const secCompartidas = document.getElementById('secciones-compartidas');
+  const carritoSeccion = document.getElementById('seccion-carrito');
+
   const tabTradicional = document.getElementById('tab-tradicional');
   const tabVegetariano = document.getElementById('tab-vegetariano');
-  
-  // 🛠️ AGREGAMOS ESTAS DOS LÍNEAS QUE FALTABAN:
-  const navTradicional = document.getElementById('nav-tradicional');
-  const navVegetariano = document.getElementById('nav-vegetariano');
+  const tabDesayunos = document.getElementById('tab-desayunos');
 
-  const carritoSeccion = document.getElementById('carrito-seccion');
-  const floatingBar = document.getElementById('floating-bar');
+  // Reset de pestañas superiores
+  [tabTradicional, tabVegetariano, tabDesayunos].forEach(tab => {
+    if (tab) {
+      tab.className = "py-2 text-[11px] font-bold rounded-lg transition-all text-amber-200/70 hover:text-white text-center truncate px-1";
+    }
+  });
 
-  // --- SENSOR A: CONTROL DEL SELECTOR SUPERIOR Y NAV SUB-CATEGORÍAS ---
-  if (secTradicional && secVegetariano && tabTradicional && tabVegetariano) {
-    const opcionesSensor = {
-      root: null,
-      rootMargin: '-25% 0px -55% 0px', // Margen optimizado para detectar el cambio a tiempo
-      threshold: 0
-    };
+  // Ocultar absolutamente todo primero
+  if (secTradicional) secTradicional.classList.add('hidden');
+  if (secVegetariano) secVegetariano.classList.add('hidden');
+  if (secDesayunos) secDesayunos.classList.add('hidden');
+  if (secCompartidas) secCompartidas.classList.add('hidden');
+  if (carritoSeccion) carritoSeccion.classList.add('hidden');
 
-    const oserbadorCallBack = (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          if (entry.target.id === 'seccion-vegetariano') {
-            // Intercambio de Navs (Esconde tradicional, muestra vegetariano)
-            if (navTradicional) navTradicional.classList.add('hidden');
-            if (navVegetariano) navVegetariano.classList.remove('hidden');
-
-            // Estado visual del botón superior
-            tabVegetariano.classList.add('bg-amber-500', 'text-andean-950', 'shadow');
-            tabVegetariano.classList.remove('text-amber-200/70', 'hover:text-white');
-            tabTradicional.classList.remove('bg-amber-500', 'text-andean-950', 'shadow');
-            tabTradicional.classList.add('text-amber-200/70', 'hover:text-white');
-          } else {
-            // Intercambio de Navs (Esconde vegetariano, muestra tradicional)
-            if (navVegetariano) navVegetariano.classList.add('hidden');
-            if (navTradicional) navTradicional.classList.remove('hidden');
-
-            // Estado visual del botón superior
-            tabTradicional.classList.add('bg-amber-500', 'text-andean-950', 'shadow');
-            tabTradicional.classList.remove('text-amber-200/70', 'hover:text-white');
-            tabVegetariano.classList.remove('bg-amber-500', 'text-andean-950', 'shadow');
-            tabVegetariano.classList.add('text-amber-200/70', 'hover:text-white');
-          }
-        }
-      });
-    };
-
-    const sensor = new IntersectionObserver(oserbadorCallBack, opcionesSensor);
-    sensor.observe(secTradicional);
-    sensor.observe(secVegetariano);
-  }
-
-  // --- SENSOR B: DETECTOR DE PRESENCIA DEL CARRITO PRINCIPAL ---
-  // (Este déjalo tal cual como estaba abajo...)
-
-  // --- SENSOR B: DETECTOR DE PRESENCIA DEL CARRITO PRINCIPAL ---
-  if (carritoSeccion && floatingBar) {
-    const cartObserverOptions = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.05
-    };
-
-    const cartObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        isCartSectionVisible = entry.isIntersecting;
-
-        if (cart.length > 0) {
-          if (isCartSectionVisible) {
-            floatingBar.classList.add('translate-y-24', 'opacity-0');
-            floatingBar.classList.remove('translate-y-0', 'opacity-100');
-          } else {
-            floatingBar.classList.remove('translate-y-24', 'opacity-0');
-            floatingBar.classList.add('translate-y-0', 'opacity-100');
-          }
-        }
-      });
-    }, cartObserverOptions);
-    cartObserver.observe(carritoSeccion);
-  }
-});
-
-// --- ACCIÓN CLIC DEL SELECTOR MAESTRO ---
-function toggleMenu(menuActivo) {
-  const destinoId = menuActivo === 'tradicional' ? 'seccion-tradicional' : 'seccion-vegetariano';
-  const elementoDestino = document.getElementById(destinoId);
-
-  if (elementoDestino) {
-    const headerOffset = 140; 
-    const elementPosition = elementoDestino.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
+  // Mostrar la sección correspondiente según el parámetro recibido
+  if (vista === 'tradicional' && secTradicional) {
+    secTradicional.classList.remove('hidden');
+    if (secCompartidas) secCompartidas.classList.remove('hidden');
+    if (tabTradicional) tabTradicional.className = "py-2 text-[11px] font-bold rounded-lg transition-all bg-amber-500 text-andean-950 shadow text-center truncate px-1";
+  } else if (vista === 'vegetariano' && secVegetariano) {
+    secVegetariano.classList.remove('hidden');
+    if (secCompartidas) secCompartidas.classList.remove('hidden');
+    if (tabVegetariano) tabVegetariano.className = "py-2 text-[11px] font-bold rounded-lg transition-all bg-amber-500 text-andean-950 shadow text-center truncate px-1";
+  } else if (vista === 'desayunos' && secDesayunos) {
+    secDesayunos.classList.remove('hidden');
+    if (secCompartidas) secCompartidas.classList.remove('hidden');
+    if (tabDesayunos) tabDesayunos.className = "py-2 text-[11px] font-bold rounded-lg transition-all bg-amber-500 text-andean-950 shadow text-center truncate px-1";
+  } else if (vista === 'carrito' && carritoSeccion) {
+    // Espacio exclusivo para el carrito limpio de otras secciones
+    carritoSeccion.classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
 
-// ==========================================
-// ⚡ INICIALIZACIÓN AUTOMÁTICA DEL MESERO
-// ==========================================
-// El mesero se despierta, lee el idioma nativo del HTML e inicializa todo de golpe
-renderizarMenu(lang);
-renderCart();
+// Inicialización automática al cargar el DOM
+document.addEventListener("DOMContentLoaded", () => {
+  renderizarMenu(lang);
+  renderCart();
+});
