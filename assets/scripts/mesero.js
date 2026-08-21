@@ -1204,7 +1204,7 @@ function sendOrderToWhatsApp() {
   textoMensaje += `\n🛵 *${t.wsModalidad}:* ${modalidad}`;
   textoMensaje += t.wsFooter;
 
-  const whatsappNumber = "51956459905";
+  const whatsappNumber = "51953395647";
   const urlUrlEncoded = encodeURIComponent(textoMensaje);
   
   window.open(`https://wa.me/${whatsappNumber}?text=${urlUrlEncoded}`, "_blank");
