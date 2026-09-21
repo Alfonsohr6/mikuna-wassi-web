@@ -66,7 +66,7 @@ const MENU_DATA = {
           fr: "Riz oriental"
         },
         descripcion: {
-          es: "Arroz acompañado de tortilla de huevos y vegetales salteados en salsa oriental.",
+          es: "Es Arroz Oriental",
           en: "Rice accompanied by egg omelet and sautéed vegetables in oriental sauce.",
           fr: "Riz accompagné d'une omelette aux œufs et de légumes sautés sauce orientale."
         },
